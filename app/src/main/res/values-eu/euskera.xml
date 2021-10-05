@@ -4,4 +4,8 @@
     <string name="user">Erabiltzailea</string>
     <string name="pass">Pasahitza</string>
     <string name="sesion">Hasi sesioa</string>
+
+    <string name="spanish">Gaztelania</string>
+    <string name="euskera">Euskara</string>
+    <string name="english">Ingelera</string>
 </resources>

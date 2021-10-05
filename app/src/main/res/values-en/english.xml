@@ -4,4 +4,8 @@
     <string name="user">Username</string>
     <string name="pass">Password</string>
     <string name="sesion">Log in</string>
+
+    <string name="spanish">Spanish</string>
+    <string name="euskera">Basque</string>
+    <string name="english">English</string>
 </resources>
