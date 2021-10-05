@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ReadyBaggage</string>
+    <!--Pantalla de login-->
     <string name="user">Username</string>
     <string name="pass">Password</string>
     <string name="sesion">Log in</string>
-
+    <!--Idiomas-->
     <string name="spanish">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="english">English</string>
+    <!--Tamaños de maleta-->
+    <string name="malPeq">Small bagagge</string>
+    <string name="malMed">Medium bagagge</string>
+    <string name="malGran">Large bagagge</string>
 </resources>

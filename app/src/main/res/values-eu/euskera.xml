@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ReadyBaggage</string>
+    <!--Pantalla de login-->
     <string name="user">Erabiltzailea</string>
     <string name="pass">Pasahitza</string>
     <string name="sesion">Hasi sesioa</string>
-
+    <!--Idiomas-->
     <string name="spanish">Gaztelania</string>
     <string name="euskera">Euskara</string>
     <string name="english">Ingelera</string>
+    <!--Tamaños de maleta-->
+    <string name="malPeq">Maleta txikia</string>
+    <string name="malMed">Maleta ertaina</string>
+    <string name="malGran">Maleta handia</string>
 </resources>
