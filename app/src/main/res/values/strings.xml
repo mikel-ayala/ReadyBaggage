@@ -5,11 +5,11 @@
     <string name="pass">Contraseña</string>
     <string name="sesion">Iniciar sesión</string>
     <!--Idiomas-->
-    <string name="spanish" >Castellano</string>
+    <string name="spanish">Castellano</string>
     <string name="euskera">Euskera</string>
     <string name="english">Inglés</string>
     <!--Tamaños de maleta-->
-    <string name="malPeq" >Maleta pequeña</string>
+    <string name="malPeq">Maleta pequeña</string>
     <string name="malMed">Maleta mediana</string>
     <string name="malGran">Maleta grande</string>
 </resources>
