@@ -6,117 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPrecioDiaMenos10"
-        android:layout_width="322dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#00FF00"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:text="LOGO"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252">
-
-        <TextView
-            android:id="@+id/precioDiaMenos10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/precioDia" />
-
-        <TextView
-            android:id="@+id/infoPrecioDMenos10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/infoPrecioDmenos10" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPrecioDiaMas10"
-        android:layout_width="322dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#F4B700"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447">
-
-        <TextView
-            android:id="@+id/precioDiaMas10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/precioDia" />
-
-        <TextView
-            android:id="@+id/infoPrecioDMas10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/infoPrecioDmas10" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPrecioNocheMenos10"
-        android:layout_width="324dp"
-        android:layout_height="122dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#0FFFF0"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681">
-
-        <TextView
-            android:id="@+id/precioNocheMenos10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/precioNoche" />
-
-        <TextView
-            android:id="@+id/infoPrecioNocheMenos10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/infoPrecioNmenos10" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPrecioNocheMas10"
-        android:layout_width="324dp"
-        android:layout_height="122dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#0037FF"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909">
-
-        <TextView
-            android:id="@+id/precioNoche"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/precioNoche" />
-
-        <TextView
-            android:id="@+id/infoPrecioNocheMas10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/infoPrecioNmas10" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btIdiomas"
@@ -127,5 +27,191 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPrecioDiaMenos10"
+                android:layout_width="367dp"
+                android:layout_height="107dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="#00FF00"
+                app:cardCornerRadius="25dp">
+
+                <TextView
+                    android:id="@+id/precioDiaMenos10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precioDia" />
+
+                <TextView
+                    android:id="@+id/infoPrecioDMenos10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infoPrecioDmenos10" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPrecioDiaMas10"
+                android:layout_width="367dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="#F4B700"
+                app:cardCornerRadius="25dp">
+
+                <TextView
+                    android:id="@+id/precioDiaMas10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precioDia" />
+
+                <TextView
+                    android:id="@+id/infoPrecioDMas10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infoPrecioDmas10" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPrecioNocheMenos10"
+                android:layout_width="367dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="#0FFFF0"
+                app:cardCornerRadius="25dp">
+
+                <TextView
+                    android:id="@+id/precioNocheMenos10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precioNoche" />
+
+                <TextView
+                    android:id="@+id/infoPrecioNocheMenos10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infoPrecioNmenos10" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPrecioNocheMas10"
+                android:layout_width="367dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="#0037FF"
+                app:cardCornerRadius="25dp">
+
+                <TextView
+                    android:id="@+id/precioNoche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precioNoche" />
+
+                <TextView
+                    android:id="@+id/infoPrecioNocheMas10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infoPrecioNmas10" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_outline_person_24" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_outline_work_outline_24" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/botones_redondos"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="-35dp"
+        android:background="@drawable/botones_redondos"
+        android:backgroundTint="@color/lightPurple"
+        android:stateListAnimator="@null"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="78dp"
+        android:layout_height="104dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintVertical_bias="0.92"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
