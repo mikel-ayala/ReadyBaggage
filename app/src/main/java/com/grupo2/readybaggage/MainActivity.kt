@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
             showPopup(btIdiomas)
         }
 
+        btnLogin.setOnClickListener() {
+            val loginIntent = Intent(this, LoginActivity::class.java)
+            startActivity(loginIntent)
+        }
+
     }
 
 
