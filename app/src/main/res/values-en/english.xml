@@ -9,8 +9,19 @@
     <string name="spanish">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="english">English</string>
-    <!--Tamaños de maleta-->
-    <string name="malPeq">Small bagagge</string>
-    <string name="malMed">Medium bagagge</string>
-    <string name="malGran">Large bagagge</string>
+    <!--Tipos de tarifa-->
+    <string name="precioDia"><b>\tDay fee</b></string>
+    <string name="precioNoche"><b>\tNight fee</b></string>
+    <string name="infoPrecioDmenos10">
+        \n\nPrice up to 10kg: 8€
+    </string>
+    <string name="infoPrecioDmas10">
+        \n\nPrecio from 10kg: 10€
+    </string>
+    <string name="infoPrecioNmenos10">
+        \n\nPrice up to 10kg: 12€
+    </string>
+    <string name="infoPrecioNmas10">
+        \n\nPrecio from 10kg: 14€
+    </string>
 </resources>

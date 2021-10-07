@@ -8,8 +8,19 @@
     <string name="spanish">Castellano</string>
     <string name="euskera">Euskera</string>
     <string name="english">Inglés</string>
-    <!--Tamaños de maleta-->
-    <string name="malPeq">Maleta pequeña</string>
-    <string name="malMed">Maleta mediana</string>
-    <string name="malGran">Maleta grande</string>
+    <!--Tipos de tarifa-->
+    <string name="precioDia"><b>\tPrecio diurno</b></string>
+    <string name="precioNoche"><b>\tPrecio nocturno</b></string>
+    <string name="infoPrecioDmenos10">
+        \n\nPrecio hasta 10kg: 8€
+    </string>
+    <string name="infoPrecioDmas10">
+        \n\nPrecio a partir de 10kg: 10€
+    </string>
+    <string name="infoPrecioNmenos10">
+        \n\nPrecio hasta 10kg: 12€
+    </string>
+    <string name="infoPrecioNmas10">
+        \n\nPrecio a partir de 10kg: 14€
+    </string>
 </resources>

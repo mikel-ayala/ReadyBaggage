@@ -3,11 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/menu/menu_idioma.xml" value="1.2607142857142857" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/drawable/botones_redondos.xml" value="0.2703125" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/drawable/botones_redondos.xml" value="0.2703125" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/menu/menu_idioma.xml" value="0.5892857142857143" />
       </map>
     </option>
   </component>

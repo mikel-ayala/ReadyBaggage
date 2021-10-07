@@ -9,8 +9,19 @@
     <string name="spanish">Gaztelania</string>
     <string name="euskera">Euskara</string>
     <string name="english">Ingelera</string>
-    <!--Tamaños de maleta-->
-    <string name="malPeq">Maleta txikia</string>
-    <string name="malMed">Maleta ertaina</string>
-    <string name="malGran">Maleta handia</string>
+    <!--Tipos de tarifa-->
+    <string name="precioDia"><b>\tEguneko prezioa</b></string>
+    <string name="precioNoche"><b>\tGaueko prezioa</b></string>
+    <string name="infoPrecioDmenos10">
+        \n\nPrezioa 10 kg-ra arte: 8€
+    </string>
+    <string name="infoPrecioDmas10">
+        \n\nPrezioa 10 kg-tik aurrera: 10€
+    </string>
+    <string name="infoPrecioNmenos10">
+        \n\nPrezioa 10 kg-ra arte: 12€
+    </string>
+    <string name="infoPrecioNmas10">
+        \n\nPrezioa 10 kg-tik aurrera: 14€
+    </string>
 </resources>

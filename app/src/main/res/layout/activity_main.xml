@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/maletaPeq"
+        android:id="@+id/cvPrecioDiaMenos10"
         android:layout_width="322dp"
         android:layout_height="110dp"
         android:layout_gravity="center"
         app:cardBackgroundColor="#00FF00"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -21,54 +21,101 @@
         app:layout_constraintVertical_bias="0.252">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/precioDiaMenos10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/malPeq" />
+            android:text="@string/precioDia" />
+
+        <TextView
+            android:id="@+id/infoPrecioDMenos10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoPrecioDmenos10" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/maletaMedi"
-        android:layout_width="324dp"
-        android:layout_height="122dp"
+        android:id="@+id/cvPrecioDiaMas10"
+        android:layout_width="322dp"
+        android:layout_height="110dp"
         android:layout_gravity="center"
-        app:cardBackgroundColor="#FFFF00"
-        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="#F4B700"
+        app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499">
+        app:layout_constraintVertical_bias="0.447">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/precioDiaMas10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/malMed" />
+            android:text="@string/precioDia" />
+
+        <TextView
+            android:id="@+id/infoPrecioDMas10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoPrecioDmas10" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/maletaGran"
-        android:layout_width="330dp"
-        android:layout_height="126dp"
+        android:id="@+id/cvPrecioNocheMenos10"
+        android:layout_width="324dp"
+        android:layout_height="122dp"
         android:layout_gravity="center"
-        app:cardBackgroundColor="#FF0000"
-        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="#0FFFF0"
+        app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745">
+        app:layout_constraintVertical_bias="0.681">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/precioNocheMenos10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/malGran" />
+            android:text="@string/precioNoche" />
+
+        <TextView
+            android:id="@+id/infoPrecioNocheMenos10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoPrecioNmenos10" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPrecioNocheMas10"
+        android:layout_width="324dp"
+        android:layout_height="122dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#0037FF"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909">
+
+        <TextView
+            android:id="@+id/precioNoche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/precioNoche" />
+
+        <TextView
+            android:id="@+id/infoPrecioNocheMas10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoPrecioNmas10" />
+
     </androidx.cardview.widget.CardView>
 
     <Button
