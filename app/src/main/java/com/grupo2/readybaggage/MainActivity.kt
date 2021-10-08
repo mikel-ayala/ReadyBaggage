@@ -12,7 +12,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var locale: Locale
+    private lateinit var locale: Locale
     private var currentLanguage = Locale.getDefault()
     private var currentLang: String? = null
 
@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val idiomas=getSharedPreferences("idiomas", 0)
-        if(idiomas.getString("idioma", "").isNullOrEmpty()){
-            currentLang = currentLanguage.toString()
+        currentLang = if(idiomas.getString("idioma", "").isNullOrEmpty()){
+            currentLanguage.toString()
         }else{
-            currentLang = idiomas.getString("idioma", "")
+            idiomas.getString("idioma", "")
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             showPopup(btIdiomas)
         }
 
-        btnLogin.setOnClickListener() {
+        btnLogin.setOnClickListener {
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
         }
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun showPopup(v : View){
+    private fun showPopup(v : View){
         val popup = PopupMenu(this, v)
         val inflater: MenuInflater = popup.menuInflater
         inflater.inflate(R.menu.menu_idioma, popup.menu)
