@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.264" />
+=======
+        <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/drawable/custom_button.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.264" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

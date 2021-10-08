@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+<<<<<<< Updated upstream
 //private var tCliente: String = "create table cliente(codigo int primary key AUTOINCREMENT, email text UNIQUE NOT NULL, pass text not null, nombre text not null, apellidos text not null, fec_nac text not null, telefono text not null)"
 private var tCliente: String = "create table cliente(codigo INTEGER PRIMARY KEY AUTOINCREMENT, email text UNIQUE NOT NULL, pass text not null, nombre text not null, apellidos text not null, fec_nac text not null, telefono text not null)"
 private var tEmpleado: String = "create table empleado(dniEmple text primary key not null unique, email text not null unique, password text not null, nombre text not null, apellidos text not null, fecNac text, direccion text)"
@@ -25,4 +26,40 @@ class SQLHandler(context: Context, name: String, factory: SQLiteDatabase.CursorF
         db.execSQL("drop table if exists cliente")
         onCreate(db)
     }
+=======
+class SQLHandler (context: Context, name:
+String, factory: SQLiteDatabase.CursorFactory?, version: Int) :
+SQLiteOpenHelper(context, name, factory, version) {
+    var tipoUsuario: String = "";
+    var nombreUsuario: String = "";
+
+    fun requestToLogIn(vUser: String, vPass: String): Boolean {
+        if (tipoUsuario.isNotEmpty() || nombreUsuario.isNotEmpty() ) {
+
+        }
+        return false;
+    }
+
+    fun requestUserType(): String? {
+        if (tipoUsuario.isNotEmpty()) {
+            return tipoUsuario;
+        }
+        println("No hay usuario logeado")
+        return null;
+    }
+
+    fun setDBConnection() {
+
+    }
+
+    override fun onCreate(db: SQLiteDatabase?) {
+        db!!.execSQL("create table usuario(idUser int primary key, user text, pass text)")
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db!!.execSQL("drop table if exists articulos")
+        onCreate(db)
+    }
+
+>>>>>>> Stashed changes
 }
