@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         val idiomas=getSharedPreferences("idiomas", 0)
         currentLang = if(idiomas.getString("idioma", "").isNullOrEmpty()){
             currentLanguage.toString()
