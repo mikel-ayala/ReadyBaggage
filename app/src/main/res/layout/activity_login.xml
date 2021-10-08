@@ -35,6 +35,16 @@
         app:layout_constraintTop_toBottomOf="@+id/editUsername" />
 
     <Button
+        android:id="@+id/loginViewBtnReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/loginViewBtnLogin"
+        app:layout_constraintStart_toStartOf="@+id/loginViewBtnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/loginViewBtnLogin" />
+
+    <Button
         android:id="@+id/loginViewBtnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
