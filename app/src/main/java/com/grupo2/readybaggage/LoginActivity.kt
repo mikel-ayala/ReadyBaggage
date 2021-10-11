@@ -10,7 +10,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        loginViewBtnReg.setOnClickListener() {
+        loginViewTextReg.setOnClickListener() {
             if (!ControlCliente.existeCliente(this, editUsername.text.toString())) {
                 if (ControlCliente.aniadirCliente(this,  editUsername.text.toString(),  editPass.text.toString())) {
                     Toast.makeText(this, "Cliente Registrado Correctamente", Toast.LENGTH_LONG).show()
@@ -18,7 +18,8 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Ya existe un cliente con dicho nombre", Toast.LENGTH_LONG).show()
             }
-
         }
+
+
     }
 }

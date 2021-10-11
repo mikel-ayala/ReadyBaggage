@@ -1,26 +1,36 @@
 <resources>
     <string name="app_name">ReadyBaggage</string>
-    <!--Pantalla de login-->
-    <string name="user">Usuario</string>
-    <string name="pass">Contraseña</string>
-    <string name="sesion">Iniciar sesión</string>
+    <string name="lang">Idioma</string>
+
+
+
     <!--Idiomas-->
     <string name="spanish">Castellano</string>
     <string name="euskera">Euskera</string>
     <string name="english">Inglés</string>
+
     <!--Tipos de tarifa-->
-    <string name="precioDia"><b>\tPrecio diurno</b></string>
-    <string name="precioNoche"><b>\tPrecio nocturno</b></string>
+    <string name="precioDia"><b>Precio diurno</b></string>
+    <string name="precioNoche"><b>Precio nocturno</b></string>
     <string name="infoPrecioDmenos10">
-        \n\nPrecio hasta 10kg: 8€
+        Precio hasta 10kg: 8€
     </string>
     <string name="infoPrecioDmas10">
-        \n\nPrecio a partir de 10kg: 10€
+        Precio a partir de 10kg: 10€
     </string>
     <string name="infoPrecioNmenos10">
-        \n\nPrecio hasta 10kg: 12€
+        Precio hasta 10kg: 12€
     </string>
     <string name="infoPrecioNmas10">
-        \n\nPrecio a partir de 10kg: 14€
+        Precio a partir de 10kg: 14€
     </string>
+    <!--Botón de reserva-->
+    <string name="reservar">Reservar</string>
+
+
+    <!--Activity de login -->
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="login">Entrar</string>
+    <string name="register">¿No tienes cuenta? Haz click aquí para registrarte</string>
 </resources>

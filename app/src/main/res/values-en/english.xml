@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ReadyBaggage</string>
-    <!--Pantalla de login-->
-    <string name="user">Username</string>
-    <string name="pass">Password</string>
-    <string name="sesion">Log in</string>
+    <string name="lang">Language</string>
+
     <!--Idiomas-->
     <string name="spanish">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="english">English</string>
     <!--Tipos de tarifa-->
-    <string name="precioDia"><b>\tDay fee</b></string>
-    <string name="precioNoche"><b>\tNight fee</b></string>
+    <string name="precioDia"><b>Day fee</b></string>
+    <string name="precioNoche"><b>Night fee</b></string>
     <string name="infoPrecioDmenos10">
-        \n\nPrice up to 10kg: 8€
+        Price up to 10kg: 8€
     </string>
     <string name="infoPrecioDmas10">
-        \n\nPrecio from 10kg: 10€
+        Precio from 10kg: 10€
     </string>
     <string name="infoPrecioNmenos10">
-        \n\nPrice up to 10kg: 12€
+        Price up to 10kg: 12€
     </string>
     <string name="infoPrecioNmas10">
-        \n\nPrecio from 10kg: 14€
+        Precio from 10kg: 14€
     </string>
+    <!--Botón de reserva-->
+    <string name="reservar">Book it</string>
+
+    <!--Activity de login -->
+    <string name="user">Username</string>
+    <string name="pass">Password</string>
+    <string name="login">Log-in</string>
+    <string name="register">Do you not have an account? Click here to register</string>
+
 </resources>

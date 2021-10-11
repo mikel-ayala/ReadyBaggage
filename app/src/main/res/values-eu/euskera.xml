@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ReadyBaggage</string>
-    <!--Pantalla de login-->
-    <string name="user">Erabiltzailea</string>
-    <string name="pass">Pasahitza</string>
-    <string name="sesion">Hasi sesioa</string>
+    <string name="lang">Hizkuntza</string>
+
     <!--Idiomas-->
     <string name="spanish">Gaztelania</string>
     <string name="euskera">Euskara</string>
     <string name="english">Ingelera</string>
     <!--Tipos de tarifa-->
-    <string name="precioDia"><b>\tEguneko prezioa</b></string>
-    <string name="precioNoche"><b>\tGaueko prezioa</b></string>
+    <string name="precioDia"><b>Eguneko prezioa</b></string>
+    <string name="precioNoche"><b>Gaueko prezioa</b></string>
     <string name="infoPrecioDmenos10">
-        \n\nPrezioa 10 kg-ra arte: 8€
+        Prezioa 10 kg-ra arte: 8€
     </string>
     <string name="infoPrecioDmas10">
-        \n\nPrezioa 10 kg-tik aurrera: 10€
+        Prezioa 10 kg-tik aurrera: 10€
     </string>
     <string name="infoPrecioNmenos10">
-        \n\nPrezioa 10 kg-ra arte: 12€
+        Prezioa 10 kg-ra arte: 12€
     </string>
     <string name="infoPrecioNmas10">
-        \n\nPrezioa 10 kg-tik aurrera: 14€
+        Prezioa 10 kg-tik aurrera: 14€
     </string>
+    <!--Botón de reserva-->
+    <string name="reservar">Erreserbartu</string>
+
+    <!--Activity de login -->
+    <string name="user">Erabiltzailea</string>
+    <string name="pass">Pasahitza</string>
+    <string name="login">Sartu</string>
+    <string name="register">Ez duzu konturik? Egin klik hemen erregistratzeko</string>
+
 </resources>

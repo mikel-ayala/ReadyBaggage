@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="172dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/user"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/pass"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/editUsername"
@@ -35,22 +35,25 @@
         app:layout_constraintTop_toBottomOf="@+id/editUsername" />
 
     <Button
-        android:id="@+id/loginViewBtnReg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Register"
-        app:layout_constraintEnd_toEndOf="@+id/loginViewBtnLogin"
-        app:layout_constraintStart_toStartOf="@+id/loginViewBtnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/loginViewBtnLogin" />
-
-    <Button
         android:id="@+id/loginViewBtnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Button"
+        android:layout_marginTop="40dp"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="@+id/editPass"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/editPass"
         app:layout_constraintTop_toBottomOf="@+id/editPass" />
+
+    <TextView
+        android:id="@+id/loginViewTextReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/register"
+        android:textColor="#0000FF"
+        app:layout_constraintEnd_toEndOf="@+id/loginViewBtnLogin"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/loginViewBtnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/loginViewBtnLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

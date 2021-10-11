@@ -33,11 +33,10 @@ class MainActivity : AppCompatActivity() {
             showPopup(btIdiomas)
         }
 
-        btnLogin.setOnClickListener {
+        iconoPerfil.setOnClickListener {
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
         }
-
     }
 
 
