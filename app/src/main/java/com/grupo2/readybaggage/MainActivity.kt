@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var locale: Locale
     private var currentLanguage = Locale.getDefault()
     private var currentLang: String? = null
-
-
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
