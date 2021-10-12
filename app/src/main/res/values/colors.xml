@@ -5,4 +5,8 @@
     <color name="blue">#31C7AF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#4e4e4e</color>
+    <color name="smoothGray">#ddd</color>
+
+    <color name="regTxtBtnColor">#31C7AF</color>
 </resources>

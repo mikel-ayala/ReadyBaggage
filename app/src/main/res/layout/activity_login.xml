@@ -8,23 +8,37 @@
 
     <EditText
         android:id="@+id/editUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="268dp"
+        android:background="@drawable/roundededittext"
         android:ems="10"
         android:hint="@string/user"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editPass"
+    <Button
+        android:id="@+id/loginViewBtnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/roundedbutton"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="@+id/editPass"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editPass"
+        app:layout_constraintTop_toBottomOf="@+id/editPass" />
+
+    <EditText
+        android:id="@+id/editPass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/roundededittext"
         android:ems="10"
         android:hint="@string/pass"
         android:inputType="textPersonName"
@@ -34,26 +48,42 @@
         app:layout_constraintStart_toStartOf="@+id/editUsername"
         app:layout_constraintTop_toBottomOf="@+id/editUsername" />
 
-    <Button
-        android:id="@+id/loginViewBtnLogin"
+    <TextView
+        android:id="@+id/loginViewTextRegBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="@+id/editPass"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/editPass"
-        app:layout_constraintTop_toBottomOf="@+id/editPass" />
+        android:layout_height="32dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="fill"
+        android:text="@string/registerTxtBtn"
+        android:textColor="@color/regTxtBtnColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toEndOf="@+id/loginViewTextReg" />
 
     <TextView
         android:id="@+id/loginViewTextReg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/register"
-        android:textColor="#0000FF"
-        app:layout_constraintEnd_toEndOf="@+id/loginViewBtnLogin"
+        android:layout_height="32dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="fill"
+        android:text="@string/registerTxt"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/regViewTxtTitle"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_vertical"
+        android:text="Ready Baggage"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/editUsername"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/loginViewBtnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/loginViewBtnLogin" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
