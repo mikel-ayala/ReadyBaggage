@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuInflater
 import android.view.View
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -33,6 +34,45 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         btIdiomas.setOnClickListener{
             showPopup(btIdiomas)
+        }
+
+        reservaMenos10.setOnClickListener() {
+            if (ControlCliente.getCliente() != null) {
+                val bookingView = Intent(this, BookingActivity::class.java)
+                bookingView.putExtra("productoId","1")
+                startActivity(bookingView)
+
+            } else {
+                val loginIntent = Intent(this, LoginActivity::class.java)
+                startActivity(loginIntent)
+                Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        reservaMas10.setOnClickListener() {
+            if (ControlCliente.getCliente() != null) {
+                val bookingView = Intent(this, BookingActivity::class.java)
+                bookingView.putExtra("productoId","2")
+                startActivity(bookingView)
+
+            } else {
+                val loginIntent = Intent(this, LoginActivity::class.java)
+                startActivity(loginIntent)
+                Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        reservaMas20.setOnClickListener() {
+            if (ControlCliente.getCliente() != null) {
+                val bookingView = Intent(this, BookingActivity::class.java)
+                bookingView.putExtra("productoId","3")
+                startActivity(bookingView)
+
+            } else {
+                val loginIntent = Intent(this, LoginActivity::class.java)
+                startActivity(loginIntent)
+                Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
+            }
         }
 
         iconoPerfil.setOnClickListener {

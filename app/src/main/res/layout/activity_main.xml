@@ -54,29 +54,26 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/imgMenos10"
-                        android:layout_width="match_parent"
-                        android:layout_height="222dp"
+                    <ImageView
+                        android:id="@+id/mainViewImgProduct1"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
                         android:layout_weight="1"
-                        android:background="@color/lightPurple" />
-                </LinearLayout>
+                        app:srcCompat="@drawable/maleta_pequenia" />
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.3" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="57dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="25dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvMenos10"
                         android:layout_width="wrap_content"
-                        android:layout_height="240dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro"
                         android:text="@string/tamanoPeq"
@@ -87,7 +84,7 @@
                     <TextView
                         android:id="@+id/tvPrecioMenos10"
                         android:layout_width="match_parent"
-                        android:layout_height="258dp"
+                        android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro"
@@ -115,7 +112,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="222dp"
+                android:layout_height="match_parent"
                 android:layout_margin="30dp"
                 android:orientation="horizontal">
 
@@ -125,29 +122,25 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/imgMas10"
-                        android:layout_width="match_parent"
-                        android:layout_height="222dp"
+                    <ImageView
+                        android:id="@+id/mainViewImgProduct2"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
                         android:layout_weight="1"
-                        android:background="@color/lightPurple" />
+                        app:srcCompat="@drawable/maleta_grande" />
                 </LinearLayout>
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.3" />
 
                 <LinearLayout
                     android:layout_width="57dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="25dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvMas10"
                         android:layout_width="wrap_content"
-                        android:layout_height="240dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro"
                         android:text="@string/tamanoGran"
@@ -158,7 +151,7 @@
                     <TextView
                         android:id="@+id/tvPrecioMas10"
                         android:layout_width="match_parent"
-                        android:layout_height="258dp"
+                        android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro"
@@ -174,6 +167,73 @@
 
                         <Button
                             android:id="@+id/reservaMas10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/reservar" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/mainViewImgProduct3"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/maleta_extra" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="57dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv2Mas10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="@string/tamanoGran"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:id="@+id/tv2PrecioMas10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="@string/precioMas10"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/reservaMas20"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

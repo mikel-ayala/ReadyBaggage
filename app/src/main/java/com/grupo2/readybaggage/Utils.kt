@@ -27,7 +27,7 @@ class Utils {
 
         fun validarPassword(pPassword: String): Boolean  {
             var passTemp = pPassword.replace(" ","")
-            if (passTemp.length > 6) {
+            if (passTemp.length >= 6) {
                 return true
             }
             return false

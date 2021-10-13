@@ -65,14 +65,13 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/profileViewBtnAvatar"
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                        <ImageView
+                            android:id="@+id/profileViewImgAvatar"
+                            android:layout_width="300dp"
+                            android:layout_height="200dp"
                             android:layout_weight="1"
-                            android:background="@drawable/rooundedavatar"
-                            android:foreground="@drawable/vectorpaint"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            app:srcCompat="@drawable/app_avatar" />
+
                     </LinearLayout>
 
                     <Space
@@ -90,9 +89,19 @@
                             android:id="@+id/profileViewTxtNombre"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:text="@string/nombre"
                             android:textSize="24sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/profileViewTxtMemberTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="60dp"
+                            android:text="Miembro desde 14/10/2021"
+                            android:textSize="16sp"
+                            android:textStyle="italic" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -229,12 +238,13 @@
                         android:background="@drawable/roundedbutton"
                         android:text="@string/actualizar" />
 
-                    <Button
+                    <android.widget.Button
                         android:id="@+id/profileViewBtnLogout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/logoutbutton"
+                        android:textColor="@color/white"
                         android:text="@string/cerrar" />
 
                     <FrameLayout
