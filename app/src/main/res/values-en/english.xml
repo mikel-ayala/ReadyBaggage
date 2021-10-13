@@ -3,23 +3,11 @@
     <string name="app_name">ReadyBaggage</string>
     <string name="lang">Language</string>
 
+
     <!--Idiomas-->
     <string name="spanish">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="english">English</string>
-    <!--Tipos de tarifa-->
-    <string name="precioDia"><b>Day fee</b></string>
-    <string name="precioNoche"><b>Night fee</b></string>
-    <string name="infoPrecioDmenos10">"         Price up to 10kg: 8€     "</string>
-    <string name="infoPrecioDmas10">
-        Price from 10kg: 10€
-    </string>
-    <string name="infoPrecioNmenos10">
-        Price up to 10kg: 12€
-    </string>
-    <string name="infoPrecioNmas10">
-        Precio from 10kg: 14€
-    </string>
 
 
     <!--Activity de login -->
@@ -29,18 +17,26 @@
     <string name="registerTxtBtn">Register</string>
     <string name="registerTxt">Not a member yet?</string>
 
+    <!--Perfil de usuario-->
+    <string name="nombre">Name</string>
+    <string name="apellido">Surname</string>
+    <string name="telefono">Phone number</string>
+    <string name="email">Email</string>
+    <string name="actualizar">Update data</string>
+    <string name="cerrar">Log out</string>
+
+
     <!--Botón de reserva-->
     <string name="reservar">Book it</string>
+    <!--Tipos de tarifa-->
     <string name="tamanoPeq">Baggage up to 10kg</string>
     <string name="precioMenos10">
         Day fee: 8€
         \nNight fee: 12€
     </string>
-
     <string name="tamanoGran">Baggage from 10kg</string>
     <string name="precioMas10">
         Day fee: 10€
         \nNight fee: 14€
     </string>
-
 </resources>

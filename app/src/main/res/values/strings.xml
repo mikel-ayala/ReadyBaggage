@@ -8,23 +8,6 @@
     <string name="euskera">Euskera</string>
     <string name="english">Inglés</string>
 
-    <!--Tipos de tarifa-->
-    <string name="precioDia"><b>Precio diurno</b></string>
-    <string name="precioNoche"><b>Precio nocturno</b></string>
-    <string name="infoPrecioDmenos10">
-        Precio hasta 10kg: 8€
-    </string>
-    <string name="infoPrecioDmas10">
-        Precio a partir de 10kg: 10€
-    </string>
-    <string name="infoPrecioNmenos10">
-        Precio hasta 10kg: 12€
-    </string>
-    <string name="infoPrecioNmas10">
-        Precio a partir de 10kg: 14€
-    </string>
-
-
 
     <!--Activity de login -->
     <string name="user">Usuario</string>
@@ -33,14 +16,23 @@
     <string name="registerTxt">¿Todavia no eres miembro?</string>
     <string name="registerTxtBtn">Regístrate</string>
 
+    <!--Perfil de usuario-->
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="telefono">Nº teléfono</string>
+    <string name="email">Correo electrónico</string>
+    <string name="actualizar">Actualizar datos</string>
+    <string name="cerrar">Cerrar sesión</string>
+
+
     <!--Botón de reserva-->
     <string name="reservar">Reservar</string>
+    <!--Tipos de tarifa-->
     <string name="tamanoPeq">Maletas hasta 10kg</string>
     <string name="precioMenos10">
         Precio diurno: 8€
         \nPrecio nocturno: 12€
     </string>
-
     <string name="tamanoGran">Maletas a partir de 10kg</string>
     <string name="precioMas10">
         Precio diurno: 10€

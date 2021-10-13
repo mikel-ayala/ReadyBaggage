@@ -90,7 +90,7 @@
                             android:id="@+id/profileViewTxtNombre"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Nombre"
+                            android:text="@string/nombre"
                             android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -123,7 +123,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Nombre" />
+                            android:text="@string/nombre" />
 
                         <TextView
                             android:id="@+id/profileViewTxtApellidos"
@@ -131,7 +131,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_weight="1"
-                            android:text="Apellidos" />
+                            android:text="@string/apellido" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -147,8 +147,8 @@
                             android:layout_weight="1"
                             android:background="@drawable/roundededittext"
                             android:ems="10"
+                            android:hint="@string/nombre"
                             android:inputType="textPersonName"
-                            android:text="Nombre"
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
@@ -158,8 +158,8 @@
                             android:layout_weight="1"
                             android:background="@drawable/roundededittext"
                             android:ems="10"
+                            android:hint="@string/apellido"
                             android:inputType="textPersonName"
-                            android:text="Apellidos"
                             tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
                 </LinearLayout>
@@ -169,7 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Numero de Telefono" />
+                    android:text="@string/telefono" />
 
                 <EditText
                     android:id="@+id/profileViewEditTelefono"
@@ -177,8 +177,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
                     android:ems="10"
+                    android:hint="@string/telefono"
                     android:inputType="number"
-                    android:text="Telefono"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
@@ -186,7 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Email" />
+                    android:text="@string/email" />
 
                 <EditText
                     android:id="@+id/profileViewEditEmail"
@@ -194,8 +194,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
                     android:ems="10"
+                    android:hint="@string/email"
                     android:inputType="text"
-                    android:text="Email"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
@@ -203,6 +203,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:hint="@string/pass"
                     android:text="Contraseña" />
 
                 <EditText
@@ -211,6 +212,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
                     android:ems="10"
+                    android:hint="@string/pass"
                     android:inputType="textPassword"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -224,16 +226,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:text="Actualizar Datos"
-                        android:background="@drawable/roundedbutton"/>
+                        android:background="@drawable/roundedbutton"
+                        android:text="@string/actualizar" />
 
                     <Button
                         android:id="@+id/profileViewBtnLogout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Cerrar sesion"
-                        android:background="@drawable/logoutbutton"/>
+                        android:background="@drawable/logoutbutton"
+                        android:text="@string/cerrar" />
 
                     <FrameLayout
                         android:layout_width="match_parent"

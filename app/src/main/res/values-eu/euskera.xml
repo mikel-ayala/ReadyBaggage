@@ -3,23 +3,11 @@
     <string name="app_name">ReadyBaggage</string>
     <string name="lang">Hizkuntza</string>
 
+
     <!--Idiomas-->
     <string name="spanish">Gaztelania</string>
     <string name="euskera">Euskara</string>
     <string name="english">Ingelera</string>
-    <!--Tipos de tarifa-->
-    <string name="precioDia"><b>Eguneko prezioa</b></string>
-    <string name="precioNoche"><b>Gaueko prezioa</b></string>
-    <string name="infoPrecioDmenos10">"         Prezioa 10 kg-ra arte: 8€     "</string>
-    <string name="infoPrecioDmas10">
-        Prezioa 10 kg-tik aurrera: 10€
-    </string>
-    <string name="infoPrecioNmenos10">
-        Prezioa 10 kg-ra arte: 12€
-    </string>
-    <string name="infoPrecioNmas10">
-        Prezioa 10 kg-tik aurrera: 14€
-    </string>
 
 
     <!--Activity de login -->
@@ -29,15 +17,24 @@
     <string name="registerTxtBtn">Erregistratu</string>
     <string name="registerTxt">Oraindik ez zara kide?</string>
 
+    <!--Perfil de usuario-->
+    <string name="nombre">Izena</string>
+    <string name="apellido">Abizenak</string>
+    <string name="telefono">Telefono zk.</string>
+    <string name="actualizar">Eguneratu datuak</string>
+    <string name="email">Posta elektronikoa</string>
+    <string name="cerrar">Itxi saioa</string>
+
+
     <!--Botón de reserva-->
     <string name="reservar">Erreserbartu</string>
+    <!--Tipos de tarifa-->
     <string name="tamanoPeq">Maletak 10 kg-ra arte</string>
     <string name="precioMenos10">
         Precio diurno: 8€
         \nPrecio nocturno: 12€
     </string>
-
-    <string name="tamanoGran">Maletak 10 kg-tik aurrera</string>
+    <string name="tamanoGran">Maletak 10kg-ra arte</string>
     <string name="precioMas10">
         Eguneko prezioa: 10€
         \nGaueko prezioa: 14€

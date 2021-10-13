@@ -89,7 +89,6 @@ class MainActivity : AppCompatActivity() {
                 this,
                 this::class.java
             )
-//            refresh.putExtra(currentLang, localeName)
             refresh.putExtra(currentLang, localeName)
             finish()
             startActivity(refresh)
