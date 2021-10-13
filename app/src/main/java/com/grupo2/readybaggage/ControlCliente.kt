@@ -57,7 +57,7 @@ class ControlCliente() {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT codigo, email, nombre, apellidos, fec_nac, telefono FROM cliente" + " WHERE email=? and pass=?", arrayOf(pUser,pPass))
+                val fila = bd.rawQuery("SELECT codigo, email, pass, nombre, apellidos, fec_nac, telefono FROM cliente" + " WHERE email=? and pass=?", arrayOf(pUser,pPass))
                 if (fila.moveToFirst()) {
                     /*
                     println("*****COD"+fila.getString(0))
@@ -69,7 +69,7 @@ class ControlCliente() {
 
                      */
                     this.userLogged = fila.getString(1)
-                    this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5))
+                    this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6))
                     bd.close()
                     return true
                 }
@@ -91,15 +91,27 @@ class ControlCliente() {
         }
 
         fun modificarCliente(contextInstance: Context, pCliente: Cliente): Boolean {
+            if (pCliente == null) {
+                return false
+            }
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT codigo, email, nombre, apellidos, fec_nac, telefono FROM cliente" + " WHERE email=?", null)
-                if (fila.moveToFirst()) {
-                    bd.close()
+                val row = ContentValues()
+                row.put("nombre", pCliente.nombre)
+                row.put("apellidos", pCliente.apellidos)
+                row.put("email", pCliente.email)
+                row.put("pass", pCliente.password)
+
+                //row.put("fec_nac", f)
+                row.put("telefono", pCliente.telefono)
+                val cant = bd.update("cliente", row, "codigo=${pCliente.idCliente}", null)
+                bd.close()
+                if (cant == 1) {
+                    println("UPDATE hecha correctamente")
                     return true
                 }
-                bd.close()
+                println("UPDATE ERROR")
                 return false
             } catch (e: Exception) {
                 val functionName = object{}.javaClass.enclosingMethod.name
@@ -110,6 +122,19 @@ class ControlCliente() {
 
         fun getCliente(): String? {
             return this.userLogged
+        }
+
+        fun getClienteObject(): Cliente? {
+            return this.userObject
+        }
+
+        fun logout(): Boolean {
+            if (userLogged != null) {
+                this.userLogged = null
+                this.userObject = null
+                return true
+            }
+            return false
         }
 
     }

@@ -37,8 +37,9 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileActivityTemp"
-            android:exported="true" />
+            android:name=".ActivityPorfileTemp"
+            android:exported="true"
+             />
 
         <meta-data
             android:name="preloaded_fonts"
