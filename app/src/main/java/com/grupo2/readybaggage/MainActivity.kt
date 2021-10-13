@@ -14,18 +14,20 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var locale: Locale
     private var currentLanguage = Locale.getDefault()
-    private var currentLang: String? = null
-    
+    private lateinit var currentLang: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        val idiomas=getSharedPreferences("idiomas", 0)
-        currentLang = if(idiomas.getString("idioma", "").isNullOrEmpty()){
-            currentLanguage.toString()
+
+        if(SharedApp.prefs.dato.equals("")){
+            currentLang= currentLanguage.toString()
+
         }else{
-            idiomas.getString("idioma", "")
+            currentLang=SharedApp.prefs.dato
         }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btIdiomas.setOnClickListener{
@@ -46,15 +48,15 @@ class MainActivity : AppCompatActivity() {
         popup.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId){
                 R.id.spanish-> {
-//                    idiomas.edit().putString("idioma", "es")
+                    SharedApp.prefs.dato="es"
                     setLocale("es")
                 }
                 R.id.euskera-> {
-//                    idiomas.edit().putString("idioma", "eu")
+                    SharedApp.prefs.dato="eu"
                     setLocale("eu")
                 }
                 R.id.english-> {
-//                    idiomas.edit().putString("idioma", "en")
+                    SharedApp.prefs.dato="en"
                     setLocale("en")
                 }
             }
@@ -73,10 +75,16 @@ class MainActivity : AppCompatActivity() {
             res.updateConfiguration(conf, dm)
             val refresh = Intent(
                 this,
-                MainActivity::class.java
+                this::class.java
             )
             refresh.putExtra(currentLang, localeName)
             finish()
             startActivity(refresh)
     }
+
+    //Comprobar usuario
+//    fun isSavedName():Boolean{
+//        val myName = SharedApp.prefs.name
+//        return myName != ""
+//    }
 }
