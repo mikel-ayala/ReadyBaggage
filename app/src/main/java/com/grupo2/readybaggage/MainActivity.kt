@@ -35,8 +35,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         iconoPerfil.setOnClickListener {
-            val loginIntent = Intent(this, LoginActivity::class.java)
-            startActivity(loginIntent)
+            //val profileIntent = Intent(this, TmpProfileLayout::class.java)
+            //startActivity(profileIntent)
+            /*
+            if (ControlCliente.getCliente() != null) {
+                val profileIntent = Intent(this, ProfileActivityTemp::class.java)
+                startActivity(profileIntent)
+            } else {
+                val loginIntent = Intent(this, LoginActivity::class.java)
+                startActivity(loginIntent)
+            }
+             */
         }
     }
 

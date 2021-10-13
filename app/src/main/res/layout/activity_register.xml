@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="32sp"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/regViewTxtNombre"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/roundededittext"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Nombre*"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/regViewTxtTelefono"
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtTelefono" />
+
+    <EditText
+        android:id="@+id/regViewTxtApellidos"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/roundededittext"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Apellidos"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/regViewTxtTelefono"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtTelefono"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/regViewTxtNombre" />
+
+    <EditText
+        android:id="@+id/regViewTxtTelefono"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="296dp"
+        android:background="@drawable/roundededittext"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Numero de Telefono*"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/regViewTxtEmail"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundededittext"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Email*"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtTelefono"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtTelefono" />
+
+    <EditText
+        android:id="@+id/regViewTxtPass"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundededittext"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Contraseña*"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtEmail" />
+
+    <Button
+        android:id="@+id/regViewBtnReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Registrarme"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtPass"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtPass"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtPass" />
+
+    <TextView
+        android:id="@+id/regViewTextLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="¿Ya tienes cuenta?"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/regViewBtnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Inicia Sesion"
+        android:textColor="@color/regTxtBtnColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toEndOf="@+id/regViewTextLogin" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="ReadyBaggage"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/regViewTxtNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

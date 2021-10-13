@@ -3,7 +3,6 @@
     <string name="lang">Idioma</string>
 
 
-
     <!--Idiomas-->
     <string name="spanish">Castellano</string>
     <string name="euskera">Euskera</string>
@@ -32,5 +31,6 @@
     <string name="user">Usuario</string>
     <string name="pass">Contraseña</string>
     <string name="login">Entrar</string>
-    <string name="register">¿No tienes cuenta? Haz click aquí para registrarte</string>
+    <string name="registerTxt">¿Todavia no eres miembro?</string>
+    <string name="registerTxtBtn">Registrate</string>
 </resources>

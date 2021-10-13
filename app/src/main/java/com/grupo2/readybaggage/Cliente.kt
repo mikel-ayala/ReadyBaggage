@@ -1,7 +1,7 @@
 package com.grupo2.readybaggage
 
 class Cliente (
-    var dniEmple: String?,
+    var dniCliente: String?,
     var email: String?,
     var nombre: String?,
     var apellidos: String?,
@@ -9,7 +9,7 @@ class Cliente (
     var direccion: String
     ) {
     fun copy(cCliente: Cliente) {
-        this.dniEmple = cCliente.dniEmple
+        this.dniCliente = cCliente.dniCliente
         this.email = cCliente.email
         this.nombre = cCliente.nombre
         this.apellidos = cCliente.apellidos
