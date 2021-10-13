@@ -21,12 +21,13 @@ class MainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
 
-        if(SharedApp.prefs.dato.equals("")){
-            currentLang= currentLanguage.toString()
-
-        }else{
-            currentLang=SharedApp.prefs.dato
-        }
+        currentLang=currentLanguage.toString()
+//        if(SharedApp.prefs.dato.isNullOrBlank()){
+//            currentLang= currentLanguage.toString()
+//
+//        }else{
+//            currentLang=SharedApp.prefs.dato
+//        }
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,15 +58,15 @@ class MainActivity : AppCompatActivity() {
         popup.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId){
                 R.id.spanish-> {
-                    SharedApp.prefs.dato="es"
+//                    SharedApp.prefs.dato="es"
                     setLocale("es")
                 }
                 R.id.euskera-> {
-                    SharedApp.prefs.dato="eu"
+//                    SharedApp.prefs.dato="eu"
                     setLocale("eu")
                 }
                 R.id.english-> {
-                    SharedApp.prefs.dato="en"
+//                    SharedApp.prefs.dato="en"
                     setLocale("en")
                 }
             }
@@ -86,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                 this,
                 this::class.java
             )
+//            refresh.putExtra(currentLang, localeName)
             refresh.putExtra(currentLang, localeName)
             finish()
             startActivity(refresh)
