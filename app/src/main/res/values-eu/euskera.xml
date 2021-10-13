@@ -10,9 +10,7 @@
     <!--Tipos de tarifa-->
     <string name="precioDia"><b>Eguneko prezioa</b></string>
     <string name="precioNoche"><b>Gaueko prezioa</b></string>
-    <string name="infoPrecioDmenos10">
-        Prezioa 10 kg-ra arte: 8€
-    </string>
+    <string name="infoPrecioDmenos10">"         Prezioa 10 kg-ra arte: 8€     "</string>
     <string name="infoPrecioDmas10">
         Prezioa 10 kg-tik aurrera: 10€
     </string>
@@ -22,13 +20,26 @@
     <string name="infoPrecioNmas10">
         Prezioa 10 kg-tik aurrera: 14€
     </string>
-    <!--Botón de reserva-->
-    <string name="reservar">Erreserbartu</string>
+
 
     <!--Activity de login -->
     <string name="user">Erabiltzailea</string>
     <string name="pass">Pasahitza</string>
     <string name="login">Sartu</string>
-    <string name="register">Ez duzu konturik? Egin klik hemen erregistratzeko</string>
+    <string name="registerTxtBtn">Erregistratu</string>
+    <string name="registerTxt">Oraindik ez zara kide?</string>
 
+    <!--Botón de reserva-->
+    <string name="reservar">Erreserbartu</string>
+    <string name="tamanoPeq">Maletak 10 kg-ra arte</string>
+    <string name="precioMenos10">
+        Precio diurno: 8€
+        \nPrecio nocturno: 12€
+    </string>
+
+    <string name="tamanoGran">Maletak 10 kg-tik aurrera</string>
+    <string name="precioMas10">
+        Eguneko prezioa: 10€
+        \nGaueko prezioa: 14€
+    </string>
 </resources>
