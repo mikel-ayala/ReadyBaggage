@@ -8,7 +8,11 @@ class Prefs (context: Context) {
     val SHARED_NAME = "idioma"
     val prefs: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
 
-    var dato: String
+    var idioma: String
+        get() = prefs.getString(SHARED_NAME, "").toString()
+        set(value) = prefs.edit().putString(SHARED_NAME, value).apply()
+
+    var usuario: String
         get() = prefs.getString(SHARED_NAME, "").toString()
         set(value) = prefs.edit().putString(SHARED_NAME, value).apply()
 }
