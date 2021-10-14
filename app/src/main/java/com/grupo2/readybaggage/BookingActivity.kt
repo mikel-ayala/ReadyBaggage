@@ -28,16 +28,16 @@ class BookingActivity : AppCompatActivity() {
         val profileName=intent.getStringExtra("productoId")
         if (profileName != null) {
              if (profileName.toString().equals("1")) {
-                 precioProducto = 20
+                 precioProducto = 8
                  bookingViewTxtProductName.text = "Maletas hasta 10kg"
                  bookingViewImgProduct.setImageResource(R.drawable.maleta_pequenia)
              } else if (profileName.toString().equals("2")) {
-                 precioProducto = 40
+                 precioProducto = 10
                  bookingViewTxtProductName.text = "Maletas a partir de 10kg"
                  bookingViewImgProduct.setImageResource(R.drawable.maleta_grande)
              } else if (profileName.toString().equals("3")) {
-                 precioProducto = 60
-                 bookingViewTxtProductName.text = "Maletas a partir de 10kg"
+                 precioProducto = 12
+                 bookingViewTxtProductName.text = "Maletas a partir de 20kg"
                  bookingViewImgProduct.setImageResource(R.drawable.maleta_extra)
              }
 

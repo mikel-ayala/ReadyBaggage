@@ -39,4 +39,9 @@
         Eguneko prezioa: 10€
         \nGaueko prezioa: 14€
     </string>
+    <string name="tamanoExtra">Maletak 20kg-ra arte</string>
+    <string name="precioMas20">
+        Eguneko prezioa: 12€
+        \nGaueko prezioa: 16€
+    </string>
 </resources>

@@ -210,7 +210,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@string/tamanoGran"
+                        android:text="@string/tamanoExtra"
                         android:textColor="#000000"
                         android:textSize="24sp"
                         android:textStyle="normal|bold" />
@@ -222,7 +222,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@string/precioMas10"
+                        android:text="@string/precioMas20"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 

@@ -38,4 +38,9 @@
         Precio diurno: 10€
         \nPrecio nocturno: 14€
     </string>
+    <string name="tamanoExtra">Maletas a partir de 20kg</string>
+    <string name="precioMas20">
+        Precio diurno: 12€
+        \nPrecio nocturno: 16€
+    </string>
 </resources>
