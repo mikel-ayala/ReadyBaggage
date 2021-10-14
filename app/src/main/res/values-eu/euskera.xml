@@ -31,8 +31,8 @@
     <!--Tipos de tarifa-->
     <string name="tamanoPeq">Maletak 10 kg-ra arte</string>
     <string name="precioMenos10">
-        Precio diurno: 8€
-        \nPrecio nocturno: 12€
+        Eguneko prezioa: 8€
+        \nGaueko prezioa: 12€
     </string>
     <string name="tamanoGran">Maletak 10kg-ra arte</string>
     <string name="precioMas10">
