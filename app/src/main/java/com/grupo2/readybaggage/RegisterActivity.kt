@@ -55,10 +55,11 @@ class RegisterActivity : AppCompatActivity() {
             if (!errorFound) {
                 if (!ControlCliente.existeCliente(this,regViewTxtEmail.text.toString())){
                     if (ControlCliente.registrarCliente(this,  regViewTxtEmail.text.toString(), regViewTxtPass.text.toString(),regViewTxtNombre.text.toString(),regViewTxtApellidos.text.toString(),regViewTxtTelefono.text.toString())) {
-                        val MainActivity = Intent(this, MainActivity::class.java)
-                        startActivity(MainActivity)
+                        val loginIntent = Intent(this, LoginActivity::class.java)
+                        startActivity(loginIntent)
                         finish()
-                        Toast.makeText(this, "Bienvenido @"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Registrado correctamente @"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
+
                     } else {
                         Toast.makeText(this, "ERROR: Algo ha ido mal durante el registro, intentelo nuevamente", Toast.LENGTH_LONG).show()
                     }

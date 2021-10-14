@@ -1,6 +1,7 @@
 package com.grupo2.readybaggage
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuInflater
@@ -60,6 +61,7 @@ class BookingActivity : AppCompatActivity() {
                 bookingReservarError = true
             }
 
+
         }
 
         bookingViewEditFecReco.setOnClickListener() {
@@ -80,16 +82,19 @@ class BookingActivity : AppCompatActivity() {
         bookingViewBtnPaypal.setOnClickListener() {
             bookingViewTxtPayment.text = "Metodo de pago: Paypal"
             metodoPago = "Paypal"
+            bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
         }
 
         bookingViewBtnApple.setOnClickListener() {
             bookingViewTxtPayment.text = "Metodo de pago: Apple Pay"
             metodoPago = "Apple Pay"
+            bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
         }
 
         bookingViewBtnMaster.setOnClickListener() {
             bookingViewTxtPayment.text = "Metodo de pago: Master Card"
             metodoPago = "Master Card"
+            bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
         }
 
         bookingViewBtnPlus.setOnClickListener() {
@@ -112,6 +117,54 @@ class BookingActivity : AppCompatActivity() {
 
         btIdiomas.setOnClickListener{
             showPopup(btIdiomas)
+        }
+
+        bookingViewBtnReservar.setOnClickListener() {
+            var errorAlReservar: Boolean = false
+            if (bookingViewEditOrigen.text.toString().isEmpty()) {
+                bookingViewEditOrigen.setError("Escriba un lugar de Origen")
+                errorAlReservar = true
+            }
+
+            if (bookingViewEditDestino.text.toString().isEmpty()) {
+                bookingViewEditDestino.setError("Escriba un lugar de Destino")
+                errorAlReservar = true
+            }
+
+            if (bookingViewEditFecReco.text.toString().isEmpty()) {
+                bookingViewEditFecReco.setError("Seleccione una fecha de Recogida")
+                errorAlReservar = true
+            }
+
+            if (bookingViewEditFecEntrega.text.toString().isEmpty()) {
+                bookingViewEditFecEntrega.setError("Seleccione una fecha de Entrega")
+                errorAlReservar = true
+            }
+
+            if (bookingViewEditHRecogida.text.toString().isEmpty()) {
+                bookingViewEditHRecogida.setError("Seleccione una Hora de Recogida")
+                errorAlReservar = true
+            }
+
+            if (bookingViewEditHEntrega.text.toString().isEmpty()) {
+                bookingViewEditHEntrega.setError("Seleccione una Hora de Entrega")
+                errorAlReservar = true
+            }
+
+            if (metodoPago == null) {
+                bookingViewTxtPayment.text = "*Seleccione un metodo de pago"
+                bookingViewTxtPayment.setTextColor(Color.parseColor("#FF0000"))
+                //Toast.makeText(this, "Error: Seleccione un Metodo de Pago", Toast.LENGTH_LONG).show()
+                errorAlReservar = true
+            }
+
+            if (!errorAlReservar) {
+                Toast.makeText(this, "EXITO: Reserva realizada correctamente", Toast.LENGTH_LONG).show()
+                val homeViewIntent = Intent(this, MainActivity::class.java)
+                startActivity(homeViewIntent)
+                finish()
+            }
+
         }
     }
 
