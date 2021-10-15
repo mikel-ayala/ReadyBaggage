@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             //startActivity(profileIntent)
 
             if (ControlCliente.getCliente() != null) {
-                val profileIntent = Intent(this, ActivityPorfileTemp::class.java)
+                val profileIntent = Intent(this, ProfileActivity::class.java)
                 startActivity(profileIntent)
             } else {
                 val loginIntent = Intent(this, LoginActivity::class.java)

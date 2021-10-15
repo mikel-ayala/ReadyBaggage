@@ -13,13 +13,19 @@
         <entry key="..\:/Users/Luis/Documents/GitHub/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.36770833333333336" />
         <entry key="..\:/Users/Luis/Documents/GitHub/ReadyBaggage/app/src/main/res/layout/activity_profiletmp.xml" value="0.67" />
         <entry key="..\:/Users/Luis/Documents/GitHub/ReadyBaggage/app/src/main/res/layout/activity_register.xml" value="0.2078125" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_booking.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+=======
+        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_booking.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profiletmp.xml" value="0.2" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>
