@@ -11,6 +11,7 @@ class ControlCliente() {
         private var userLogged: String? = null
         private var userType: String? = null
         private var userObject: Cliente? = null
+        //Función para registrar clientes
         fun registrarCliente(contextInstance: Context, pUsername: String, pPassword: String, pNombre: String, pApellidos: String, pTelefono: String): Boolean {
             try {
                 val sdf = SimpleDateFormat("dd/MM/yyyy")
@@ -34,6 +35,7 @@ class ControlCliente() {
             return false
         }
 
+        //Función para comprobar si el cliente ya existe
         fun existeCliente(contextInstance: Context, pEmail: String): Boolean {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
@@ -52,6 +54,7 @@ class ControlCliente() {
             }
             return false
         }
+
 
         fun logCliente(contextInstance: Context, pUser: String, pPass: String): Boolean {
             try {
@@ -90,6 +93,7 @@ class ControlCliente() {
             return false
         }
 
+        //Función para hacer UPDATE de los datos de cliente
         fun modificarCliente(contextInstance: Context, pCliente: Cliente): Boolean {
             if (pCliente == null) {
                 return false
@@ -138,25 +142,4 @@ class ControlCliente() {
         }
 
     }
-    /*
-    fun aniadirCliente(contextInstance: Context) {
-    //fun addCliente(email: String, pass: String, nombre: String) {
-
-        val admin = SQLHandler(contextInstance," bdReadyBaggage.db", null, 1)
-        val bd = admin.writableDatabase
-        val row = ContentValues()
-        row.put("email", "luis@gmail.com")
-        row.put("pass", "123456aa")
-        row.put("nombre", "Luis")
-        bd.insert("empleado", null, row)
-        bd.close()
-    }
-
-
-
-    fun buscarCliente() {
-
-    }
-
-     */
 }

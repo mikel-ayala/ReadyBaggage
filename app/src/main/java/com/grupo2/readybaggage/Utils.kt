@@ -6,6 +6,7 @@ import java.lang.Exception
 
 class Utils {
     companion object {
+        //Función para comprobar que el formato del nº de teléfono es correcto
         fun validarTelefono(pTelefono: String): Boolean {
             try {
                 var esNumero: Int? = null
@@ -21,10 +22,12 @@ class Utils {
             return false
         }
 
+        //Función para comprobar que el formato del email es correcto
         fun validarEmail(pEmail: String): Boolean {
             return !TextUtils.isEmpty(pEmail) && android.util.Patterns.EMAIL_ADDRESS.matcher(pEmail).matches()
         }
 
+        //Función para comprobar que el formato de la contraseña es correcto
         fun validarPassword(pPassword: String): Boolean  {
             var passTemp = pPassword.replace(" ","")
             if (passTemp.length >= 6) {
