@@ -14,20 +14,22 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        //Si ya tienes una cuenta
         regViewBtnLogin.setOnClickListener() {
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
             finish()
         }
 
+        //Proceso de registro
         regViewBtnReg.setOnClickListener() {
             var errorFound: Boolean = false
-            //Email Validation
+            //Validar el email
             if (!Utils.validarEmail(regViewTxtEmail.text.toString())) {
                 regViewTxtEmail.setError("Introduzca un email valido")
                 errorFound = true
             }
-            //Password validation
+            //Validar la password
             if (!Utils.validarPassword(regViewTxtPass.text.toString())) {
                 regViewTxtPass.setError("Introduzca al menos 6 caracteres")
                 //regViewTxtPassConfirm.setError("Introduzca al menos 6 caracteres")
@@ -40,18 +42,18 @@ class RegisterActivity : AppCompatActivity() {
                 errorFound = true
             }
              */
-            //Nombre Validation
+            //Validar el nombre
             if (regViewTxtNombre.text.toString().isEmpty()) {
                 regViewTxtNombre.setError("Este es un campo obligatorio")
                 errorFound = true
             }
 
-            //Telefono Validation
+            //Validar el telefono
             if (!Utils.validarTelefono(regViewTxtTelefono.text.toString())) {
                 regViewTxtTelefono.setError("Introduzca un telefono valido")
                 errorFound = true
             }
-            //Registro
+            //Comprobar los datos
             if (!errorFound) {
                 if (!ControlCliente.existeCliente(this,regViewTxtEmail.text.toString())){
                     if (ControlCliente.registrarCliente(this,  regViewTxtEmail.text.toString(), regViewTxtPass.text.toString(),regViewTxtNombre.text.toString(),regViewTxtApellidos.text.toString(),regViewTxtTelefono.text.toString())) {

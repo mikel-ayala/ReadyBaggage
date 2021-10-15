@@ -13,6 +13,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //Si no estas registrado
         loginViewTextRegBtn.setOnClickListener() {
             val regIntent = Intent(this, RegisterActivity::class.java)
             startActivity(regIntent)
@@ -29,17 +30,20 @@ class LoginActivity : AppCompatActivity() {
              */
         }
 
+        //Proceso de login
         loginViewBtnLogin.setOnClickListener() {
             var loginErrorFound: Boolean = false
-            //Email Validation
+            //Validar el email
             if (!Utils.validarEmail(editUsername.text.toString())) {
                 editUsername.setError("Introduzca un email valido")
                 loginErrorFound = true
             }
+            //Validar la password
             if (!Utils.validarPassword(editPass.text.toString())) {
                 editPass.setError("Introduzca al menos 6 caracteres")
                 loginErrorFound = true
             }
+            //Comprobar los datos
             if (!loginErrorFound) {
                 //if (!ControlCliente.clienteIsLogged()) {
                     if (ControlCliente.logCliente(this,editUsername.text.toString(), editPass.text.toString())) {

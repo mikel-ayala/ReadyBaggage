@@ -21,6 +21,7 @@ class ActivityPorfileTemp : AppCompatActivity() {
         currentLang=currentLanguage.toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profiletmp)
+        //Mostrar datos del usuario
         var pViewCliente: Cliente? = ControlCliente.getClienteObject()
         if (pViewCliente != null) {
             profileViewTxtNombre.text = pViewCliente.nombre+ " " +pViewCliente.apellidos
@@ -32,6 +33,7 @@ class ActivityPorfileTemp : AppCompatActivity() {
 
         }
 
+        //Comprobar datos y actualizar usuario
         profileViewActualizar.setOnClickListener() {
             if ( pViewCliente!= null){
                 if (
@@ -60,7 +62,7 @@ class ActivityPorfileTemp : AppCompatActivity() {
                 Toast.makeText(this, "ERROR: No se ha podido actualizar", Toast.LENGTH_LONG).show()
             }
         }
-
+        //Cerrar sesion
         profileViewBtnLogout.setOnClickListener() {
             if (ControlCliente.logout()) {
                 Toast.makeText(this, "Se ha cerrado correctamente la sesion", Toast.LENGTH_LONG).show()
@@ -76,6 +78,8 @@ class ActivityPorfileTemp : AppCompatActivity() {
             showPopup(btIdiomas)
         }
     }
+
+    //Mostrar menu idiomas
     private fun showPopup(v : View){
         val popup = PopupMenu(this, v)
         val inflater: MenuInflater = popup.menuInflater

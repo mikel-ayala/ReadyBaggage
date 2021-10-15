@@ -44,26 +44,8 @@ class BookingActivity : AppCompatActivity() {
             bookingViewTxtProductPrice.text = precioProducto.toString()+"€"
             actualizarResumen(1)
         }
-        bookingViewBtnReservar.setOnClickListener() {
-            var bookingReservarError = false
-            if (bookingViewEditOrigen.text.toString().isEmpty()) {
-                bookingViewEditOrigen.setError("Introduzca un Origen")
-                bookingReservarError = true
-            }
 
-            if (bookingViewEditDestino.text.toString().isEmpty()) {
-                bookingViewEditDestino.setError("Introduzca un Destino")
-                bookingReservarError = true
-            }
-
-            if (metodoPago == null) {
-                Toast.makeText(this, "ERROR: Introduzca un Metodo de pago", Toast.LENGTH_LONG).show()
-                bookingReservarError = true
-            }
-
-
-        }
-
+        //Seleccion fecha y hora
         bookingViewEditFecReco.setOnClickListener() {
             showDatePickerDialog(1)
         }
@@ -79,6 +61,7 @@ class BookingActivity : AppCompatActivity() {
             showTimePickerDialog(2)
         }
 
+        //Seleccion de metodo de pago
         bookingViewBtnPaypal.setOnClickListener() {
             bookingViewTxtPayment.text = "Metodo de pago: Paypal"
             metodoPago = "Paypal"
@@ -97,6 +80,7 @@ class BookingActivity : AppCompatActivity() {
             bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
         }
 
+        //Sumar cantidad de maletas
         bookingViewBtnPlus.setOnClickListener() {
             var cMaletas: Int = bookingViewTxtMaletas.text.toString().toInt()
             cMaletas = cMaletas + 1
@@ -104,6 +88,7 @@ class BookingActivity : AppCompatActivity() {
             actualizarResumen(cMaletas)
         }
 
+        //Restar cantidad de maletas
         bookingViewBtnMinus.setOnClickListener() {
             var cMaletas: Int = bookingViewTxtMaletas.text.toString().toInt()
             cMaletas = cMaletas - 1
@@ -114,11 +99,11 @@ class BookingActivity : AppCompatActivity() {
             actualizarResumen(cMaletas)
         }
 
-
+        //Mostrar menu idiomas
         btIdiomas.setOnClickListener{
             showPopup(btIdiomas)
         }
-
+        //Comprobar datos
         bookingViewBtnReservar.setOnClickListener() {
             var errorAlReservar: Boolean = false
             if (bookingViewEditOrigen.text.toString().isEmpty()) {
@@ -152,7 +137,7 @@ class BookingActivity : AppCompatActivity() {
             }
 
             if (metodoPago == null) {
-                bookingViewTxtPayment.text = "*Seleccione un metodo de pago"
+                bookingViewTxtPayment.text = "Seleccione un metodo de pago"
                 bookingViewTxtPayment.setTextColor(Color.parseColor("#FF0000"))
                 //Toast.makeText(this, "Error: Seleccione un Metodo de Pago", Toast.LENGTH_LONG).show()
                 errorAlReservar = true
@@ -167,7 +152,7 @@ class BookingActivity : AppCompatActivity() {
 
         }
     }
-
+    //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
         bookingViewTxtTotalMaletas.text = "Numero de maletas: "+qMaletas.toString()
         bookingViewTxtTotal.text = "Total: "+(qMaletas*precioProducto)+"€"
@@ -199,7 +184,7 @@ class BookingActivity : AppCompatActivity() {
             bookingViewEditHEntrega.setText("$time")
         }
     }
-
+    //Mostrar menu idiomas
     private fun showPopup(v : View){
         val popup = PopupMenu(this, v)
         val inflater: MenuInflater = popup.menuInflater
