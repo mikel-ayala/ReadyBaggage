@@ -44,4 +44,10 @@
         Eguneko prezioa: 12€
         \nGaueko prezioa: 16€
     </string>
+    <string name="destino">Helmuga</string>
+    <string name="origen">Jatorria</string>
+    <string name="fecha_rec">Billtze data</string>
+    <string name="hora_rec">Biltze ordua</string>
+    <string name="fecha_ent">Entrega data</string>
+    <string name="hora_ent">Entrega ordua</string>
 </resources>

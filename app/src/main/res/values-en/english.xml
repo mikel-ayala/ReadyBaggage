@@ -44,4 +44,10 @@
         Day fee: 12€
         \nNight fee: 16€
     </string>
+    <string name="origen">Origin</string>
+    <string name="destino">Destination</string>
+    <string name="fecha_rec">Pickup date</string>
+    <string name="hora_rec">Pickup hour</string>
+    <string name="fecha_ent">Delivery date</string>
+    <string name="hora_ent">Delivery hour</string>
 </resources>

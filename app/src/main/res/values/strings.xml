@@ -43,4 +43,12 @@
         Precio diurno: 12€
         \nPrecio nocturno: 16€
     </string>
+    
+    <!--Activity de reserva-->
+    <string name="origen">Origen</string>
+    <string name="destino">Destino</string>
+    <string name="fecha_rec">Fecha de recogida</string>
+    <string name="fecha_ent">Fecha de entrega</string>
+    <string name="hora_rec">H. recogida</string>
+    <string name="hora_ent">H. entrega</string>
 </resources>
