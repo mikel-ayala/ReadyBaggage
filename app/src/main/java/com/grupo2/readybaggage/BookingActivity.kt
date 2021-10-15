@@ -26,6 +26,7 @@ class BookingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
         val profileName=intent.getStringExtra("productoId")
+        //Mostrar la tarifa seleccionada
         if (profileName != null) {
              if (profileName.toString().equals("1")) {
                  precioProducto = 8
@@ -158,6 +159,7 @@ class BookingActivity : AppCompatActivity() {
         bookingViewTxtTotal.text = "Total: "+(qMaletas*precioProducto)+"€"
     }
 
+    //Mostrar fechas y horas seleccionadas
     private fun showDatePickerDialog(elementId: Int) {
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year,elementId) }
         datePicker.show(supportFragmentManager, "datePicker")
