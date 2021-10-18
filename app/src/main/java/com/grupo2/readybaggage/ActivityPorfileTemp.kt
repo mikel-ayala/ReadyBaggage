@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
+import com.grupo2.readybaggage.Utils.Companion.showPopup
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profiletmp.*
 import kotlinx.android.synthetic.main.activity_profiletmp.btIdiomas
@@ -75,50 +76,7 @@ class ActivityPorfileTemp : AppCompatActivity() {
         }
 
         btIdiomas.setOnClickListener{
-            showPopup(btIdiomas)
+            showPopup(btIdiomas, this, this)
         }
-    }
-
-    //Mostrar menu idiomas
-    private fun showPopup(v : View){
-        val popup = PopupMenu(this, v)
-        val inflater: MenuInflater = popup.menuInflater
-        inflater.inflate(R.menu.menu_idioma, popup.menu)
-        popup.setOnMenuItemClickListener { menuItem ->
-            when(menuItem.itemId){
-                R.id.spanish-> {
-//                    SharedApp.prefs.dato="es"
-                    setLocale("es")
-                }
-                R.id.euskera-> {
-//                    SharedApp.prefs.dato="eu"
-                    setLocale("eu")
-                }
-                R.id.english-> {
-//                    SharedApp.prefs.dato="en"
-                    setLocale("en")
-                }
-            }
-            true
-        }
-        popup.show()
-    }
-
-    //cambiar idioma
-    private fun setLocale(localeName: String) {
-        locale = Locale(localeName)
-        val res = resources
-        val dm = res.displayMetrics
-        val conf = res.configuration
-        conf.locale = locale
-        res.updateConfiguration(conf, dm)
-        val refresh = Intent(
-            this,
-            this::class.java
-        )
-//            refresh.putExtra(currentLang, localeName)
-        refresh.putExtra(currentLang, localeName)
-        finish()
-        startActivity(refresh)
     }
 }

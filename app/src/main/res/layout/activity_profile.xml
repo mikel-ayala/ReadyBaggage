@@ -29,90 +29,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_outlined_flag_24" />
 
-    <View
+    <include
+        android:id="@+id/include"
+        layout="@layout/menu_inferior"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="-15dp"
-        android:background="@drawable/sombramenu"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/menuredondo"
-        android:elevation="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <ImageView
-            android:id="@+id/iconoPerfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_outline_person_outline_24_b" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:textAlignment="center">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button4"
-                android:layout_width="69dp"
-                android:layout_height="69dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/botones_redondos"
-                android:backgroundTint="@color/lightPurple"
-                android:stateListAnimator="@null"
-                android:textAlignment="center"
-                android:textSize="60sp"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                app:srcCompat="@drawable/ic_baseline_add_24" />
-        </FrameLayout>
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <ImageView
-            android:id="@+id/reservas"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_outline_work_outline_24_b" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

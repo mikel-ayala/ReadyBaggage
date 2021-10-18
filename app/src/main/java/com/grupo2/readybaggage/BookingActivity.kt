@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuInflater
 import android.view.View
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_booking.*
@@ -15,35 +16,27 @@ import kotlinx.android.synthetic.main.activity_profiletmp.btIdiomas
 import java.util.*
 
 class BookingActivity : AppCompatActivity() {
+
     private lateinit var locale: Locale
     private var currentLanguage = Locale.getDefault()
     private lateinit var currentLang: String
     private var metodoPago: String? = null
-    private var precioProducto: Int = 20
+    private var precioProducto: Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         currentLang=currentLanguage.toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
-        val profileName=intent.getStringExtra("productoId")
-        //Mostrar la tarifa seleccionada
-        if (profileName != null) {
-             if (profileName.toString().equals("1")) {
-                 precioProducto = 8
-                 bookingViewTxtProductName.text = "Maletas hasta 10kg"
-                 bookingViewImgProduct.setImageResource(R.drawable.maleta_pequenia)
-             } else if (profileName.toString().equals("2")) {
-                 precioProducto = 10
-                 bookingViewTxtProductName.text = "Maletas a partir de 10kg"
-                 bookingViewImgProduct.setImageResource(R.drawable.maleta_grande)
-             } else if (profileName.toString().equals("3")) {
-                 precioProducto = 12
-                 bookingViewTxtProductName.text = "Maletas a partir de 20kg"
-                 bookingViewImgProduct.setImageResource(R.drawable.maleta_extra)
-             }
 
-            bookingViewTxtProductPrice.text = precioProducto.toString()+"€"
-            actualizarResumen(1)
+        val extras = intent.extras
+        val productoId: Int? = extras?.getInt("productoId")
+        val productoPrecio: Int? = extras?.getInt("productoPrecio")
+        val productoNombre: String? = extras?.getString("productoNombre")
+
+        when(productoId){
+            1 -> mostrarReserva(productoPrecio, productoNombre)
+            2 -> mostrarReserva(productoPrecio, productoNombre)
+            3 -> mostrarReserva(productoPrecio, productoNombre)
         }
 
         //Seleccion fecha y hora
@@ -64,21 +57,15 @@ class BookingActivity : AppCompatActivity() {
 
         //Seleccion de metodo de pago
         bookingViewBtnPaypal.setOnClickListener() {
-            bookingViewTxtPayment.text = "Metodo de pago: Paypal"
-            metodoPago = "Paypal"
-            bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
+            metodoPago("Paypal")
         }
 
         bookingViewBtnApple.setOnClickListener() {
-            bookingViewTxtPayment.text = "Metodo de pago: Apple Pay"
-            metodoPago = "Apple Pay"
-            bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
+            metodoPago("Apple Pay")
         }
 
         bookingViewBtnMaster.setOnClickListener() {
-            bookingViewTxtPayment.text = "Metodo de pago: Master Card"
-            metodoPago = "Master Card"
-            bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
+            metodoPago("Master Card")
         }
 
         //Sumar cantidad de maletas
@@ -102,8 +89,9 @@ class BookingActivity : AppCompatActivity() {
 
         //Mostrar menu idiomas
         btIdiomas.setOnClickListener{
-            showPopup(btIdiomas)
+            Utils.showPopup(btIdiomas, this, this)
         }
+
         //Comprobar datos
         bookingViewBtnReservar.setOnClickListener() {
             var errorAlReservar: Boolean = false
@@ -153,10 +141,29 @@ class BookingActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun mostrarReserva(precio: Int?, nombre: String?){
+        precioProducto = precio
+        bookingViewTxtProductName.text = nombre
+        when(precio){
+            8 -> bookingViewImgProduct.setImageResource(R.drawable.maleta_pequenia)
+            10 -> bookingViewImgProduct.setImageResource(R.drawable.maleta_grande)
+            12 -> bookingViewImgProduct.setImageResource(R.drawable.maleta_extra)
+        }
+        bookingViewTxtProductPrice.text = precioProducto.toString() + "€"
+        actualizarResumen(1)
+    }
+
+    private fun metodoPago(metodo: String){
+        bookingViewTxtPayment.text = "Metodo de pago: " + metodo
+        metodoPago = metodo
+        bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
+    }
+
     //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
         bookingViewTxtTotalMaletas.text = "Numero de maletas: "+qMaletas.toString()
-        bookingViewTxtTotal.text = "Total: "+(qMaletas*precioProducto)+"€"
+        bookingViewTxtTotal.text = "Total: "+(qMaletas* precioProducto!!)+"€"
     }
 
     //Mostrar fechas y horas seleccionadas
@@ -185,47 +192,5 @@ class BookingActivity : AppCompatActivity() {
         } else {
             bookingViewEditHEntrega.setText("$time")
         }
-    }
-    //Mostrar menu idiomas
-    private fun showPopup(v : View){
-        val popup = PopupMenu(this, v)
-        val inflater: MenuInflater = popup.menuInflater
-        inflater.inflate(R.menu.menu_idioma, popup.menu)
-        popup.setOnMenuItemClickListener { menuItem ->
-            when(menuItem.itemId){
-                R.id.spanish-> {
-//                    SharedApp.prefs.dato="es"
-                    setLocale("es")
-                }
-                R.id.euskera-> {
-//                    SharedApp.prefs.dato="eu"
-                    setLocale("eu")
-                }
-                R.id.english-> {
-//                    SharedApp.prefs.dato="en"
-                    setLocale("en")
-                }
-            }
-            true
-        }
-        popup.show()
-    }
-
-    //cambiar idioma
-    private fun setLocale(localeName: String) {
-        locale = Locale(localeName)
-        val res = resources
-        val dm = res.displayMetrics
-        val conf = res.configuration
-        conf.locale = locale
-        res.updateConfiguration(conf, dm)
-        val refresh = Intent(
-            this,
-            this::class.java
-        )
-//            refresh.putExtra(currentLang, localeName)
-        refresh.putExtra(currentLang, localeName)
-        finish()
-        startActivity(refresh)
     }
 }
