@@ -34,10 +34,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         btIdiomas.setOnClickListener{
             showPopup(btIdiomas)
+//            Utils.showPopup(btIdiomas)
         }
 
         //Para reservar maletas de menos de 10kg
-        reservaMenos10.setOnClickListener() {
+        reservaMenos10.setOnClickListener {
             //Comprueba si el usuario está logeado
             if (ControlCliente.getCliente() != null) {
                 val bookingView = Intent(this, BookingActivity::class.java)
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Para reservar maletas de más de 10kg
-        reservaMas10.setOnClickListener() {
+        reservaMas10.setOnClickListener {
             //Comprueba si el usuario está logeado
             if (ControlCliente.getCliente() != null) {
                 val bookingView = Intent(this, BookingActivity::class.java)
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Para reservar maletas de más de 20kg
-        reservaMas20.setOnClickListener() {
+        reservaMas20.setOnClickListener {
             //Comprueba si el usuario está logeado
             if (ControlCliente.getCliente() != null) {
                 val bookingView = Intent(this, BookingActivity::class.java)
