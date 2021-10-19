@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profiletmp.*
 import kotlinx.android.synthetic.main.activity_profiletmp.btIdiomas
+import kotlinx.android.synthetic.main.menu_inferior.*
 import java.util.*
 
 class BookingActivity : AppCompatActivity() {

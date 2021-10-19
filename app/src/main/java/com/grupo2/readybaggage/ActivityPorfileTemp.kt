@@ -11,6 +11,7 @@ import com.grupo2.readybaggage.Utils.Companion.showPopup
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profiletmp.*
 import kotlinx.android.synthetic.main.activity_profiletmp.btIdiomas
+import kotlinx.android.synthetic.main.menu_inferior.*
 import java.util.*
 
 class ActivityPorfileTemp : AppCompatActivity() {
@@ -77,6 +78,10 @@ class ActivityPorfileTemp : AppCompatActivity() {
 
         btIdiomas.setOnClickListener{
             showPopup(btIdiomas, this, this)
+        }
+
+        iconoNuevaReserva.setOnClickListener(){
+
         }
     }
 }

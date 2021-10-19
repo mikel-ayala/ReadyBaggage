@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.iconoPerfil
 import kotlinx.android.synthetic.main.menu_inferior.*
 import java.util.*
 
