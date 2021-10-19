@@ -35,17 +35,17 @@ class MainActivity : AppCompatActivity() {
 
         //Para reservar maletas de menos de 10kg
         reservaMenos10.setOnClickListener() {
-            reservar(1, 8, "Maletas hasta 10kg")
+            reservar(1, 8, getString(R.string.tamanoPeq))
         }
 
         //Para reservar maletas de más de 10kg
         reservaMas10.setOnClickListener() {
-            reservar(2,10, "Maletas a partir de 10kg")
+            reservar(2,10, getString(R.string.tamanoGran))
         }
 
         //Para reservar maletas de más de 20kg
         reservaMas20.setOnClickListener() {
-            reservar(3, 12, "Maletas a partir de 20kg")
+            reservar(3, 12, getString(R.string.tamanoExtra))
         }
 
 

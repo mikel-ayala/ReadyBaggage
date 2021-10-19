@@ -162,15 +162,15 @@ class BookingActivity : AppCompatActivity() {
     }
 
     private fun metodoPago(metodo: String){
-        bookingViewTxtPayment.text = "Metodo de pago: " + metodo
+        bookingViewTxtPayment.text = getString(R.string.metodo_pago) + metodo
         metodoPago = metodo
         bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
     }
 
     //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
-        bookingViewTxtTotalMaletas.text = "Numero de maletas: "+qMaletas.toString()
-        bookingViewTxtTotal.text = "Total: "+(qMaletas* precioProducto!!)+"€"
+        bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
+        bookingViewTxtTotal.text = "Total: " + (qMaletas * precioProducto!!) + "€"
     }
 
     //Mostrar fechas y horas seleccionadas
