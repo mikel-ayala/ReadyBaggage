@@ -50,4 +50,6 @@
     <string name="hora_rec">Biltze ordua</string>
     <string name="fecha_ent">Entrega data</string>
     <string name="hora_ent">Entrega ordua</string>
+    <string name="metodo_pago">"Ordaintzeko metodoa:  "</string>
+    <string name="n_maletas">"Maleta kopurua:  "</string>
 </resources>

@@ -4,39 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityPorfileTemp">
+    tools:context=".ProfileActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/include"
+        layout="@layout/menu_superior"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/source_sans_pro"
-        android:text="LOGO"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btIdiomas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/lang"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/include3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/include">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,14 +131,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical" />
 
                 <TextView
                     android:id="@+id/bookingViewTxtOrigen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Origen" />
+                    android:text="@string/origen" />
 
                 <EditText
                     android:id="@+id/bookingViewEditOrigen"
@@ -159,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
                     android:ems="10"
-                    android:hint="Origen"
+                    android:hint="@string/origen"
                     android:inputType="text"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -168,7 +155,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Destino" />
+                    android:text="@string/destino" />
 
                 <EditText
                     android:id="@+id/bookingViewEditDestino"
@@ -176,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
                     android:ems="10"
-                    android:hint="Destino"
+                    android:hint="@string/destino"
                     android:inputType="text"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -185,18 +172,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Fecha de Recogida" />
+                    android:text="@string/fecha_rec" />
 
                 <EditText
                     android:id="@+id/bookingViewEditFecReco"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
-                    android:editable="false"
-                    android:focusable="false"
                     android:clickable="false"
+                    android:editable="false"
                     android:ems="10"
-                    android:hint="Fecha de Recogida"
+                    android:focusable="false"
+                    android:hint="@string/fecha_rec"
                     android:inputType="text"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -205,18 +192,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Fecha de Entrega" />
+                    android:text="@string/fecha_ent" />
 
                 <EditText
                     android:id="@+id/bookingViewEditFecEntrega"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundededittext"
-                    android:editable="false"
-                    android:focusable="false"
                     android:clickable="false"
+                    android:editable="false"
                     android:ems="10"
-                    android:hint="Fecha de Entrega"
+                    android:focusable="false"
+                    android:hint="@string/fecha_ent"
                     android:inputType="text"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -236,14 +223,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="H. Recogida" />
+                            android:text="@string/hora_rec" />
 
                         <TextView
                             android:id="@+id/bookingViewTxtHEntrega"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="H. Entrega" />
+                            android:text="@string/hora_ent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -262,7 +249,7 @@
                             android:editable="false"
                             android:ems="10"
                             android:focusable="false"
-                            android:hint="H. Recogida"
+                            android:hint="@string/hora_rec"
                             android:inputType="time"
                             tools:ignore="TouchTargetSizeCheck" />
 
@@ -271,13 +258,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="H. Entrega"
-                            android:inputType="time"
                             android:background="@drawable/roundededittext"
-                            android:editable="false"
-                            android:focusable="false"
                             android:clickable="false"
+                            android:editable="false"
+                            android:ems="10"
+                            android:focusable="false"
+                            android:hint="@string/hora_ent"
+                            android:inputType="time"
                             tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
 
@@ -333,7 +320,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="right"
-                    android:text="Metodo de pago:"
+                    android:text="@string/metodo_pago"
                     android:textSize="16sp"
                     android:textStyle="italic" />
 
@@ -343,7 +330,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="right"
-                    android:text="Numero de maletas: 1"
+                    android:text="@string/n_maletas"
                     android:textSize="16sp"
                     android:textStyle="italic" />
 
@@ -353,7 +340,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="right"
-                    android:text="Total: 20€"
+                    android:text="Total: "
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -364,8 +351,8 @@
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:text="@string/reservar"
-                    android:background="@drawable/roundedbutton"/>
+                    android:background="@drawable/roundedbutton"
+                    android:text="@string/reservar" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -378,81 +365,25 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/black"
-        android:orientation="horizontal"
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="45dp"
+        android:alpha="0.8"
+        android:background="@drawable/sombramenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <ImageView
-            android:id="@+id/iconoPerfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_outline_person_24" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="-75dp"
-            android:background="@drawable/botones_redondos" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_outline_work_outline_24" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="-35dp"
-        android:background="@drawable/botones_redondos"
-        android:backgroundTint="@color/lightPurple"
-        android:stateListAnimator="@null"
-        android:textAlignment="center"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="78dp"
-        android:layout_height="104dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+    <include
+        android:id="@+id/include3"
+        layout="@layout/menu_inferior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

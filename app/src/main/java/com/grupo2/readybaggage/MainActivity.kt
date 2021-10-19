@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.menu_inferior.*
+import kotlinx.android.synthetic.main.menu_superior.*
 import java.util.*
 
 
@@ -32,30 +35,30 @@ class MainActivity : AppCompatActivity() {
 
         //Para reservar maletas de menos de 10kg
         reservaMenos10.setOnClickListener() {
-            reservar(1, 8, "Maletas hasta 10kg")
+            reservar(1, 8, getString(R.string.tamanoPeq))
         }
 
         //Para reservar maletas de más de 10kg
         reservaMas10.setOnClickListener() {
-            reservar(2,10, "Maletas a partir de 10kg")
+            reservar(2,10, getString(R.string.tamanoGran))
         }
 
         //Para reservar maletas de más de 20kg
         reservaMas20.setOnClickListener() {
-            reservar(3, 12, "Maletas a partir de 20kg")
+            reservar(3, 12, getString(R.string.tamanoExtra))
         }
 
+
         iconoPerfil.setOnClickListener {
-            //Comprueba si el usuario está logeado
-            if (ControlCliente.getCliente() != null) {
-                val profileIntent = Intent(this, ProfileActivity::class.java)
-                startActivity(profileIntent)
-            } else { //Si no está logeado, te manda al login
-                val loginIntent = Intent(this, LoginActivity::class.java)
-                startActivity(loginIntent)
-            }
+            profileActivity(this, this)
+        }
 
+        iconoMain.setOnClickListener {
+            finish()
+        }
 
+        iconoReservas.setOnClickListener{
+            Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
         }
     }
 

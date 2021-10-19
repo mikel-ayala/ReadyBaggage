@@ -90,5 +90,23 @@ class Utils {
             activity.finish()
             context.startActivity(refresh)
         }
+
+        fun profileActivity(activity: Activity, context: Context){
+            if (ControlCliente.getCliente() != null) {
+                val profileIntent = Intent(context, ProfileActivity::class.java)
+                context.startActivity(profileIntent)
+                activity.finish()
+            } else { //Si no está logeado, te manda al login
+                val loginIntent = Intent(context, LoginActivity::class.java)
+                context.startActivity(loginIntent)
+                activity.finish()
+            }
+        }
+
+        fun mainActivity(activity: Activity, context: Context){
+            val mainIntent = Intent(context, MainActivity::class.java)
+            context.startActivity(mainIntent)
+            activity.finish()
+        }
     }
 }

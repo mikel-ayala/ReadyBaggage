@@ -4,20 +4,16 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuInflater
-import android.view.View
-import android.widget.ImageView
-import android.widget.PopupMenu
 import android.widget.Toast
+import com.grupo2.readybaggage.Utils.Companion.mainActivity
+import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import kotlinx.android.synthetic.main.activity_booking.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_profiletmp.*
-import kotlinx.android.synthetic.main.activity_profiletmp.btIdiomas
+import kotlinx.android.synthetic.main.menu_inferior.*
+import kotlinx.android.synthetic.main.menu_superior.*
 import java.util.*
 
 class BookingActivity : AppCompatActivity() {
 
-    private lateinit var locale: Locale
     private var currentLanguage = Locale.getDefault()
     private lateinit var currentLang: String
     private var metodoPago: String? = null
@@ -139,6 +135,17 @@ class BookingActivity : AppCompatActivity() {
                 finish()
             }
 
+            iconoPerfil.setOnClickListener {
+                profileActivity(this, this)
+            }
+
+            iconoMain.setOnClickListener {
+                mainActivity(this, this)
+            }
+
+            iconoReservas.setOnClickListener {
+                Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -155,15 +162,15 @@ class BookingActivity : AppCompatActivity() {
     }
 
     private fun metodoPago(metodo: String){
-        bookingViewTxtPayment.text = "Metodo de pago: " + metodo
+        bookingViewTxtPayment.text = getString(R.string.metodo_pago) + metodo
         metodoPago = metodo
         bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
     }
 
     //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
-        bookingViewTxtTotalMaletas.text = "Numero de maletas: "+qMaletas.toString()
-        bookingViewTxtTotal.text = "Total: "+(qMaletas* precioProducto!!)+"€"
+        bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
+        bookingViewTxtTotal.text = "Total: " + (qMaletas * precioProducto!!) + "€"
     }
 
     //Mostrar fechas y horas seleccionadas
