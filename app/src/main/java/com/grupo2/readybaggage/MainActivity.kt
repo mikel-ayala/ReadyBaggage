@@ -25,56 +25,6 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-<<<<<<< Updated upstream
-        btIdiomas.setOnClickListener{
-            showPopup(btIdiomas)
-//            Utils.showPopup(btIdiomas)
-        }
-
-        //Para reservar maletas de menos de 10kg
-        reservaMenos10.setOnClickListener {
-            //Comprueba si el usuario está logeado
-            if (ControlCliente.getCliente() != null) {
-                val bookingView = Intent(this, BookingActivity::class.java)
-                bookingView.putExtra("productoId","1")
-                startActivity(bookingView)
-
-            } else { //Si no está logeado, te manda al login
-                val loginIntent = Intent(this, LoginActivity::class.java)
-                startActivity(loginIntent)
-                Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
-            }
-        }
-
-        //Para reservar maletas de más de 10kg
-        reservaMas10.setOnClickListener {
-            //Comprueba si el usuario está logeado
-            if (ControlCliente.getCliente() != null) {
-                val bookingView = Intent(this, BookingActivity::class.java)
-                bookingView.putExtra("productoId","2")
-                startActivity(bookingView)
-
-            } else { //Si no está logeado, te manda al login
-                val loginIntent = Intent(this, LoginActivity::class.java)
-                startActivity(loginIntent)
-                Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
-            }
-        }
-
-        //Para reservar maletas de más de 20kg
-        reservaMas20.setOnClickListener {
-            //Comprueba si el usuario está logeado
-            if (ControlCliente.getCliente() != null) {
-                val bookingView = Intent(this, BookingActivity::class.java)
-                bookingView.putExtra("productoId","3")
-                startActivity(bookingView)
-
-            } else { //Si no está logeado, te manda al login
-                val loginIntent = Intent(this, LoginActivity::class.java)
-                startActivity(loginIntent)
-                Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
-            }
-=======
 
         btIdiomas.setOnClickListener {
             showPopup(btIdiomas, this, this)
@@ -93,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         //Para reservar maletas de más de 20kg
         reservaMas20.setOnClickListener() {
             reservar(3, 12, "Maletas a partir de 20kg")
->>>>>>> Stashed changes
         }
 
         iconoPerfil.setOnClickListener {

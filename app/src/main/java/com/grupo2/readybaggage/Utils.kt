@@ -1,24 +1,21 @@
 package com.grupo2.readybaggage
 
-<<<<<<< Updated upstream
 import android.text.TextUtils
-
-=======
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.text.TextUtils
 import android.view.MenuInflater
 import android.view.View
 import android.widget.PopupMenu
-import androidx.core.content.ContextCompat.startActivity
 import java.lang.Exception
 import java.util.*
->>>>>>> Stashed changes
 
 class Utils {
     companion object {
 
+        private lateinit var locale: Locale
+        private var currentLanguage = Locale.getDefault()
+        private lateinit var currentLang: String
 
         //Función para comprobar que el formato del nº de teléfono es correcto
         fun validarTelefono(pTelefono: String): Boolean {
@@ -50,9 +47,6 @@ class Utils {
             return false
         }
 
-<<<<<<< Updated upstream
-
-=======
         //Desplegar menú
         fun showPopup(v : View, activity: Activity, context: Context){
             val popup = PopupMenu(activity, v)
@@ -96,6 +90,5 @@ class Utils {
             activity.finish()
             context.startActivity(refresh)
         }
->>>>>>> Stashed changes
     }
 }
