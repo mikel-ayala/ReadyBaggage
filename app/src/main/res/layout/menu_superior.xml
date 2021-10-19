@@ -17,12 +17,23 @@
 
     <ImageView
         android:id="@+id/btIdiomas"
-        android:layout_width="61dp"
-        android:layout_height="42dp"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toEndOf="@+id/iconoMain"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_outlined_flag_24" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/iconoMain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_connect_without_contact_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

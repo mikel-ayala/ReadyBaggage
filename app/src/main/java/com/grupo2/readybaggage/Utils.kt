@@ -11,6 +11,7 @@ import java.lang.Exception
 import java.util.*
 
 class Utils {
+
     companion object {
 
         private lateinit var locale: Locale

@@ -20,51 +20,61 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        window.decorView.systemUiVisibility =
-            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
 
         currentLang = currentLanguage.toString()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btIdiomas.setOnClickListener {
-            showPopup(btIdiomas, this, this)
-        }
 
-        //Para reservar maletas de menos de 10kg
+
+        //Tarifa -= 10kg
         reservaMenos10.setOnClickListener() {
             reservar(1, 8, getString(R.string.tamanoPeq))
-        }
+        }//onClick
 
-        //Para reservar maletas de más de 10kg
+        //Tarifa + 10kg
         reservaMas10.setOnClickListener() {
             reservar(2,10, getString(R.string.tamanoGran))
-        }
+        }//onclick
 
-        //Para reservar maletas de más de 20kg
+        //Tarifa + 20kg
         reservaMas20.setOnClickListener() {
             reservar(3, 12, getString(R.string.tamanoExtra))
-        }
+        }//onClick
 
 
+
+        //Menu idiomas
+        btIdiomas.setOnClickListener {
+            showPopup(btIdiomas, this, this)
+        }//onClick
+
+        //Ir al perfil
         iconoPerfil.setOnClickListener {
             profileActivity(this, this)
-        }
+        }//onClick
 
-        iconoMain.setOnClickListener {
-            finish()
-        }
-
+        //Ir a reservas
         iconoReservas.setOnClickListener{
             Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
-        }
-    }
+        }//onClick
+
+        //Salir de la app
+        iconoMain.setOnClickListener {
+            finishAffinity()
+        }///onClick
+
+    }//onCreate
 
     private fun reservar(id: Int, precio: Int, nombre: String) {
-        //Comprueba si el usuario está logeado
+
+        //Una tarifa ha sido seleccionada
         if (ControlCliente.getCliente() != null) {
+
             val extras = Bundle()
             val bookingView = Intent(this, BookingActivity::class.java)
             extras.putInt("productoId", id)
@@ -73,11 +83,15 @@ class MainActivity : AppCompatActivity() {
             bookingView.putExtras(extras)
             startActivity(bookingView)
 
-        } else { //Si no está logeado, te manda al login
+        }//logged
+        else {
+
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
-            Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG)
-                .show()
-        }
-    }
-}
+            Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
+
+        }//not logged
+
+    }//reservar
+
+}//MainActivity

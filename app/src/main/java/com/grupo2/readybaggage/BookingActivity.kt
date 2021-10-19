@@ -134,18 +134,18 @@ class BookingActivity : AppCompatActivity() {
                 startActivity(homeViewIntent)
                 finish()
             }
+        }
 
-            iconoPerfil.setOnClickListener {
-                profileActivity(this, this)
-            }
+        iconoPerfil.setOnClickListener {
+            profileActivity(this, this)
+        }
 
-            iconoMain.setOnClickListener {
-                mainActivity(this, this)
-            }
+        iconoMain.setOnClickListener {
+            mainActivity(this, this)
+        }
 
-            iconoReservas.setOnClickListener {
-                Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
-            }
+        iconoReservas.setOnClickListener {
+            Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
         }
     }
 

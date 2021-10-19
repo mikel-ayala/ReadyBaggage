@@ -20,6 +20,9 @@ class ProfileActivity : AppCompatActivity() {
         currentLang=currentLanguage.toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        iconoPerfil.setImageResource(R.drawable.ic_outline_person_outline_24_active)
+
         //Mostrar datos del usuario
         var pViewCliente: Cliente? = ControlCliente.getClienteObject()
         if (pViewCliente != null) {
