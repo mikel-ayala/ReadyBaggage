@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
+import com.grupo2.readybaggage.Utils.Companion.mainActivity
+import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profiletmp.*
@@ -137,6 +139,10 @@ class BookingActivity : AppCompatActivity() {
                 val homeViewIntent = Intent(this, MainActivity::class.java)
                 startActivity(homeViewIntent)
                 finish()
+            }
+
+            iconoPerfil.setOnClickListener {
+                profileActivity(this)
             }
 
         }

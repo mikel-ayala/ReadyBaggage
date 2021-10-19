@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.iconoPerfil
+import kotlinx.android.synthetic.main.menu_inferior.*
 import java.util.*
 
 
@@ -45,17 +48,13 @@ class MainActivity : AppCompatActivity() {
             reservar(3, 12, "Maletas a partir de 20kg")
         }
 
+
         iconoPerfil.setOnClickListener {
-            //Comprueba si el usuario está logeado
-            if (ControlCliente.getCliente() != null) {
-                val profileIntent = Intent(this, ProfileActivity::class.java)
-                startActivity(profileIntent)
-            } else { //Si no está logeado, te manda al login
-                val loginIntent = Intent(this, LoginActivity::class.java)
-                startActivity(loginIntent)
-            }
+            profileActivity(this)
+        }
 
-
+        textView2.setOnClickListener {
+            finish()
         }
     }
 
