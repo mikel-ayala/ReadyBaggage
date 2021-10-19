@@ -17,17 +17,13 @@
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/ReadyBaggage/app/src/main/res/menu/menu_idioma.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.13125" />
+        <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_profiletmp.xml" value="0.13125" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/drawable/sombramenu.xml" value="0.2703125" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.1648148148148148" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profile.xml" value="0.264" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_profiletmp.xml" value="0.264" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/menu_inferior.xml" value="0.536" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/menu_superior.xml" value="0.1648148148148148" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/menu/menu_idioma.xml" value="0.1648148148148148" />
+        <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_reservas.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/item_reserva.xml" value="0.16587677725118483" />
       </map>
     </option>
   </component>

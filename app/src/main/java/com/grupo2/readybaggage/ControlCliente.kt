@@ -23,8 +23,8 @@ class ControlCliente() {
                 row.put("pass", pPassword)
                 row.put("nombre", pNombre)
                 row.put("apellidos", pApellidos)
-                row.put("fec_nac", currentDate.toString())
                 row.put("telefono", pTelefono)
+                row.put("f_registro", currentDate.toString())
                 bd.insert("cliente", null, row)
                 bd.close()
                 return true
@@ -60,7 +60,7 @@ class ControlCliente() {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT codigo, email, pass, nombre, apellidos, fec_nac, telefono FROM cliente" + " WHERE email=? and pass=?", arrayOf(pUser,pPass))
+                val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro FROM cliente" + " WHERE email=? and pass=?", arrayOf(pUser,pPass))
                 if (fila.moveToFirst()) {
                     /*
                     println("*****COD"+fila.getString(0))
@@ -109,10 +109,10 @@ class ControlCliente() {
 
                 //row.put("fec_nac", f)
                 row.put("telefono", pCliente.telefono)
-                val cant = bd.update("cliente", row, "codigo=${pCliente.idCliente}", null)
+                val cant = bd.update("cliente", row, "idCliente=${pCliente.idCliente}", null)
                 bd.close()
                 if (cant == 1) {
-                    println("UPDATE hecha correctamente")
+                    println("UPDATE realizada correctamente")
                     return true
                 }
                 println("UPDATE ERROR")
