@@ -9,6 +9,7 @@ import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.menu_inferior.*
+import kotlinx.android.synthetic.main.menu_superior.*
 import java.util.*
 
 
@@ -49,11 +50,15 @@ class MainActivity : AppCompatActivity() {
 
 
         iconoPerfil.setOnClickListener {
-            profileActivity(this)
+            profileActivity(this, this)
         }
 
-        textView2.setOnClickListener {
+        iconoMain.setOnClickListener {
             finish()
+        }
+
+        iconoReservas.setOnClickListener{
+            Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
         }
     }
 
