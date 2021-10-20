@@ -1,69 +1,95 @@
 package com.grupo2.readybaggage
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.grupo2.readybaggage.Utils.Companion.mainActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
+import com.grupo2.readybaggage.Utils.Companion.validationPro
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
 import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
+
     private lateinit var locale: Locale
     private var currentLanguage = Locale.getDefault()
     private lateinit var currentLang: String
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         currentLang=currentLanguage.toString()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        iconoMain.setOnClickListener {
+            mainActivity(this, this)
+        }//onClick
+
+        btIdiomas.setOnClickListener {
+            showPopup(btIdiomas, this, this)
+        }//onClick
+
+
 
         iconoPerfil.setImageResource(R.drawable.ic_outline_person_outline_24_active)
 
         //Mostrar datos del usuario
-        var pViewCliente: Cliente? = ControlCliente.getClienteObject()
-        if (pViewCliente != null) {
-            profileViewTxtNombre.text = pViewCliente.nombre+ " " +pViewCliente.apellidos
-            profileViewEditNombre.setText(pViewCliente.nombre)
-            profileViewEditApellidos.setText(pViewCliente.apellidos)
-            profileViewEditTelefono.setText(pViewCliente.telefono)
-            profileViewEditEmail.setText(pViewCliente.email)
-            profileViewEditPassword.setText(pViewCliente.password)
+        var cliente: Cliente? = ControlCliente.getClienteObject()
+        var clienteUp: Cliente?
 
-        }
+        profileViewTxtNombre.text = "${cliente?.nombre} ${cliente?.apellidos}"
+        profileViewTextNombre.setText(cliente?.nombre)
+        profileViewTextApellidos.setText(cliente?.apellidos)
+        profileViewTextTelefono.setText(cliente?.telefono)
+        profileViewTextEmail.setText(cliente?.email)
+        profileViewTextPass.setText(cliente?.password)
 
         //Comprobar datos y actualizar usuario
         profileViewActualizar.setOnClickListener() {
-            if ( pViewCliente!= null){
-                if (
-                    !profileViewEditNombre.text.toString().equals(pViewCliente.nombre) ||
-                    !profileViewEditApellidos.text.toString().equals(pViewCliente.apellidos) ||
-                    !profileViewEditTelefono.text.toString().equals(pViewCliente.telefono) ||
-                    !profileViewEditEmail.text.toString().equals(pViewCliente.email) ||
-                    !profileViewEditPassword.text.toString().equals(pViewCliente.password)
+            if (validationPro(this)){
 
-                ) {
-                    pViewCliente.nombre = profileViewEditNombre.text.toString()
-                    pViewCliente.apellidos = profileViewEditApellidos.text.toString()
-                    pViewCliente.telefono = profileViewEditTelefono.text.toString()
-                    pViewCliente.email = profileViewEditEmail.text.toString()
-                    pViewCliente.password = profileViewEditPassword.text.toString()
-                    if (ControlCliente.modificarCliente(this,pViewCliente)) {
+                clienteUp = Cliente(cliente!!.idCliente,
+                    profileViewTxtEmail.text.toString(),
+                    profileViewTextPass.text.toString(),
+                    profileViewTxtNombre.text.toString(),
+                    profileViewTxtApellidos.text.toString(),
+                    profileViewTxtTelefono.text.toString(),
+                    cliente.f_registro)
+
+                if (clienteUp!!.nombre != cliente.nombre ||
+                    clienteUp!!.apellidos != cliente.apellidos ||
+                    clienteUp!!.telefono != cliente.telefono ||
+                    clienteUp!!.email != cliente.email ||
+                    clienteUp!!.password != cliente.password){
+
+                    if (ControlCliente.modificarCliente(this, clienteUp!!)) {
 
                         Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_LONG).show()
-                    } else {
+
+                    }//Se ha podido actualizar
+                    else {
+
                         Toast.makeText(this, "ERROR: No se ha podido actualizar", Toast.LENGTH_LONG).show()
-                    }
-                } else {
-                    Toast.makeText(this, "No ha habido cambios para actualizar", Toast.LENGTH_LONG).show()
-                }
-            } else {
-                Toast.makeText(this, "ERROR: No se ha podido actualizar", Toast.LENGTH_LONG).show()
-            }
-        }
+
+                    }//No se ha podido actualizar
+
+                }//Si los datos se han cambiado
+                else {
+
+                    Toast.makeText(this, "No han habido cambios para actualizar", Toast.LENGTH_LONG).show()
+
+                }//Si los datos no se han cambiado
+
+            }//Validacion de los datos
+
+        }//onClick
+
         //Cerrar sesion
         profileViewBtnLogout.setOnClickListener() {
             if (ControlCliente.logout()) {
@@ -74,18 +100,14 @@ class ProfileActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "ERROR: No se ha podido cerrar sesion", Toast.LENGTH_LONG).show()
             }
-        }
+        }//onClick
 
-        btIdiomas.setOnClickListener {
-            showPopup(btIdiomas, this, this)
-        }
 
-       iconoMain.setOnClickListener {
-           mainActivity(this, this)
-       }
 
         iconoReservas.setOnClickListener{
             Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
-        }
-    }
-}
+        }//onClick
+
+    }//onCreate
+
+}//ProfileActivity

@@ -12,19 +12,18 @@ class ControlCliente() {
         private var userType: String? = null
         private var userObject: Cliente? = null
         //Función para registrar clientes
-        fun registrarCliente(contextInstance: Context, pUsername: String, pPassword: String, pNombre: String, pApellidos: String, pTelefono: String): Boolean {
+        fun registrarCliente(contextInstance: Context, pUsername: String, pPassword: String, pNombre: String, pApellidos: String?, pTelefono: String): Boolean {
             try {
-                val sdf = SimpleDateFormat("dd/MM/yyyy")
-                val currentDate = sdf.format(Date())
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
                 val row = ContentValues()
                 row.put("email", pUsername)
                 row.put("pass", pPassword)
                 row.put("nombre", pNombre)
-                row.put("apellidos", pApellidos)
+                if (pApellidos != null){
+                    row.put("apellidos", pApellidos)
+                }
                 row.put("telefono", pTelefono)
-                row.put("f_registro", currentDate.toString())
                 bd.insert("cliente", null, row)
                 bd.close()
                 return true
@@ -40,7 +39,7 @@ class ControlCliente() {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT email FROM cliente" + " WHERE email=?", arrayOf(pEmail))
+                val fila = bd.rawQuery("SELECT email FROM client WHERE email=?", arrayOf(pEmail))
                 if (fila.moveToFirst()) {
                     bd.close()
                     return true
@@ -52,7 +51,7 @@ class ControlCliente() {
                 println("CATCHING ERROR AT: ${functionName.toString()}")
                 return false
             }
-            return false
+
         }
 
 
@@ -60,7 +59,7 @@ class ControlCliente() {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro FROM cliente" + " WHERE email=? and pass=?", arrayOf(pUser,pPass))
+                val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro FROM cliente WHERE email=? and pass=?", arrayOf(pUser,pPass))
                 if (fila.moveToFirst()) {
                     /*
                     println("*****COD"+fila.getString(0))

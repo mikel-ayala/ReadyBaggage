@@ -29,6 +29,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Salir de la app
+        iconoMain.setOnClickListener {
+            finishAffinity()
+        }///onClick
+
+        //Menu idiomas
+        btIdiomas.setOnClickListener {
+            showPopup(btIdiomas, this, this)
+        }//onClick
+
 
 
         //Tarifa -= 10kg
@@ -48,11 +58,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        //Menu idiomas
-        btIdiomas.setOnClickListener {
-            showPopup(btIdiomas, this, this)
-        }//onClick
-
         //Ir al perfil
         iconoPerfil.setOnClickListener {
             profileActivity(this, this)
@@ -62,11 +67,6 @@ class MainActivity : AppCompatActivity() {
         iconoReservas.setOnClickListener{
             Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
         }//onClick
-
-        //Salir de la app
-        iconoMain.setOnClickListener {
-            finishAffinity()
-        }///onClick
 
     }//onCreate
 

@@ -13,7 +13,7 @@
         tools:context=".LoginActivity">
 
         <EditText
-            android:id="@+id/editUsername"
+            android:id="@+id/logViewTextEmail"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="268dp"
@@ -35,13 +35,13 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/roundedbutton"
             android:text="@string/login"
-            app:layout_constraintEnd_toEndOf="@+id/editPass"
+            app:layout_constraintEnd_toEndOf="@+id/logViewTextPass"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/editPass"
-            app:layout_constraintTop_toBottomOf="@+id/editPass" />
+            app:layout_constraintStart_toStartOf="@+id/logViewTextPass"
+            app:layout_constraintTop_toBottomOf="@+id/logViewTextPass" />
 
         <EditText
-            android:id="@+id/editPass"
+            android:id="@+id/logViewTextPass"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -51,10 +51,10 @@
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:text="1234567"
-            app:layout_constraintEnd_toEndOf="@+id/editUsername"
+            app:layout_constraintEnd_toEndOf="@+id/logViewTextEmail"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/editUsername"
-            app:layout_constraintTop_toBottomOf="@+id/editUsername" />
+            app:layout_constraintStart_toStartOf="@+id/logViewTextEmail"
+            app:layout_constraintTop_toBottomOf="@+id/logViewTextEmail" />
 
         <TextView
             android:id="@+id/loginViewTextReg"
@@ -94,7 +94,7 @@
             android:gravity="center_vertical"
             android:text="Ready Baggage"
             android:textSize="32sp"
-            app:layout_constraintBottom_toTopOf="@+id/editUsername"
+            app:layout_constraintBottom_toTopOf="@+id/logViewTextEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent" />

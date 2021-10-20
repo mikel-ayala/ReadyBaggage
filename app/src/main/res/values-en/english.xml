@@ -52,4 +52,8 @@
     <string name="hora_ent">Delivery hour</string>
     <string name="metodo_pago">"Payment method: "</string>
     <string name="n_maletas">"Bag quantity: "</string>
+    <string name="nombre_error">Check your name</string>
+    <string name="telefono_error">Check your phone number</string>
+    <string name="email_error">Check your email</string>
+    <string name="pass_error">Check your password</string>
 </resources>

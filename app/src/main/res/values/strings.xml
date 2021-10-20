@@ -16,6 +16,12 @@
     <string name="registerTxt">¿Todavia no eres miembro?</string>
     <string name="registerTxtBtn">Regístrate</string>
 
+    <!--Comprobaciones registro y login-->
+    <string name="nombre_error">Comprueba el nombre</string>
+    <string name="telefono_error">Comprueba el telefono</string>
+    <string name="email_error">Comprueba el correo electronico</string>
+    <string name="pass_error">Comprueba la contraseina</string>
+
     <!--Perfil de usuario-->
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
