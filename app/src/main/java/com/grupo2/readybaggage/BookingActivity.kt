@@ -1,12 +1,10 @@
 package com.grupo2.readybaggage
 
-import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.grupo2.readybaggage.Utils.Companion.mainActivity
-import com.grupo2.readybaggage.Utils.Companion.profileActivity
+import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
@@ -20,9 +18,24 @@ class BookingActivity : AppCompatActivity() {
     private var precioProducto: Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         currentLang=currentLanguage.toString()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
+
+        //Ir al main
+        iconoMain.setOnClickListener {
+            startActivity<MainActivity>()
+
+        }//onClick
+
+        //Mostrar menu idiomas
+        btIdiomas.setOnClickListener{
+            Utils.showPopup(btIdiomas, this, this)
+        }
+
+
 
         val extras = intent.extras
         val productoId: Int? = extras?.getInt("productoId")
@@ -83,11 +96,6 @@ class BookingActivity : AppCompatActivity() {
             actualizarResumen(cMaletas)
         }
 
-        //Mostrar menu idiomas
-        btIdiomas.setOnClickListener{
-            Utils.showPopup(btIdiomas, this, this)
-        }
-
         //Comprobar datos
         bookingViewBtnReservar.setOnClickListener() {
             var errorAlReservar: Boolean = false
@@ -130,74 +138,107 @@ class BookingActivity : AppCompatActivity() {
 
             if (!errorAlReservar) {
                 Toast.makeText(this, "EXITO: Reserva realizada correctamente", Toast.LENGTH_LONG).show()
-                val homeViewIntent = Intent(this, MainActivity::class.java)
-                startActivity(homeViewIntent)
-                finish()
+                startActivity<MainActivity>()
+
             }
         }
 
+
+
+        //Ir al perfil
         iconoPerfil.setOnClickListener {
-            profileActivity(this, this)
-        }
+            startActivity<ProfileActivity>()
 
-        iconoMain.setOnClickListener {
-            mainActivity(this, this)
-        }
+        }//onClick
 
+        //Ir a reservas
         iconoReservas.setOnClickListener {
             Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
-        }
-    }
+
+        }//onClick
+
+    }//onCreate
 
     private fun mostrarReserva(precio: Int?, nombre: String?){
+
         precioProducto = precio
         bookingViewTxtProductName.text = nombre
+
         when(precio){
+
             8 -> bookingViewImgProduct.setImageResource(R.drawable.maleta_pequenia)
             10 -> bookingViewImgProduct.setImageResource(R.drawable.maleta_grande)
             12 -> bookingViewImgProduct.setImageResource(R.drawable.maleta_extra)
-        }
+
+        }//when precio
+
         bookingViewTxtProductPrice.text = precioProducto.toString() + "€"
         actualizarResumen(1)
-    }
+
+    }//mostrarReserva
 
     private fun metodoPago(metodo: String){
+
         bookingViewTxtPayment.text = getString(R.string.metodo_pago) + metodo
         metodoPago = metodo
         bookingViewTxtPayment.setTextColor(Color.parseColor("#4e4e4e"))
-    }
+
+    }//metodoPago
 
     //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
+
         bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
         bookingViewTxtTotal.text = "Total: " + (qMaletas * precioProducto!!) + "€"
-    }
 
-    //Mostrar fechas y horas seleccionadas
+    }//actualizarResumen
+
+    //Mostrar fechas seleccionadas
     private fun showDatePickerDialog(elementId: Int) {
+
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year,elementId) }
         datePicker.show(supportFragmentManager, "datePicker")
-    }
 
+    }//showDatePickerDialog
+
+    //Fecha de recogida o entrega
     private fun onDateSelected(day: Int, month: Int, year: Int, elementoPicker: Int) {
+
         if (elementoPicker == 1) {
+
             bookingViewEditFecReco.setText("$day/$month/$year")
-        } else {
+
+        }//if 1
+        else {
+
             bookingViewEditFecEntrega.setText("$day/$month/$year")
-        }
 
-    }
+        }//if not 1
 
+    }//onDateSelected
+
+    //Mostrar horas seleccionadas
     private fun showTimePickerDialog(elementId: Int) {
+
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
         timePicker.show(supportFragmentManager, "timePicker")
-    }
 
+    }//showTimePickerDialog
+
+    //Hora de recogida o entrega
     private fun onTimeSelected(time: String, elementoPicker: Int) {
+
         if (elementoPicker == 1) {
+
             bookingViewEditHRecogida.setText("$time")
-        } else {
+
+        }//if 1
+        else {
+
             bookingViewEditHEntrega.setText("$time")
-        }
-    }
-}
+
+        }//if not 1
+
+    }//onTimeSelected
+
+}//BookingActivity

@@ -4,11 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.grupo2.readybaggage.Utils.Companion.startActivity
 import com.grupo2.readybaggage.Utils.Companion.validationLog
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -19,9 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
                 if (ControlCliente.logCliente(this,logViewTextEmail.text.toString(), logViewTextPass.text.toString())) {
 
-                    val mainViewIntent = Intent(this, MainActivity::class.java)
-                    startActivity(mainViewIntent)
-                    finish()
+                    startActivity<MainActivity>()
                     Toast.makeText(this, "Cliente logeado Correctamente", Toast.LENGTH_LONG).show()
 
                 }//Si inicia sesion
@@ -39,9 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
         //Si no estas registrado
         loginViewTextRegBtn.setOnClickListener() {
-            val regIntent = Intent(this, RegisterActivity::class.java)
-            startActivity(regIntent)
-            finish()
+            startActivity<RegisterActivity>()
 
         }//onClick
 

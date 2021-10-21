@@ -1,12 +1,11 @@
 package com.grupo2.readybaggage
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.grupo2.readybaggage.Utils.Companion.mainActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
+import com.grupo2.readybaggage.Utils.Companion.startActivity
 import com.grupo2.readybaggage.Utils.Companion.validationPro
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.menu_inferior.*
@@ -28,7 +27,7 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         iconoMain.setOnClickListener {
-            mainActivity(this, this)
+            startActivity<MainActivity>()
         }//onClick
 
         btIdiomas.setOnClickListener {
@@ -62,11 +61,7 @@ class ProfileActivity : AppCompatActivity() {
                     profileViewTxtTelefono.text.toString(),
                     cliente.f_registro)
 
-                if (clienteUp!!.nombre != cliente.nombre ||
-                    clienteUp!!.apellidos != cliente.apellidos ||
-                    clienteUp!!.telefono != cliente.telefono ||
-                    clienteUp!!.email != cliente.email ||
-                    clienteUp!!.password != cliente.password){
+                if (clienteUp != cliente){
 
                     if (ControlCliente.modificarCliente(this, clienteUp!!)) {
 
@@ -93,19 +88,24 @@ class ProfileActivity : AppCompatActivity() {
         //Cerrar sesion
         profileViewBtnLogout.setOnClickListener() {
             if (ControlCliente.logout()) {
+
                 Toast.makeText(this, "Se ha cerrado correctamente la sesion", Toast.LENGTH_LONG).show()
-                val mainViewIntent = Intent(this, MainActivity::class.java)
-                startActivity(mainViewIntent)
-                finish()
-            } else {
+                startActivity<MainActivity>()
+
+            }//logged out
+            else {
+
                 Toast.makeText(this, "ERROR: No se ha podido cerrar sesion", Toast.LENGTH_LONG).show()
-            }
+
+            }//not logged out
+
         }//onClick
 
 
 
         iconoReservas.setOnClickListener{
             Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
+
         }//onClick
 
     }//onCreate

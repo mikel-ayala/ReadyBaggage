@@ -22,7 +22,7 @@ class Utils {
         private val mAwesomeValidationL = AwesomeValidation(ValidationStyle.BASIC)
         private val mAwesomeValidationP = AwesomeValidation(ValidationStyle.BASIC)
 
-
+        //Validaciones
         fun validationReg(activity: Activity): Boolean {
 
             mAwesomeValidationR.clear()
@@ -99,22 +99,12 @@ class Utils {
             context.startActivity(refresh)
         }
 
-        fun profileActivity(activity: Activity, context: Context){
-            if (ControlCliente.getCliente() != null) {
-                val profileIntent = Intent(context, ProfileActivity::class.java)
-                context.startActivity(profileIntent)
-                activity.finish()
-            } else { //Si no está logeado, te manda al login
-                val loginIntent = Intent(context, LoginActivity::class.java)
-                context.startActivity(loginIntent)
-                activity.finish()
-            }
+        inline fun<reified activity: Activity> Activity.startActivity(){
+            startActivity(Intent(this, activity::class.java))
+            finish()
+
         }
 
-        fun mainActivity(activity: Activity, context: Context){
-            val mainIntent = Intent(context, MainActivity::class.java)
-            context.startActivity(mainIntent)
-            activity.finish()
-        }
     }
+
 }

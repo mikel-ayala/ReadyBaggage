@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.grupo2.readybaggage.Utils.Companion.profileActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
+import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
@@ -60,7 +60,16 @@ class MainActivity : AppCompatActivity() {
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
-            profileActivity(this, this)
+            if (ControlCliente.getCliente() != null) {
+
+                startActivity<ProfileActivity>()
+
+            }//logged
+            else {
+
+                startActivity<LoginActivity>()
+
+            }//not logged
         }//onClick
 
         //Ir a reservas
@@ -86,8 +95,7 @@ class MainActivity : AppCompatActivity() {
         }//logged
         else {
 
-            val loginIntent = Intent(this, LoginActivity::class.java)
-            startActivity(loginIntent)
+            startActivity<LoginActivity>()
             Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
 
         }//not logged

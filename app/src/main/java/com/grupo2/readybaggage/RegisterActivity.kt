@@ -1,9 +1,9 @@
 package com.grupo2.readybaggage
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.grupo2.readybaggage.Utils.Companion.startActivity
 import com.grupo2.readybaggage.Utils.Companion.validationReg
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -22,9 +22,7 @@ class RegisterActivity : AppCompatActivity() {
 
                     if (ControlCliente.registrarCliente(this,  regViewTxtEmail.text.toString(), regViewTxtPass.text.toString(),regViewTxtNombre.text.toString(),regViewTxtApellidos.text.toString(),regViewTxtTelefono.text.toString())) {
 
-                        val loginIntent = Intent(this, LoginActivity::class.java)
-                        startActivity(loginIntent)
-                        finish()
+                        startActivity<LoginActivity>()
                         Toast.makeText(this, "Registrado correctamente @"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
 
                     }//Si se registra
@@ -49,9 +47,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Si ya tienes una cuenta
         regViewBtnLogin.setOnClickListener() {
-            val loginIntent = Intent(this, LoginActivity::class.java)
-            startActivity(loginIntent)
-            finish()
+            startActivity<LoginActivity>()
 
         }//onClick
 
