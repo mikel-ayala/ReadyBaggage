@@ -5,6 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.grupo2.readybaggage.ControlCliente.Companion.dameCliente
+import com.grupo2.readybaggage.ControlCliente.Companion.getCliente
+import com.grupo2.readybaggage.Preferences.Companion.cargarCliente
+import com.grupo2.readybaggage.Preferences.Companion.guardarCliente
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,11 +30,16 @@ class MainActivity : AppCompatActivity() {
 
         currentLang = currentLanguage.toString()
 
+
+        dameCliente(this, cargarCliente(this)!!)
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //Salir de la app
         iconoMain.setOnClickListener {
+            guardarCliente(this, getCliente())
             finishAffinity()
         }///onClick
 

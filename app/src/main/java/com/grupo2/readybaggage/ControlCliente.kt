@@ -38,7 +38,7 @@ class ControlCliente() {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT email FROM client WHERE email=?", arrayOf(pEmail))
+                val fila = bd.rawQuery("SELECT email FROM cliente WHERE email=?", arrayOf(pEmail))
                 if (fila.moveToFirst()) {
                     bd.close()
                     return true
@@ -60,15 +60,29 @@ class ControlCliente() {
                 val bd = admin.writableDatabase
                 val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro, is_empleado FROM cliente WHERE email=? and pass=?", arrayOf(pUser,pPass))
                 if (fila.moveToFirst()) {
-                    /*
-                    println("*****COD"+fila.getString(0))
-                    println("*****EMAIL"+fila.getString(1))
-                    println("*****NOMBRE"+fila.getString(2))
-                    println("*****APE"+fila.getString(3))
-                    println("*****FEC"+fila.getString(4))
-                    println("*****TEL"+fila.getString(5))
 
-                     */
+                    this.userLogged = fila.getString(1)
+                    this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6), fila.getString(7))
+                    bd.close()
+                    return true
+                }
+                bd.close()
+                return false
+            } catch (e: Exception) {
+                val functionName = object{}.javaClass.enclosingMethod.name
+                println("CATCHING ERROR AT: ${functionName.toString()}")
+                return false
+            }
+            return false
+        }
+
+        fun dameCliente(contextInstance: Context, email: String): Boolean {
+            try {
+                val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
+                val bd = admin.writableDatabase
+                val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro, is_empleado FROM cliente WHERE email=?", arrayOf(email))
+                if (fila.moveToFirst()) {
+
                     this.userLogged = fila.getString(1)
                     this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6), fila.getString(7))
                     bd.close()
