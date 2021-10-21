@@ -63,7 +63,7 @@ class ProfileActivity : AppCompatActivity() {
 
                 if (clienteUp != cliente){
 
-                    if (ControlCliente.modificarCliente(this, clienteUp!!)) {
+                    if (ControlCliente.updateCliente(this, clienteUp!!)) {
 
                         Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_LONG).show()
 

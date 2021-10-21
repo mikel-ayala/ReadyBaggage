@@ -8,7 +8,6 @@ import android.content.Intent
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
-        finish()
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }

@@ -14,13 +14,23 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //Cargar Data User
+        var userEmailData: String? = Preferences.getUserPreferences(this,"userdata","email")
+        if (userEmailData != null && userEmailData.trim() != "") {
+            logViewTextEmail.setText(userEmailData)
+        }
+
         //Login
         loginViewBtnLogin.setOnClickListener() {
             //Comprobar los datos
             if (validationLog(this)) {
 
                 if (ControlCliente.logCliente(this,logViewTextEmail.text.toString(), logViewTextPass.text.toString())) {
-
+                    if (Preferences.setUserPreferences(this, "userdata","email",logViewTextEmail.text.toString())) {
+                        print("[DEBUG] User data guardada correctamente")
+                    } else {
+                        print("[ERROR] Error al guardar el email del usuario")
+                    }
                     startActivity<MainActivity>()
                     Toast.makeText(this, "Cliente logeado Correctamente", Toast.LENGTH_LONG).show()
 
@@ -35,12 +45,9 @@ class LoginActivity : AppCompatActivity() {
 
         }//onClick
 
-
-
         //Si no estas registrado
         loginViewTextRegBtn.setOnClickListener() {
             startActivity<RegisterActivity>()
-
         }//onClick
 
     }//onCreate

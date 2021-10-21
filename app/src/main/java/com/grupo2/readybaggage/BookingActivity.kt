@@ -35,8 +35,6 @@ class BookingActivity : AppCompatActivity() {
             Utils.showPopup(btIdiomas, this, this)
         }
 
-
-
         val extras = intent.extras
         val productoId: Int? = extras?.getInt("productoId")
         val productoPrecio: Int? = extras?.getInt("productoPrecio")
@@ -99,32 +97,32 @@ class BookingActivity : AppCompatActivity() {
         //Comprobar datos
         bookingViewBtnReservar.setOnClickListener() {
             var errorAlReservar: Boolean = false
-            if (bookingViewEditOrigen.text.toString().isEmpty()) {
+            if (bookingViewEditOrigen.text.toString().trim().isEmpty()) {
                 bookingViewEditOrigen.setError("Escriba un lugar de Origen")
                 errorAlReservar = true
             }
 
-            if (bookingViewEditDestino.text.toString().isEmpty()) {
+            if (bookingViewEditDestino.text.toString().trim().isEmpty()) {
                 bookingViewEditDestino.setError("Escriba un lugar de Destino")
                 errorAlReservar = true
             }
 
-            if (bookingViewEditFecReco.text.toString().isEmpty()) {
+            if (bookingViewEditFecReco.text.toString().trim().isEmpty()) {
                 bookingViewEditFecReco.setError("Seleccione una fecha de Recogida")
                 errorAlReservar = true
             }
 
-            if (bookingViewEditFecEntrega.text.toString().isEmpty()) {
+            if (bookingViewEditFecEntrega.text.toString().trim().isEmpty()) {
                 bookingViewEditFecEntrega.setError("Seleccione una fecha de Entrega")
                 errorAlReservar = true
             }
 
-            if (bookingViewEditHRecogida.text.toString().isEmpty()) {
+            if (bookingViewEditHRecogida.text.toString().trim().isEmpty()) {
                 bookingViewEditHRecogida.setError("Seleccione una Hora de Recogida")
                 errorAlReservar = true
             }
 
-            if (bookingViewEditHEntrega.text.toString().isEmpty()) {
+            if (bookingViewEditHEntrega.text.toString().trim().isEmpty()) {
                 bookingViewEditHEntrega.setError("Seleccione una Hora de Entrega")
                 errorAlReservar = true
             }
@@ -142,8 +140,6 @@ class BookingActivity : AppCompatActivity() {
 
             }
         }
-
-
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
@@ -219,24 +215,17 @@ class BookingActivity : AppCompatActivity() {
 
     //Mostrar horas seleccionadas
     private fun showTimePickerDialog(elementId: Int) {
-
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
         timePicker.show(supportFragmentManager, "timePicker")
-
     }//showTimePickerDialog
 
     //Hora de recogida o entrega
     private fun onTimeSelected(time: String, elementoPicker: Int) {
-
         if (elementoPicker == 1) {
-
             bookingViewEditHRecogida.setText("$time")
-
         }//if 1
         else {
-
             bookingViewEditHEntrega.setText("$time")
-
         }//if not 1
 
     }//onTimeSelected

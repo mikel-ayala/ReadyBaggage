@@ -5,10 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.grupo2.readybaggage.ControlCliente.Companion.dameCliente
-import com.grupo2.readybaggage.ControlCliente.Companion.getCliente
-import com.grupo2.readybaggage.Preferences.Companion.cargarCliente
-import com.grupo2.readybaggage.Preferences.Companion.guardarCliente
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,13 +21,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
 
         currentLang = currentLanguage.toString()
 
 
-        dameCliente(this, cargarCliente(this)!!)
+        //ControlCliente.getCliente(this, cargarCliente(this)!!)
 
 
         super.onCreate(savedInstanceState)
@@ -39,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         //Salir de la app
         iconoMain.setOnClickListener {
-            guardarCliente(this, getCliente())
+            //guardarCliente(this, getCliente())
             finishAffinity()
         }///onClick
 
@@ -65,19 +61,13 @@ class MainActivity : AppCompatActivity() {
             reservar(3, 12, getString(R.string.tamanoExtra))
         }//onClick
 
-
-
         //Ir al perfil
         iconoPerfil.setOnClickListener {
-            if (ControlCliente.getCliente() != null) {
-
+            if (ControlCliente.getClienteName() != null) {
                 startActivity<ProfileActivity>()
-
             }//logged
             else {
-
                 startActivity<LoginActivity>()
-
             }//not logged
         }//onClick
 
@@ -89,10 +79,8 @@ class MainActivity : AppCompatActivity() {
     }//onCreate
 
     private fun reservar(id: Int, precio: Int, nombre: String) {
-
         //Una tarifa ha sido seleccionada
-        if (ControlCliente.getCliente() != null) {
-
+        if (ControlCliente.getClienteName() != null) {
             val extras = Bundle()
             val bookingView = Intent(this, BookingActivity::class.java)
             extras.putInt("productoId", id)
@@ -100,15 +88,11 @@ class MainActivity : AppCompatActivity() {
             extras.putString("productoNombre", nombre)
             bookingView.putExtras(extras)
             startActivity(bookingView)
-
         }//logged
         else {
-
             startActivity<LoginActivity>()
             Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
-
         }//not logged
-
     }//reservar
 
 }//MainActivity

@@ -76,13 +76,12 @@ class ControlCliente() {
             return false
         }
 
-        fun dameCliente(contextInstance: Context, email: String): Boolean {
+        fun getCliente(contextInstance: Context, email: String): Boolean {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
                 val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro, is_empleado FROM cliente WHERE email=?", arrayOf(email))
                 if (fila.moveToFirst()) {
-
                     this.userLogged = fila.getString(1)
                     this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6), fila.getString(7))
                     bd.close()
@@ -106,7 +105,7 @@ class ControlCliente() {
         }
 
         //Función para hacer UPDATE de los datos de cliente
-        fun modificarCliente(contextInstance: Context, pCliente: Cliente): Boolean {
+        fun updateCliente(contextInstance: Context, pCliente: Cliente): Boolean {
             if (pCliente == null) {
                 return false
             }
@@ -118,25 +117,23 @@ class ControlCliente() {
                 row.put("apellidos", pCliente.apellidos)
                 row.put("email", pCliente.email)
                 row.put("pass", pCliente.password)
-
-                //row.put("fec_nac", f)
                 row.put("telefono", pCliente.telefono)
                 val cant = bd.update("cliente", row, "idCliente=${pCliente.idCliente}", null)
                 bd.close()
                 if (cant == 1) {
-                    println("UPDATE realizada correctamente")
+                    println("[DEBUG] Cliente actualizado correctamente")
                     return true
                 }
-                println("UPDATE ERROR")
+                println("[DEBUG] Error al actualizar cliente")
                 return false
             } catch (e: Exception) {
                 val functionName = object{}.javaClass.enclosingMethod.name
-                println("CATCHING ERROR AT: ${functionName.toString()}")
+                println("[ERROR] Catched at : ${functionName.toString()}")
             }
             return false
         }
 
-        fun getCliente(): String? {
+        fun getClienteName(): String? {
             return this.userLogged
         }
 
