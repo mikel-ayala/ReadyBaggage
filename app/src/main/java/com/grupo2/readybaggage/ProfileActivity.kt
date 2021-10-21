@@ -59,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
                     profileViewTxtNombre.text.toString(),
                     profileViewTxtApellidos.text.toString(),
                     profileViewTxtTelefono.text.toString(),
-                    cliente.f_registro)
+                    cliente.f_registro, cliente.is_empleado)
 
                 if (clienteUp != cliente){
 

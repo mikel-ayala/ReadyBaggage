@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.PopupMenu
 import com.basgeekball.awesomevalidation.AwesomeValidation
 import com.basgeekball.awesomevalidation.ValidationStyle
-import com.basgeekball.awesomevalidation.utility.RegexTemplate
 import java.util.*
 
 class Utils {

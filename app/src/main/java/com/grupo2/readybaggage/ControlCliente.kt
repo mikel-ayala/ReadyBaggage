@@ -9,7 +9,6 @@ import java.util.*
 class ControlCliente() {
     companion object {
         private var userLogged: String? = null
-        private var userType: String? = null
         private var userObject: Cliente? = null
         //Función para registrar clientes
         fun registrarCliente(contextInstance: Context, pUsername: String, pPassword: String, pNombre: String, pApellidos: String?, pTelefono: String): Boolean {
@@ -59,7 +58,7 @@ class ControlCliente() {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro FROM cliente WHERE email=? and pass=?", arrayOf(pUser,pPass))
+                val fila = bd.rawQuery("SELECT idCliente, email, pass, nombre, apellidos, telefono, f_registro, is_empleado FROM cliente WHERE email=? and pass=?", arrayOf(pUser,pPass))
                 if (fila.moveToFirst()) {
                     /*
                     println("*****COD"+fila.getString(0))
@@ -71,7 +70,7 @@ class ControlCliente() {
 
                      */
                     this.userLogged = fila.getString(1)
-                    this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6))
+                    this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6), fila.getString(7))
                     bd.close()
                     return true
                 }

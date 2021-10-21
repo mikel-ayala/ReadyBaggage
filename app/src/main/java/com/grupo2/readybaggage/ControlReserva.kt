@@ -1,6 +1,6 @@
 package com.grupo2.readybaggage
 
-class ControlReservas {
+class ControlReserva {
     companion object {
         //private var reservasList: MutableList<Person> = mutableListOf()
     }
