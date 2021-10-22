@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list android:opacity="opaque"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/blue"/>
+    <item android:drawable="@color/white"/>
     <item
         android:width="300dp"
         android:height="300dp"
         android:gravity="center_horizontal|center_vertical">
-        <bitmap android:src="@drawable/readybaggagelogo"/>
+        <bitmap android:src="@drawable/logo"/>
     </item>
 </layer-list>
