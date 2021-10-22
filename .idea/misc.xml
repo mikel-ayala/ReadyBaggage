@@ -23,6 +23,7 @@
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/Documents/git/ReadyBaggage/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/drawable/roundededittext.xml" value="0.14375" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/drawable/sombramenu.xml" value="0.2703125" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/drawable/spash_screen.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_booking.xml" value="0.264" />
@@ -33,7 +34,7 @@
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_register.xml" value="0.14907407407407408" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/activity_reservas.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/menu_inferior.xml" value="0.264" />
-        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/menu_superior.xml" value="0.264" />
+        <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/layout/menu_superior.xml" value="0.4" />
         <entry key="..\:/Users/mikel/AndroidStudioProjects/ReadyBaggage/app/src/main/res/menu/menu_idioma.xml" value="0.1648148148148148" />
       </map>
     </option>

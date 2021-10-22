@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="lightPurple">#D59FE8</color>
-    <color name="darkPurple">#9D6AB0</color>
-    <color name="blue">#31C7AF</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray">#4e4e4e</color>
+    <color name="primary">#E4EEB6</color>
+    <color name="secondary">#FFCE4E</color>
+    <color name="primary_a">#AB8165</color>
+    <color name="secondary_a">#4B2D1A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="smoothGray">#ddd</color>
 
-    <color name="regTxtBtnColor">#31C7AF</color>
 </resources>
