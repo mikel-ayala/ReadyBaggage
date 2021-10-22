@@ -56,4 +56,5 @@
     <string name="telefono_error">Check your phone number</string>
     <string name="email_error">Check your email</string>
     <string name="pass_error">Check your password</string>
+    <string name="antiguedad">Member since: </string>
 </resources>

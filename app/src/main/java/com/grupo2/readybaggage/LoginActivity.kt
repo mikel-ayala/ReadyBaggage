@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
             if (validationLog(this)) {
 
                 if (ControlCliente.logCliente(this,logViewTextEmail.text.toString(), logViewTextPass.text.toString())) {
-                    if (Preferences.setUserPreferences(this, "userdata","email",logViewTextEmail.text.toString())) {
+                    if (Preferences.setUserPreferences(this, "userdata","email",logViewTextEmail.text.toString()) && Preferences.setUserPreferences(this, "userdata","password",logViewTextPass.text.toString())) {
                         print("[DEBUG] User data guardada correctamente")
                     } else {
                         print("[ERROR] Error al guardar el email del usuario")

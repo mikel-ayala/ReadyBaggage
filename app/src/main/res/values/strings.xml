@@ -59,4 +59,5 @@
     <string name="hora_ent">H. entrega</string>
     <string name="metodo_pago">Metodo de pago: </string>
     <string name="n_maletas">Numero de maletas: </string>
+    <string name="antiguedad">Miembro desde: </string>
 </resources>

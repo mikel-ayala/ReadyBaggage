@@ -1,5 +1,6 @@
 package com.grupo2.readybaggage
 
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
 import java.lang.Exception
@@ -141,10 +142,12 @@ class ControlCliente() {
             return this.userObject
         }
 
-        fun logout(): Boolean {
+        fun logout(pActivity: Activity): Boolean {
             if (userLogged != null) {
                 this.userLogged = null
                 this.userObject = null
+                Preferences.setUserPreferences(pActivity,"userdata","email","")
+                Preferences.setUserPreferences(pActivity,"userdata","password","")
                 return true
             }
             return false

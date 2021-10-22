@@ -26,7 +26,11 @@ class MainActivity : AppCompatActivity() {
 
         currentLang = currentLanguage.toString()
 
-
+        var userAccount: String? = Preferences.getUserPreferences(this,"userdata","email")
+        var userPassword: String? = Preferences.getUserPreferences(this,"userdata","password")
+        if (userAccount != null && userPassword != null) {
+            ControlCliente.logCliente(this,userAccount, userPassword)
+        }
         //ControlCliente.getCliente(this, cargarCliente(this)!!)
 
 

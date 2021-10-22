@@ -56,4 +56,5 @@
     <string name="telefono_error">a</string>
     <string name="email_error">a</string>
     <string name="pass_error">aa</string>
+    <string name="antiguedad">Kidea noiztik: </string>
 </resources>

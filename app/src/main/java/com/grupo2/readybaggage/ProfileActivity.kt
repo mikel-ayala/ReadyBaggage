@@ -1,15 +1,18 @@
 package com.grupo2.readybaggage
 
 import android.annotation.SuppressLint
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.grupo2.readybaggage.Utils.Companion.showPopup
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import com.grupo2.readybaggage.Utils.Companion.validationPro
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
+import java.time.LocalDate
 import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
@@ -18,6 +21,7 @@ class ProfileActivity : AppCompatActivity() {
     private var currentLanguage = Locale.getDefault()
     private lateinit var currentLang: String
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -47,7 +51,9 @@ class ProfileActivity : AppCompatActivity() {
         profileViewTextApellidos.setText(cliente?.apellidos)
         profileViewTextTelefono.setText(cliente?.telefono)
         profileViewTextEmail.setText(cliente?.email)
-        profileViewTextPass.setText(cliente?.password)
+        var value = cliente?.f_registro ?: ""
+        val lstValues: List<String> = value.split("-").map { it -> it.trim() }
+        profileViewTxtMemberTime.setText(getString(R.string.antiguedad) + lstValues[2]+"/"+lstValues[1]+"/"+lstValues[0])
 
         //Comprobar datos y actualizar usuario
         profileViewActualizar.setOnClickListener() {
@@ -87,7 +93,7 @@ class ProfileActivity : AppCompatActivity() {
 
         //Cerrar sesion
         profileViewBtnLogout.setOnClickListener() {
-            if (ControlCliente.logout()) {
+            if (ControlCliente.logout(this)) {
 
                 Toast.makeText(this, "Se ha cerrado correctamente la sesion", Toast.LENGTH_LONG).show()
                 startActivity<MainActivity>()

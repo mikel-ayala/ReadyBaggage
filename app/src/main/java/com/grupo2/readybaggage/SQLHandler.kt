@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-private var tCliente: String = "create table cliente(idCliente text PRIMARY KEY AUTOINCREMENT, email text UNIQUE NOT NULL, pass text NOT NULL, nombre text NOT NULL, apellidos text, telefono text NOT NULL, f_registro text DEFAULT CURRENT_DATE, is_empleado INTEGER DEFAULT 0)"
+private var tCliente: String = "create table cliente(idCliente INTEGER PRIMARY KEY AUTOINCREMENT, email text UNIQUE NOT NULL, pass text NOT NULL, nombre text NOT NULL, apellidos text, telefono text NOT NULL, f_registro text DEFAULT CURRENT_DATE, is_empleado INTEGER DEFAULT 0)"
 private var tProducto: String = "create table producto(idProducto real PRIMARY KEY AUTOINCREMENT, nombre text not null, desc text not null, precio real not null)"
 private var tReserva: String = "create table reserva(idReserva real PRIMARY KEY AUTOINCREMENT, idCliente real not null, idProducto real not null, cantidadProducto real not null, fSolicitud text not null, origen text not null, destino text not null, fRecogida text not null, fEntrega text not null, hRecogida text not null, hEntrega text not null, ubicacion text not null, FOREIGN KEY(idCliente) REFERENCES cliente(idCliente), FOREIGN KEY(idProducto) REFERENCES producto(idProducto))"
 
