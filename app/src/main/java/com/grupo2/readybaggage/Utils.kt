@@ -63,16 +63,16 @@ class Utils {
             popup.setOnMenuItemClickListener { menuItem ->
                 when(menuItem.itemId){
                     R.id.spanish-> {
-//                    SharedApp.prefs.dato="es"
-                        setLocale("es", activity, context)
+                        Preferences.setUserPreferences(activity, "userLang","language","es")
+                        setLocale("es", activity, context, null)
                     }
                     R.id.euskera-> {
-//                    SharedApp.prefs.dato="eu"
-                        setLocale("eu", activity, context)
+                        Preferences.setUserPreferences(activity, "userLang","language","eu")
+                        setLocale("eu", activity, context, null)
                     }
                     R.id.english-> {
-//                    SharedApp.prefs.dato="en"
-                        setLocale("en", activity, context)
+                        Preferences.setUserPreferences(activity, "userLang","language","en")
+                        setLocale("en", activity, context, null)
                     }
                 }
                 true
@@ -81,7 +81,7 @@ class Utils {
         }
 
         //cambiar idioma
-        private fun setLocale(localeName: String, activity: Activity, context: Context) {
+        fun setLocale(localeName: String, activity: Activity, context: Context, avoidFirstRefresh: Boolean?) {
             locale = Locale(localeName)
             val res = activity.resources
             val dm = res.displayMetrics
@@ -94,14 +94,15 @@ class Utils {
             )
             currentLang=currentLanguage.toString()
             refresh.putExtra(currentLang, locale)
-            activity.finish()
-            context.startActivity(refresh)
+            if (avoidFirstRefresh == null) {
+                activity.finish()
+                context.startActivity(refresh)
+            }
         }
 
         inline fun<reified activity: Activity> Activity.startActivity(){
-            startActivity(Intent(this, activity::class.java))
-            finish()
-
+                startActivity(Intent(this, activity::class.java))
+                finish()
         }
 
     }
