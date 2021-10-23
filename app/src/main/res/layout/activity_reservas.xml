@@ -4,45 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ReservasActivity">
 
-    <include
-        android:id="@+id/include7"
-        layout="@layout/menu_superior"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:id="@+id/scrollView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/include8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include7">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reservasViewRVMain"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </ScrollView>
-
-    <include
-        android:id="@+id/include8"
-        layout="@layout/menu_inferior"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" /><![CDATA[
-
-
-
-=======
-    >>>>>>> Stashed changes
-
-]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

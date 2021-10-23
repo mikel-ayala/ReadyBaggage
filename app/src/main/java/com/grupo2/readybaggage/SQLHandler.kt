@@ -1,19 +1,53 @@
 package com.grupo2.readybaggage
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-private var tCliente: String = "create table cliente(idCliente INTEGER PRIMARY KEY AUTOINCREMENT, email text UNIQUE NOT NULL, pass text NOT NULL, nombre text NOT NULL, apellidos text, telefono text NOT NULL, f_registro text DEFAULT CURRENT_DATE, is_empleado INTEGER DEFAULT 0)"
-private var tProducto: String = "create table producto(idProducto real PRIMARY KEY AUTOINCREMENT, nombre text not null, desc text not null, precio real not null)"
-private var tReserva: String = "create table reserva(idReserva real PRIMARY KEY AUTOINCREMENT, idCliente real not null, idProducto real not null, cantidadProducto real not null, fSolicitud text not null, origen text not null, destino text not null, fRecogida text not null, fEntrega text not null, hRecogida text not null, hEntrega text not null, ubicacion text not null, FOREIGN KEY(idCliente) REFERENCES cliente(idCliente), FOREIGN KEY(idProducto) REFERENCES producto(idProducto))"
-
 class SQLHandler(context: Context, name: String, factory: SQLiteDatabase.CursorFactory?, version: Int): SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase) {
         println("[DEBUG] Data Base successfully created")
-        db.execSQL(tCliente)
-        //db.execSQL(tProducto)
-        //db.execSQL(tReserva)
+
+        db.execSQL("create table cliente(idCliente INTEGER PRIMARY KEY AUTOINCREMENT, email text UNIQUE NOT NULL, pass text not null, nombre texT not null, apellidos text, telefono text not null, f_registro text DEFAULT CURRENT_DATE, is_empleado real DEFAULT 0)")
+        //db.execSQL("create table producto(idProducto real PRIMARY KEY AUTOINCREMENT, nombre text not null, descripcion text not null, precio real not null)")
+        db.execSQL("create table reserva(idReserva INTEGER PRIMARY KEY AUTOINCREMENT, idCliente real not null, idProducto real not null, cantidadProducto real not null, fSolicitud text DEFAULT CURRENT_DATE, origen text not null, destino text not null, fRecogida text not null, fEntrega text not null, hRecogida text not null, hEntrega text not null, ubicacion text not null, FOREIGN KEY(idCliente) REFERENCES cliente(idCliente))") //, FOREIGN KEY(idProducto) REFERENCES producto(idProducto)
+
+        val admin = ContentValues()
+        admin.put("email", "admin@gmail.com")
+        admin.put("pass", "Admin_1234")
+        admin.put("nombre", "Administrador")
+        admin.put("apellidos", "Oficial")
+        admin.put("telefono", "999999999")
+        db.insert("cliente", null, admin)
+
+        var reserva1 = ContentValues()
+        reserva1.put("idCliente", 1)
+        reserva1.put("idProducto", 1)
+        reserva1.put("cantidadProducto", 1)
+        reserva1.put("origen", "bilbo")
+        reserva1.put("destino", "respal")
+        reserva1.put("fRecogida", "10/22/2021")
+        reserva1.put("fEntrega", "11/22/2021")
+        reserva1.put("hRecogida", "1:51")
+        reserva1.put("hEntrega", "2:52")
+        reserva1.put("ubicacion", "almacen")
+
+        db.insert("reserva", null, reserva1)
+
+        var reserva = ContentValues()
+        reserva.put("idCliente", 1)
+        reserva.put("idProducto", 2)
+        reserva.put("cantidadProducto", 3)
+        reserva.put("origen", "basa")
+        reserva.put("destino", "galda")
+        reserva.put("fRecogida", "12/25/2021")
+        reserva.put("fEntrega", "12/22/2021")
+        reserva.put("hRecogida", "3:53")
+        reserva.put("hEntrega", "5:53")
+        reserva.put("ubicacion", "almacen")
+
+        db.insert("reserva", null, reserva)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -22,44 +56,4 @@ class SQLHandler(context: Context, name: String, factory: SQLiteDatabase.CursorF
         db.execSQL("drop table if exists cliente")
         onCreate(db)
     }
-
-    /*
-    class SQLHandler(
-        context: Context, name:
-        String, factory: SQLiteDatabase.CursorFactory?, version: Int
-    ) :
-        SQLiteOpenHelper(context, name, factory, version) {
-        var tipoUsuario: String = "";
-        var nombreUsuario: String = "";
-
-        fun requestToLogIn(vUser: String, vPass: String): Boolean {
-            if (tipoUsuario.isNotEmpty() || nombreUsuario.isNotEmpty()) {
-
-            }
-            return false;
-        }
-
-        fun requestUserType(): String? {
-            if (tipoUsuario.isNotEmpty()) {
-                return tipoUsuario;
-            }
-            println("No hay usuario logeado")
-            return null;
-        }
-
-        fun setDBConnection() {
-
-        }
-
-        override fun onCreate(db: SQLiteDatabase?) {
-            db!!.execSQL("create table usuario(idUser int primary key, user text, pass text)")
-        }
-
-        override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-            db!!.execSQL("drop table if exists articulos")
-            onCreate(db)
-        }
-
-    }
-     */
 }

@@ -49,7 +49,7 @@
         Precio diurno: 12€
         \nPrecio nocturno: 16€
     </string>
-    
+
     <!--Activity de reserva-->
     <string name="origen">Origen</string>
     <string name="destino">Destino</string>
