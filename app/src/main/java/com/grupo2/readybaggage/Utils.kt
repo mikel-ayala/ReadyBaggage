@@ -108,8 +108,8 @@ class Utils {
         }
 
         inline fun<reified activity: Activity> Activity.startActivity(){
-                startActivity(Intent(this, activity::class.java))
-                finish()
+            startActivity(Intent(this, activity::class.java))
+            finish()
         }
 
     }
