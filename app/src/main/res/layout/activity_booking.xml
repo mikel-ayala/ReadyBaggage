@@ -148,6 +148,7 @@
                     android:ems="10"
                     android:hint="@string/origen"
                     android:inputType="text"
+                    android:text="Origentest1"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
@@ -165,6 +166,7 @@
                     android:ems="10"
                     android:hint="@string/destino"
                     android:inputType="text"
+                    android:text="Destinotest1"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
@@ -185,6 +187,7 @@
                     android:focusable="false"
                     android:hint="@string/fecha_rec"
                     android:inputType="text"
+                    android:text="20/10/2021"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
@@ -205,6 +208,7 @@
                     android:focusable="false"
                     android:hint="@string/fecha_ent"
                     android:inputType="text"
+                    android:text="21/10/2021"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -251,6 +255,7 @@
                             android:focusable="false"
                             android:hint="@string/hora_rec"
                             android:inputType="time"
+                            android:text="16:00"
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
@@ -265,6 +270,7 @@
                             android:focusable="false"
                             android:hint="@string/hora_ent"
                             android:inputType="time"
+                            android:text="21:00"
                             tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
 
@@ -335,12 +341,32 @@
                     android:textStyle="italic" />
 
                 <TextView
+                    android:id="@+id/bookingViewTxtSubtotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/subtotal"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/bookingViewTxtIva"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/iva"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <TextView
                     android:id="@+id/bookingViewTxtTotal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="right"
-                    android:text="Total: "
+                    android:text="@string/total"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

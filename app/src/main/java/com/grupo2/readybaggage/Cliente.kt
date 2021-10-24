@@ -8,4 +8,5 @@ data class Cliente (
     var apellidos: String,
     var telefono: String,
     var f_registro: String,
-    var is_empleado: String)
+    var is_empleado: String,
+)

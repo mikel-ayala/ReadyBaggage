@@ -11,6 +11,8 @@ class ControlCliente() {
     companion object {
         private var userLogged: String? = null
         private var userObject: Cliente? = null
+        private var userAdmin: Boolean = false
+
         //Función para registrar clientes
         fun registrarCliente(contextInstance: Context, pUsername: String, pPassword: String, pNombre: String, pApellidos: String?, pTelefono: String): Boolean {
             try {
@@ -20,6 +22,7 @@ class ControlCliente() {
                 row.put("email", pUsername)
                 row.put("pass", pPassword)
                 row.put("nombre", pNombre)
+                //ESTE CASO SIEMPRE SE CUMPLE (REVISAR) UNA CAJA DE TEXTO NUNCA ES NULA DADO QUE ES UNA CADENA DE CARACTERES VACIA
                 if (pApellidos != null){
                     row.put("apellidos", pApellidos)
                 }
@@ -54,7 +57,6 @@ class ControlCliente() {
 
         }
 
-
         fun logCliente(contextInstance: Context, pUser: String, pPass: String): Boolean {
             try {
                 val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
@@ -63,6 +65,9 @@ class ControlCliente() {
                 if (fila.moveToFirst()) {
 
                     this.userLogged = fila.getString(1)
+                    if (fila.getString(7) == "1") {
+                        userAdmin = true
+                    }
                     this.userObject = Cliente(fila.getString(0),fila.getString(1),fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5),fila.getString(6), fila.getString(7))
                     bd.close()
                     return true
@@ -146,6 +151,7 @@ class ControlCliente() {
             if (userLogged != null) {
                 this.userLogged = null
                 this.userObject = null
+                this.userAdmin = false
                 Preferences.setUserPreferences(pActivity,"userdata","email","")
                 Preferences.setUserPreferences(pActivity,"userdata","password","")
                 return true

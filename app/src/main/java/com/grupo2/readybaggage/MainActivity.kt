@@ -77,8 +77,13 @@ class MainActivity : AppCompatActivity() {
 
         //Ir a reservas
         iconoReservas.setOnClickListener{
-            Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
+            startActivity<ReservasActivity>()
         }//onClick
+
+        btnRrss.setOnClickListener() {
+            startActivity<ClienteReservasActivity>()
+        }
 
     }//onCreate
 

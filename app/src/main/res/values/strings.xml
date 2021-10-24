@@ -60,4 +60,7 @@
     <string name="metodo_pago">Metodo de pago: </string>
     <string name="n_maletas">Numero de maletas: </string>
     <string name="antiguedad">Miembro desde: </string>
+    <string name="subtotal">Sub Total: </string>
+    <string name="iva">Iva</string>
+    <string name="total">Total: </string>
 </resources>

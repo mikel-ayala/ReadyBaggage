@@ -3,11 +3,15 @@ package com.grupo2.readybaggage
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.core.view.isGone
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
+import java.lang.Math.floor
+import java.text.DecimalFormat
 import java.util.*
 
 class BookingActivity : AppCompatActivity() {
@@ -16,6 +20,7 @@ class BookingActivity : AppCompatActivity() {
     private lateinit var currentLang: String
     private var metodoPago: String? = null
     private var precioProducto: Int? = 0
+    private var iva: Int = 21
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -23,6 +28,23 @@ class BookingActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
+
+        val extras = intent.extras
+        val productoId: Int? = extras?.getInt("productoId")
+        val productoPrecio: Int? = extras?.getInt("productoPrecio")
+        val productoNombre: String? = extras?.getString("productoNombre")
+
+        bookingViewTxtIva.isEnabled = false
+        bookingViewTxtIva.visibility = View.GONE
+
+
+        bookingViewTxtIva.text = getString(R.string.iva) + " " + iva + "%: "
+
+        when(productoId){
+            1 -> mostrarReserva(productoPrecio, productoNombre)
+            2 -> mostrarReserva(productoPrecio, productoNombre)
+            3 -> mostrarReserva(productoPrecio, productoNombre)
+        }
 
         //Ir al main
         iconoMain.setOnClickListener {
@@ -33,17 +55,6 @@ class BookingActivity : AppCompatActivity() {
         //Mostrar menu idiomas
         btIdiomas.setOnClickListener{
             Utils.showPopup(btIdiomas, this, this)
-        }
-
-        val extras = intent.extras
-        val productoId: Int? = extras?.getInt("productoId")
-        val productoPrecio: Int? = extras?.getInt("productoPrecio")
-        val productoNombre: String? = extras?.getString("productoNombre")
-
-        when(productoId){
-            1 -> mostrarReserva(productoPrecio, productoNombre)
-            2 -> mostrarReserva(productoPrecio, productoNombre)
-            3 -> mostrarReserva(productoPrecio, productoNombre)
         }
 
         //Seleccion fecha y hora
@@ -137,9 +148,28 @@ class BookingActivity : AppCompatActivity() {
             if (!errorAlReservar) {
                 Toast.makeText(this, "EXITO: Reserva realizada correctamente", Toast.LENGTH_LONG).show()
                 startActivity<MainActivity>()
+                var clienteObject: Cliente? = ControlCliente.getClienteObject()
+                if (clienteObject != null) {
+                    var idCliente: Int = clienteObject.idCliente.toInt()
+                    var vMaletasCantidad : String = bookingViewTxtMaletas.text.toString()
+                    var vOrigen : String = bookingViewEditOrigen.text.toString()
+                    var vDestino : String = bookingViewEditDestino.text.toString()
+                    var vFrecogida : String = bookingViewEditFecReco.text.toString()
+                    var vFentrega : String = bookingViewEditFecEntrega.text.toString()
+                    var vHrecogida : String = bookingViewEditHRecogida.text.toString()
+                    var vHentrega : String = bookingViewEditHEntrega.text.toString()
+
+                    if (ControlReserva.registrarReserva(this, idCliente,productoId!!,
+                            vMaletasCantidad.toInt(),Utils.getCurrentDate(),vOrigen,vDestino,vFrecogida,vFentrega,vHrecogida,vHentrega,metodoPago!!)) {
+                        println("********EXITO")
+                    } else {
+                        println("********ERROR AL RESERVAR")
+                    }
+                }
 
             }
         }
+
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
@@ -184,8 +214,16 @@ class BookingActivity : AppCompatActivity() {
     //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
 
+//        bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
         bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
-        bookingViewTxtTotal.text = "Total: " + (qMaletas * precioProducto!!) + "€"
+//        bookingViewTxtTotal.text = "Total: " + (qMaletas * precioProducto!!) + "€"
+        var preciosiniva: Double = (qMaletas * precioProducto!!).toDouble()
+        var precioiva: Double = ((preciosiniva * iva).toDouble() / 100)
+        var preciototal: Double = preciosiniva+precioiva
+        val dec = DecimalFormat("#,###.00")
+        bookingViewTxtSubtotal.text = getString(R.string.subtotal) + preciosiniva.toInt() + "€"
+        bookingViewTxtIva.text = getString(R.string.iva) + " " + dec.format(iva) + "%: " + precioiva + "€"
+        bookingViewTxtTotal.text = getString(R.string.total) + dec.format(preciosiniva+precioiva) + "€"
 
     }//actualizarResumen
 

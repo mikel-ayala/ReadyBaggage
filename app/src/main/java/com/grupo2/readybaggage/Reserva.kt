@@ -4,7 +4,9 @@ data class Reserva(
     var idReserva: String,
     var idCliente: String,
     var idProducto: String,
-    var cantidadProducto: String,
+    var nombreCliente: String,
+    var apellidoCliente: String,
+    var cantidad: String,
     var f_solicitud: String,
     var origen: String,
     var destino: String,
@@ -12,5 +14,6 @@ data class Reserva(
     var f_entrega: String,
     var h_recogida: String,
     var h_entrega: String,
-    var ubicacion: String
+    var metodoPago: String
+    //var ubicacion: String
 )

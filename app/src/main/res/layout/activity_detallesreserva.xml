@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetallesReservaActivity">
+
+    <include
+        android:id="@+id/include7"
+        layout="@layout/menu_superior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/dRvScrollviewMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include7">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/dRvImgProducto"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/maleta_pequenia" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/dRvTxtId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ID:000000"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:background="@drawable/estado_activa"
+                    android:padding="7dp"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="25dp"/>
+                <TextView
+                    android:id="@+id/dRvTxtFsolicitud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="21/12/2021"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:background="@drawable/estado_pendiente"
+                    android:padding="7dp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="25dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/include8"
+        layout="@layout/menu_inferior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

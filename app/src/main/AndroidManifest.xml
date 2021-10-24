@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/MainTheme" >
         <activity
-            android:name=".RegisterActivity"
-            android:exported="true"
-            android:theme="@style/MainTheme" />
-        <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -23,21 +19,36 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true"
+            android:theme="@style/MainTheme" />
+        <activity
             android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".ReservasActivity"
+            android:exported="true"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".ClienteReservasActivity"
+            android:exported="true"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".DetallesReservaActivity"
             android:exported="true"
             android:theme="@style/MainTheme" />
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/MainTheme" />
-        <activity
             android:name=".BookingActivity"
             android:exported="true"
             android:theme="@style/MainTheme" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

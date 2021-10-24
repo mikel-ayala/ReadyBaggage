@@ -57,4 +57,7 @@
     <string name="email_error">a</string>
     <string name="pass_error">aa</string>
     <string name="antiguedad">Kidea noiztik: </string>
+    <string name="subtotal">Sub Total: </string>
+    <string name="iva">Iva</string>
+    <string name="total">Total: </string>
 </resources>

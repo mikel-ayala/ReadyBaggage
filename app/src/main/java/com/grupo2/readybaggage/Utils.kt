@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.PopupMenu
 import com.basgeekball.awesomevalidation.AwesomeValidation
 import com.basgeekball.awesomevalidation.ValidationStyle
+import java.text.SimpleDateFormat
 import java.util.*
 
 class Utils {
@@ -78,6 +79,12 @@ class Utils {
                 true
             }
             popup.show()
+        }
+
+
+        fun getCurrentDate(): String {
+            val sdf = SimpleDateFormat("dd/MM/yyyy")
+            return sdf.format(Date())
         }
 
         //cambiar idioma

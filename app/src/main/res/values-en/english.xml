@@ -57,4 +57,7 @@
     <string name="email_error">Check your email</string>
     <string name="pass_error">Check your password</string>
     <string name="antiguedad">Member since: </string>
+    <string name="subtotal">Sub Total: </string>
+    <string name="iva">Iva</string>
+    <string name="total">Total: </string>
 </resources>
