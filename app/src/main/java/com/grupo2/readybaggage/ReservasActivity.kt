@@ -30,7 +30,7 @@ class ReservasActivity : AppCompatActivity() {
 
 
 
-        var isAdmin: Boolean = intent.getBooleanExtra("isAdmin",false)
+        var isAdmin: Boolean = ControlCliente.isAdmin()
 
         reservasList = ControlReserva.getAllReservas(this, !isAdmin)
 
@@ -38,8 +38,6 @@ class ReservasActivity : AppCompatActivity() {
             reservasList!!.sortByDescending{it.idReserva}
             initRecycler(reservasList!!)
         }
-
-
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
@@ -53,6 +51,11 @@ class ReservasActivity : AppCompatActivity() {
             }//not logged
 
         }//onClick
+
+        iconoMain.setOnClickListener {
+            startActivity<MainActivity>()
+        }//onClick
+
 
     }//onCreate
 

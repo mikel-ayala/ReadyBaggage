@@ -73,11 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         //Ir a reservas
         iconoReservas.setOnClickListener{
-            val extras = Bundle()
-            val reservasIntent = Intent(this, ReservasActivity::class.java)
-            extras.putBoolean("isAdmin", ControlCliente.isAdmin())
-            reservasIntent.putExtras(extras)
-            startActivity(reservasIntent)
+            startActivity<ReservasActivity>()
         }//onClick
 
     }//onCreate

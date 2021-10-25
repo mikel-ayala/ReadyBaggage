@@ -45,7 +45,6 @@ class BookingActivity : AppCompatActivity() {
         //Ir al main
         iconoMain.setOnClickListener {
             startActivity<MainActivity>()
-
         }//onClick
 
         //Mostrar menu idiomas
@@ -218,7 +217,7 @@ class BookingActivity : AppCompatActivity() {
         var preciototal: Double = preciosiniva+precioiva
         val dec = DecimalFormat("#,###.00")
         bookingViewTxtSubtotal.text = getString(R.string.subtotal) + preciosiniva.toInt() + "€"
-        bookingViewTxtIva.text = getString(R.string.iva) + " " + dec.format(iva) + "%: " + precioiva + "€"
+        bookingViewTxtIva.text = getString(R.string.iva) + " " + iva + "%: " + precioiva + "€"
         bookingViewTxtTotal.text = getString(R.string.total) + dec.format(preciosiniva+precioiva) + "€"
 
     }//actualizarResumen
@@ -236,12 +235,13 @@ class BookingActivity : AppCompatActivity() {
 
         if (elementoPicker == 1) {
 
-            bookingViewEditFecReco.setText("$day/$month/$year")
+            //bookingViewEditFecReco.setText("$day/$month/$year")
+            bookingViewEditFecReco.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
 
         }//if 1
         else {
 
-            bookingViewEditFecEntrega.setText("$day/$month/$year")
+            bookingViewEditFecReco.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
 
         }//if not 1
 
