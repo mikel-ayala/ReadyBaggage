@@ -53,6 +53,7 @@ class ReservasActivity : AppCompatActivity() {
         }//onClick
 
         iconoMain.setOnClickListener {
+            println("*****************CLICKED ")
             startActivity<MainActivity>()
         }//onClick
 

@@ -10,12 +10,18 @@ import java.util.*
 
 class DatePickerFragment(val listener: (day: Int, month: Int, year: Int) -> Unit) :
     DialogFragment(), DatePickerDialog.OnDateSetListener {
+
+    var timeInMs: Int = 1
+    val minDateList = mutableListOf<Int>()
+    val maxDateList = mutableListOf<Int>()
+
+    val c = Calendar.getInstance()
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
         listener(day, month, year)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val c = Calendar.getInstance()
+        //val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
@@ -25,5 +31,14 @@ class DatePickerFragment(val listener: (day: Int, month: Int, year: Int) -> Unit
         picker.datePicker.maxDate = c.timeInMillis
         return picker
     }
+
+    fun setDateMinLimit(day: Int, month: Int, year: Int) {
+        maxDateList.clear()
+        maxDateList.add(day)
+        maxDateList.add(month)
+        maxDateList.add(year)
+    }
+
+
 
 }
