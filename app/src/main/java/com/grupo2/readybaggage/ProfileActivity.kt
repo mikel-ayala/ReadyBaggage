@@ -110,7 +110,7 @@ class ProfileActivity : AppCompatActivity() {
 
 
         iconoReservas.setOnClickListener{
-            Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
+            startActivity<ReservasActivity>()
 
         }//onClick
 
