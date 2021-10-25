@@ -14,6 +14,7 @@ data class Reserva(
     var f_entrega: String,
     var h_recogida: String,
     var h_entrega: String,
-    var metodoPago: String
+    var metodoPago: String,
+    var estado: String
     //var ubicacion: String
 )

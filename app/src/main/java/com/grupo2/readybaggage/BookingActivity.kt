@@ -34,10 +34,6 @@ class BookingActivity : AppCompatActivity() {
         val productoPrecio: Int? = extras?.getInt("productoPrecio")
         val productoNombre: String? = extras?.getString("productoNombre")
 
-        bookingViewTxtIva.isEnabled = false
-        bookingViewTxtIva.visibility = View.GONE
-
-
         bookingViewTxtIva.text = getString(R.string.iva) + " " + iva + "%: "
 
         when(productoId){

@@ -13,19 +13,19 @@ class ControlReserva {
         fun getAllReservas(contextInstance: Context, userFilter: Boolean): MutableList<Reserva>? {
             try {
                 reservasList.clear()
-                val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
+                val admin = SQLHandler(contextInstance, "bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
-                var querySyntax: String = "SELECT idReserva, reserva.idCliente, idProducto, cliente.nombre, cliente.apellidos, cantidad, f_solicitud, origen, destino, fRecogida, fEntrega, hRecogida, hEntrega, metodoPago FROM reserva inner join cliente on reserva.idCliente=cliente.idCliente"
+                var querySyntax: String = "SELECT idReserva, reserva.idCliente, idProducto, cliente.nombre, cliente.apellidos, cantidad, f_solicitud, origen, destino, fRecogida, fEntrega, hRecogida, hEntrega, metodoPago, estado FROM reserva inner join cliente on reserva.idCliente=cliente.idCliente"
                 if (userFilter) {
                    var userId: String = ControlCliente.getClienteObject()!!.idCliente
-                    querySyntax = "SELECT idReserva, reserva.idCliente, idProducto, cliente.nombre, cliente.apellidos, cantidad, f_solicitud, origen, destino, fRecogida, fEntrega, hRecogida, hEntrega, metodoPago FROM reserva inner join cliente on reserva.idCliente=cliente.idCliente where reserva.idCliente='$userId'"
+                    querySyntax = "SELECT idReserva, reserva.idCliente, idProducto, cliente.nombre, cliente.apellidos, cantidad, f_solicitud, origen, destino, fRecogida, fEntrega, hRecogida, hEntrega, metodoPago, estado FROM reserva inner join cliente on reserva.idCliente=cliente.idCliente where reserva.idCliente='$userId'"
                 }
                 println(querySyntax)
                 val cursor: Cursor = bd.rawQuery(querySyntax,null)
                 if (cursor.moveToFirst()) {
                     do {
                         var vReserva: Reserva = Reserva(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),
-                            cursor.getString(5),cursor.getString(6),cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),cursor.getString(11),cursor.getString(12),cursor.getString(13))
+                            cursor.getString(5),cursor.getString(6),cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),cursor.getString(11),cursor.getString(12),cursor.getString(13),cursor.getString(14))
                         reservasList.add(vReserva)
                     }while (cursor.moveToNext())
                     cursor.close()
@@ -49,7 +49,7 @@ class ControlReserva {
         fun registrarReserva(contextInstance: Context, pIdCliente: Int, pIdProducto: Int, pCantidad: Int, vF_solicitud: String, vOrigen: String,
                 vDestino: String, vF_recogida: String, vF_entrega: String, vH_recogida: String, vH_entrega: String, vMetodoPago: String): Boolean {
             try {
-                val admin = SQLHandler(contextInstance, " bdReadyBaggage.db", null, 1)
+                val admin = SQLHandler(contextInstance, "bdReadyBaggage.db", null, 1)
                 val bd = admin.writableDatabase
                 val row = ContentValues()
                 row.put("idCliente", pIdCliente)
@@ -72,6 +72,33 @@ class ControlReserva {
             }
             return false
         }
+
+        fun updateReserva(contextInstance: Context, pReserva: Reserva): Boolean {
+            if (pReserva == null) {
+                return false
+            }
+            try {
+                val admin = SQLHandler(contextInstance, "bdReadyBaggage.db", null, 1)
+                val bd = admin.writableDatabase
+                val row = ContentValues()
+                row.put("estado", pReserva.estado)
+                val cant = bd.update("reserva", row, "idReserva=${pReserva.idReserva}", null)
+                bd.close()
+                if (cant == 1) {
+                    println("[DEBUG] Reserva actualizada correctamente")
+                    return true
+                }
+                bd.close()
+                println("[DEBUG] Error al actualizar Reserva")
+                return false
+            } catch (e: Exception) {
+                val functionName = object{}.javaClass.enclosingMethod.name
+                println("[ERROR] Catched at : ${functionName.toString()}")
+            }
+            return false
+        }
+
+
 
         /*
         private var reservaList: MutableList<Reserva> = mutableListOf()

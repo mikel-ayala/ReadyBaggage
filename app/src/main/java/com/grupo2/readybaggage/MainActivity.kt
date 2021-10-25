@@ -77,13 +77,12 @@ class MainActivity : AppCompatActivity() {
 
         //Ir a reservas
         iconoReservas.setOnClickListener{
-            //Toast.makeText(this, "Ver las reservas todavia no esta disponible", Toast.LENGTH_LONG).show()
-            startActivity<ReservasActivity>()
+            val extras = Bundle()
+            val reservasIntent = Intent(this, ReservasActivity::class.java)
+            extras.putBoolean("isAdmin", ControlCliente.isAdmin())
+            reservasIntent.putExtras(extras)
+            startActivity(reservasIntent)
         }//onClick
-
-        btnRrss.setOnClickListener() {
-            startActivity<ClienteReservasActivity>()
-        }
 
     }//onCreate
 

@@ -3,13 +3,9 @@ package com.grupo2.readybaggage
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings.System.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.item_reserva.view.*
@@ -31,7 +27,19 @@ class ReservaAdapter (var mContext: Context, val reservasList: MutableList<Reser
 //            view.itemReservasId.text = reserva.idReserva
             view.itemReservasId.text = "ID: "+String.format("%06d", reserva.idReserva.toInt())
             view.itemReservasNombre.text = "Nombre: "+reserva.nombreCliente + " " + reserva.apellidoCliente
-            view.itemReservasEstado.setBackgroundResource(R.drawable.estado_pendiente)
+            view.itemReservasOrigen.text = "Origen: "+reserva.origen
+            view.itemReservasDestino.text = "Destino: "+reserva.destino
+            view.itemReservasEstado.text = reserva.estado
+            when (reserva.estado) {
+                "Pendiente" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_orange)
+                "En almacen" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_purple)
+                "En entrega" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_blue)
+                "Entregado" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_green)
+                else -> {
+                    view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_orange)
+                }
+            }
+
             when (reserva.idProducto) {
                 "1" -> view.itemReservasIV.setImageResource(R.drawable.maleta_pequenia)
                 "2" -> view.itemReservasIV.setImageResource(R.drawable.maleta_grande)

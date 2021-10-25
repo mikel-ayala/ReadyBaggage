@@ -37,17 +37,34 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="0dp"
-            android:layout_weight="0.33"
+            android:layout_weight="0.25"
             android:weightSum="1">
+
             <TextView
-                android:text="ID: 00001"
                 android:id="@+id/itemReservasId"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_weight="0.5"
                 android:gravity="center_vertical"
-                android:layout_marginStart="10dp"/>
+                android:text="ID: 00001"
+                android:textStyle="bold|italic" />
 
+            <TextView
+                android:id="@+id/itemReservasEstado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="10dp"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:text="Estado"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@drawable/rounded_blue"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:layout_marginStart="25dp"/>
+            <!--
             <android.widget.Button
                 android:id="@+id/itemReservasEstado"
                 android:layout_width="0dp"
@@ -59,6 +76,7 @@
                 android:scaleY="0.6"
                 android:text="CONFIRMADA"
                 tools:ignore="TouchTargetSizeCheck" />
+                -->
 
         </LinearLayout>
         <TextView
@@ -68,20 +86,25 @@
             android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.33"/>
-
-        <Button
-            android:id="@+id/itemReservasModificar"
+            android:layout_weight="0.25"/>
+        <TextView
+            android:id="@+id/itemReservasOrigen"
+            android:text="Origen: N/A"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight=".33"
-            android:background="@drawable/roundedbutton"
-            android:text="Modificar"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_weight="0.25"/>
+        <TextView
+            android:id="@+id/itemReservasDestino"
+            android:text="Destino: N/A"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"/>
+
+
     </LinearLayout>
 
         </LinearLayout>

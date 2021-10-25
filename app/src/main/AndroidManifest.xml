@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MainTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -41,10 +44,6 @@
             android:name=".ProfileActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ClienteReservasActivity"
-            android:exported="true"
-            android:theme="@style/MainTheme" />
         <activity
             android:name=".DetallesReservaActivity"
             android:exported="true"
