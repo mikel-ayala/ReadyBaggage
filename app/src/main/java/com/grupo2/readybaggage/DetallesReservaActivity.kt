@@ -1,5 +1,6 @@
 package com.grupo2.readybaggage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,8 +13,11 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.gson.Gson
+import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_detallesreserva.*
+import kotlinx.android.synthetic.main.menu_inferior.*
+import kotlinx.android.synthetic.main.menu_superior.*
 
 class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -32,12 +36,18 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             dRvSpinnerEstado.setClickable(false);
         }
 
-        val operaciones = arrayOf("Pendiente","En almacen","En entrega","Entregado")
-        val adaptador = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, operaciones)
+        val reservaEstados = arrayOf("Pendiente","En almacen","En entrega","Entregado")
+        val adaptador = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, reservaEstados)
         dRvSpinnerEstado.adapter = adaptador
 
         val gson = Gson()
         val reserva = gson.fromJson<Reserva>(intent.getStringExtra("reserva"), Reserva::class.java)
+
+        when(reserva.idProducto) {
+            "1" -> dRvImgProducto.setImageResource(R.drawable.maleta_pequenia)
+            "2" -> dRvImgProducto.setImageResource(R.drawable.maleta_grande)
+            "3" -> dRvImgProducto.setImageResource(R.drawable.maleta_extra)
+        }
 
         dRvTxtId.text = "ID: "+String.format("%06d", reserva.idReserva.toInt())
         dRvTxtFsolicitud.text = reserva.f_solicitud
@@ -47,13 +57,21 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         dRvEditHrecogida.setText(reserva.h_recogida)
         dRvEditHentrega.setText(reserva.h_entrega)
 
-
+        for (i in reservaEstados.indices) {
+            if (reservaEstados[i].equals(reserva.estado)) {
+                dRvSpinnerEstado.setSelection(i)
+                break
+            }
+        }
 
         dRvBtnModificarReserva.setOnClickListener() {
             if (!dRvSpinnerEstado.selectedItem.toString().equals(reserva.estado)) {
                 reserva.estado = dRvSpinnerEstado.selectedItem.toString()
                 if (ControlReserva.updateReserva(this,reserva)) {
                     Toast.makeText(this, "Reserva modificada correctamente", Toast.LENGTH_SHORT).show()
+                    val reservasIntent = Intent(this, ReservasActivity::class.java)
+                    reservasIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(reservasIntent)
                 } else {
                     Toast.makeText(this, "Error al modificar la reserva", Toast.LENGTH_SHORT).show()
                 }
@@ -61,6 +79,26 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
+        iconoMain.setOnClickListener {
+            startActivity<MainActivity>()
+        }//onClick
+
+        iconoReservas.setOnClickListener{
+            startActivity<ReservasActivity>()
+        }//onClick
+
+        iconoMain.setOnClickListener {
+            startActivity<MainActivity>()
+        }//onClick
+
+        iconoPerfil.setOnClickListener {
+            if (ControlCliente.getClienteName() != null) {
+                startActivity<ProfileActivity>()
+            }//logged
+            else {
+                startActivity<LoginActivity>()
+            }//not logged
+        }//onClick
     }
 
     private fun createMapFragment() {

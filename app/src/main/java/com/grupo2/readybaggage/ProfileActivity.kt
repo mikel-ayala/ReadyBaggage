@@ -111,7 +111,6 @@ class ProfileActivity : AppCompatActivity() {
 
         iconoReservas.setOnClickListener{
             startActivity<ReservasActivity>()
-
         }//onClick
 
     }//onCreate
