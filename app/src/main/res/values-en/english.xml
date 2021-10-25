@@ -71,5 +71,5 @@
     <string name="total">Total: </string>
 
     <!--Activity detalles reserva-->
-    <string name="estado">Current status</string>
+    <string name="estadoR">Current status</string>
 </resources>

@@ -207,7 +207,7 @@
                         android:layout_marginStart="30dp"
                         android:layout_weight="0.5"
                         android:gravity="center_vertical"
-                        android:text="@string/estado"
+                        android:text="@string/estadoR"
                         android:textSize="18sp" />
                     <Spinner
                         android:id="@+id/dRvSpinnerEstado"
