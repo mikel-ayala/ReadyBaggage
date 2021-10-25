@@ -2,7 +2,10 @@ package com.grupo2.readybaggage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.children
+import com.google.android.material.textfield.TextInputLayout
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import com.grupo2.readybaggage.Utils.Companion.validationReg
 import kotlinx.android.synthetic.main.activity_register.*
@@ -20,7 +23,7 @@ class RegisterActivity : AppCompatActivity() {
 
                 if (!ControlCliente.existeCliente(this,regViewTxtEmail.text.toString())){
 
-                    if (ControlCliente.registrarCliente(this,  regViewTxtEmail.text.toString(), regViewTxtPass.text.toString(),regViewTxtNombre.text.toString(),regViewTxtApellidos.text.toString(),regViewTxtTelefono.text.toString())) {
+                    if (ControlCliente.registrarCliente(this, findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtEmail).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtPass).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtNombre).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtApellidos).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtTelefono).toString())) {
 
                         startActivity<LoginActivity>()
                         Toast.makeText(this, "Registrado correctamente @"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()

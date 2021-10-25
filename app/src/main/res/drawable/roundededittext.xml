@@ -6,11 +6,6 @@
                 android:radius="110dp"   />
             <solid
                 android:color="@color/smoothGray" />
-            <padding
-                android:left="10dp"
-                android:top="10dp"
-                android:right="10dp"
-                android:bottom="10dp" />
         </shape>
     </item>
 </selector>

@@ -7,91 +7,162 @@
     android:scrollbarSize="32sp"
     tools:context=".RegisterActivity">
 
-    <EditText
-        android:id="@+id/regViewTxtNombre"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/roundededittext"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint="@string/nombre_reg"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/regViewTxtTelefono"
-        app:layout_constraintStart_toStartOf="@+id/regViewTxtTelefono" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/regViewTxtApellidos"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/roundededittext"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint="@string/apellido"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/regViewTxtTelefono"
-        app:layout_constraintEnd_toEndOf="@+id/regViewTxtTelefono"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/regViewTxtNombre" />
-
-    <EditText
-        android:id="@+id/regViewTxtTelefono"
+    <TextView
+        android:id="@+id/textView9"
         android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="296dp"
-        android:background="@drawable/roundededittext"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint="@string/telefono_reg"
-        android:inputType="number"
-        android:maxLength="9"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="ReadyBaggage"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-    <EditText
-        android:id="@+id/regViewTxtEmail"
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/regViewTxtNombreLayout"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/nombre_reg"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regViewTxtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/roundededittext"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/regViewTxtApellidosLayout"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/apellido"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/regViewTxtNombreLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regViewTxtApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/roundededittext"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/regViewTxtTelefonoLayout"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/roundededittext"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:hint="@string/telefono_reg"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtApellidosLayout"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtNombreLayout"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtNombreLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regViewTxtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/roundededittext"
+            android:inputType="number"
+            android:maxLength="9" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/regViewTxtEmailLayout"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
         android:hint="@string/email_reg"
-        android:inputType="textPersonName|textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/regViewTxtTelefono"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtTelefonoLayout"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/regViewTxtTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/regViewTxtTelefono" />
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtTelefonoLayout"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtTelefonoLayout"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
-    <EditText
-        android:id="@+id/regViewTxtPass"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regViewTxtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/roundededittext"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/regViewTxtPassLayout"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/roundededittext"
         android:ems="10"
-        android:gravity="center_vertical"
         android:hint="@string/pass_reg"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/regViewTxtEmail"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtEmailLayout"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/regViewTxtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/regViewTxtEmail" />
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtEmailLayout"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtEmailLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regViewTxtPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/roundededittext"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/regViewBtnReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/roundedbutton"
         android:text="@string/registerTxtBtn"
-        app:layout_constraintEnd_toEndOf="@+id/regViewTxtPass"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/regViewTxtPassLayout"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/regViewTxtPass"
-        app:layout_constraintTop_toBottomOf="@+id/regViewTxtPass" />
+        app:layout_constraintStart_toStartOf="@+id/regViewTxtPassLayout"
+        app:layout_constraintTop_toBottomOf="@+id/regViewTxtPassLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/regViewTextLogin"
@@ -103,8 +174,10 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regViewBtnReg"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/regViewBtnLogin"
@@ -116,18 +189,7 @@
         android:textColor="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toEndOf="@+id/regViewTextLogin" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="ReadyBaggage"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/regViewTxtNombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
