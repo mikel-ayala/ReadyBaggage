@@ -17,6 +17,12 @@
     <string name="registerTxtBtn">Erregistratu</string>
     <string name="registerTxt">Oraindik ez zara kide?</string>
 
+    <!--Activity de registro -->
+    <string name="nombre_reg">Izena*</string>
+    <string name="telefono_reg">Telefono zk.*</string>
+    <string name="email_reg">Posta elektronikoa*</string>
+    <string name="pass_reg">Pasahitza*</string>
+
     <!--Perfil de usuario-->
     <string name="nombre">Izena</string>
     <string name="apellido">Abizenak</string>
@@ -57,7 +63,10 @@
     <string name="email_error">Egiaztatu posta elektronikoa</string>
     <string name="pass_error">Egiaztatu pasahitza</string>
     <string name="antiguedad">Kidea noiztik: </string>
-    <string name="subtotal">Sub Total: </string>
-    <string name="iva">Iva</string>
-    <string name="total">Total: </string>
+    <string name="subtotal">Subtotala: </string>
+    <string name="iva">BEZ</string>
+    <string name="total">Totala: </string>
+
+    <!--Activity detalles reserva-->
+    <string name="estado">Uneko egoera</string>
 </resources>
