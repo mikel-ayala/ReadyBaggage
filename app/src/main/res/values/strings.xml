@@ -17,10 +17,10 @@
     <string name="registerTxtBtn">Regístrate</string>
 
     <!--Activity de registro -->
-    <string name="nombre_reg">Name*</string>
-    <string name="telefono_reg">Phone number*</string>
-    <string name="email_reg">Email*</string>
-    <string name="pass_reg">Password*</string>
+    <string name="nombre_reg">Nombre*</string>
+    <string name="telefono_reg">Nº teléfono*</string>
+    <string name="email_reg">Correo electrónico*</string>
+    <string name="pass_reg">Contraseña*</string>
 
     <!--Comprobaciones registro y login-->
     <string name="nombre_error">Comprueba el nombre</string>
