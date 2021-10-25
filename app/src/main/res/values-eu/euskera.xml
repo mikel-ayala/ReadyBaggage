@@ -23,6 +23,12 @@
     <string name="email_reg">Posta elektronikoa*</string>
     <string name="pass_reg">Pasahitza*</string>
 
+    <!--Comprobaciones registro y login-->
+    <string name="nombre_error">Egiaztatu izena</string>
+    <string name="telefono_error">Egiaztatu telefonoa</string>
+    <string name="email_error">Egiaztatu posta elektronikoa</string>
+    <string name="pass_error">Egiaztatu pasahitza</string>
+
     <!--Perfil de usuario-->
     <string name="nombre">Izena</string>
     <string name="apellido">Abizenak</string>
@@ -58,10 +64,7 @@
     <string name="hora_ent">Entrega ordua</string>
     <string name="metodo_pago">"Ordaintzeko metodoa:  "</string>
     <string name="n_maletas">"Maleta kopurua:  "</string>
-    <string name="nombre_error">Egiaztatu izena</string>
-    <string name="telefono_error">Egiaztatu telefonoa</string>
-    <string name="email_error">Egiaztatu posta elektronikoa</string>
-    <string name="pass_error">Egiaztatu pasahitza</string>
+
     <string name="antiguedad">Kidea noiztik: </string>
     <string name="subtotal">Subtotala: </string>
     <string name="iva">BEZ</string>
