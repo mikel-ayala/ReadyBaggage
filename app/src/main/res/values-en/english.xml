@@ -17,6 +17,18 @@
     <string name="registerTxtBtn">Register</string>
     <string name="registerTxt">Not a member yet?</string>
 
+    <!--Activity de registro -->
+    <string name="nombre_reg">Name*</string>
+    <string name="telefono_reg">Phone number*</string>
+    <string name="email_reg">Email*</string>
+    <string name="pass_reg">Password*</string>
+
+    <!--Comprobaciones registro y login-->
+    <string name="nombre_error">Check your name</string>
+    <string name="telefono_error">Check your phone number</string>
+    <string name="email_error">Check your email</string>
+    <string name="pass_error">Check your password</string>
+
     <!--Perfil de usuario-->
     <string name="nombre">Name</string>
     <string name="apellido">Surname</string>
@@ -52,12 +64,12 @@
     <string name="hora_ent">Delivery hour</string>
     <string name="metodo_pago">"Payment method: "</string>
     <string name="n_maletas">"Bag quantity: "</string>
-    <string name="nombre_error">Check your name</string>
-    <string name="telefono_error">Check your phone number</string>
-    <string name="email_error">Check your email</string>
-    <string name="pass_error">Check your password</string>
+
     <string name="antiguedad">Member since: </string>
-    <string name="subtotal">Sub Total: </string>
-    <string name="iva">Iva</string>
+    <string name="subtotal">Subtotal: </string>
+    <string name="iva">VAT</string>
     <string name="total">Total: </string>
+
+    <!--Activity detalles reserva-->
+    <string name="estadoR">Current status</string>
 </resources>

@@ -16,6 +16,12 @@
     <string name="registerTxt">¿Todavia no eres miembro?</string>
     <string name="registerTxtBtn">Regístrate</string>
 
+    <!--Activity de registro -->
+    <string name="nombre_reg">Name*</string>
+    <string name="telefono_reg">Phone number*</string>
+    <string name="email_reg">Email*</string>
+    <string name="pass_reg">Password*</string>
+
     <!--Comprobaciones registro y login-->
     <string name="nombre_error">Comprueba el nombre</string>
     <string name="telefono_error">Comprueba el telefono</string>
@@ -61,7 +67,9 @@
     <string name="n_maletas">Numero de maletas: </string>
     <string name="antiguedad">Miembro desde: </string>
     <string name="subtotal">Sub Total: </string>
-    <string name="iva">Iva</string>
+    <string name="iva">IVA</string>
     <string name="total">Total: </string>
 
+    <!--Activity detalles reserva-->
+    <string name="estadoR">Estado actual</string>
 </resources>

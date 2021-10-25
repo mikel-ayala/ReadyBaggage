@@ -92,14 +92,15 @@
                     android:layout_height="match_parent"
                     android:weightSum="1"
                     android:layout_marginTop="10dp">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="Fecha Recogida"
-                        android:layout_weight="0.5"
                         android:layout_marginStart="30dp"
+                        android:layout_weight="0.5"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"/>
+                        android:text="@string/fecha_rec"
+                        android:textSize="18sp" />
                     <EditText
                         android:id="@+id/dRvEditFrecogida"
                         android:layout_width="0dp"
@@ -118,14 +119,15 @@
                     android:layout_height="match_parent"
                     android:weightSum="1"
                     android:layout_marginTop="10dp">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="Fecha Entrega"
-                        android:layout_weight="0.5"
                         android:layout_marginStart="30dp"
+                        android:layout_weight="0.5"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"/>
+                        android:text="@string/fecha_ent"
+                        android:textSize="18sp" />
                     <EditText
                         android:id="@+id/dRvEditFentrega"
                         android:layout_width="0dp"
@@ -144,14 +146,15 @@
                     android:layout_height="match_parent"
                     android:weightSum="1"
                     android:layout_marginTop="10dp">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="Hora Recogida"
-                        android:layout_weight="0.5"
                         android:layout_marginStart="30dp"
+                        android:layout_weight="0.5"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"/>
+                        android:text="@string/hora_rec"
+                        android:textSize="18sp" />
                     <EditText
                         android:id="@+id/dRvEditHrecogida"
                         android:layout_width="0dp"
@@ -170,14 +173,15 @@
                     android:layout_height="match_parent"
                     android:weightSum="1"
                     android:layout_marginTop="10dp">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="Hora Entrega"
-                        android:layout_weight="0.5"
                         android:layout_marginStart="30dp"
+                        android:layout_weight="0.5"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"/>
+                        android:text="@string/hora_ent"
+                        android:textSize="18sp" />
                     <EditText
                         android:id="@+id/dRvEditHentrega"
                         android:layout_width="0dp"
@@ -196,14 +200,15 @@
                     android:layout_height="match_parent"
                     android:weightSum="1"
                     android:layout_marginTop="10dp">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="Estado Actual"
-                        android:layout_weight="0.5"
                         android:layout_marginStart="30dp"
+                        android:layout_weight="0.5"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"/>
+                        android:text="@string/estadoR"
+                        android:textSize="18sp" />
                     <Spinner
                         android:id="@+id/dRvSpinnerEstado"
                         android:layout_width="0dp"
