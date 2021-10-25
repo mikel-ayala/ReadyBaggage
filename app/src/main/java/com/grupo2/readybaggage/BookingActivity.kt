@@ -250,6 +250,7 @@ class BookingActivity : AppCompatActivity() {
     //Mostrar horas seleccionadas
     private fun showTimePickerDialog(elementId: Int) {
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
+        timePicker.setLimita()
         timePicker.show(supportFragmentManager, "timePicker")
     }//showTimePickerDialog
 
