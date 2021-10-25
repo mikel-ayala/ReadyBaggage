@@ -17,12 +17,7 @@ class ReservasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reservas)
         var isAdmin: Boolean = intent.getBooleanExtra("isAdmin",false)
-        println("*****Estado: "+isAdmin.toString())
-       // if (isAdmin != null) {
             reservasList = ControlReserva.getAllReservas(this, !isAdmin)
-       // } else {
-       //     reservasList = ControlReserva.getAllReservas(this, true)
-       // }
         if (reservasList != null) {
             reservasList!!.sortByDescending{it.idReserva}
             initRecycler(reservasList!!)
