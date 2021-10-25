@@ -52,10 +52,10 @@
     <string name="hora_ent">Entrega ordua</string>
     <string name="metodo_pago">"Ordaintzeko metodoa:  "</string>
     <string name="n_maletas">"Maleta kopurua:  "</string>
-    <string name="nombre_error">a</string>
-    <string name="telefono_error">a</string>
-    <string name="email_error">a</string>
-    <string name="pass_error">aa</string>
+    <string name="nombre_error">Egiaztatu izena</string>
+    <string name="telefono_error">Egiaztatu telefonoa</string>
+    <string name="email_error">Egiaztatu posta elektronikoa</string>
+    <string name="pass_error">Egiaztatu pasahitza</string>
     <string name="antiguedad">Kidea noiztik: </string>
     <string name="subtotal">Sub Total: </string>
     <string name="iva">Iva</string>

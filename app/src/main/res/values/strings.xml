@@ -20,7 +20,7 @@
     <string name="nombre_error">Comprueba el nombre</string>
     <string name="telefono_error">Comprueba el telefono</string>
     <string name="email_error">Comprueba el correo electronico</string>
-    <string name="pass_error">Comprueba la contraseina</string>
+    <string name="pass_error">Comprueba la contraseña</string>
 
     <!--Perfil de usuario-->
     <string name="nombre">Nombre</string>

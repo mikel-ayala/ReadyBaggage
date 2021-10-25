@@ -4,8 +4,6 @@ import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
 import java.lang.Exception
-import java.text.SimpleDateFormat
-import java.util.*
 
 class ControlCliente() {
     companion object {

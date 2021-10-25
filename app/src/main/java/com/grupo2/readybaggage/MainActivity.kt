@@ -2,7 +2,6 @@ package com.grupo2.readybaggage
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.grupo2.readybaggage.Utils.Companion.showPopup
