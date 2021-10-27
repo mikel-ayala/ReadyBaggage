@@ -36,7 +36,7 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             dRvSpinnerEstado.setClickable(false);
         }
 
-        val reservaEstados = arrayOf("Pendiente","En almacen","En entrega","Entregado")
+        val reservaEstados = arrayOf(getString(R.string.actualizar),"En almacen","En entrega","Entregado")
         val adaptador = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, reservaEstados)
         dRvSpinnerEstado.adapter = adaptador
 
@@ -58,7 +58,11 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         dRvEditHentrega.setText(reserva.h_entrega)
 
         for (i in reservaEstados.indices) {
-            if (reservaEstados[i].equals(reserva.estado)) {
+            var estadoFormated: String = reserva.estado.replace("estado_","")
+            var estadoFormatedToInt: Int = estadoFormated.toInt()
+            if (i == estadoFormatedToInt) {
+                //dRvSpinnerEstado.setSelection(i)
+                //dRvSpinnerEstado.selectedItemPosition
                 dRvSpinnerEstado.setSelection(i)
                 break
             }

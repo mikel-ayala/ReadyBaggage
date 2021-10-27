@@ -226,6 +226,18 @@ class BookingActivity : AppCompatActivity() {
     private fun showDatePickerDialog(elementId: Int) {
 
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year,elementId) }
+        if (elementId == 1) {
+            if (bookingViewEditFecEntrega.text.toString().trim() != "") {
+                var (vDay,vMonth,vYear) = getDateValues(bookingViewEditFecEntrega.text.toString())
+                datePicker.setDateMinMaxLimit(elementId,vDay,vMonth,vYear)
+            }
+        }
+        if (elementId == 2) {
+                if (bookingViewEditFecReco.text.toString().trim() != "") {
+                var (vDay,vMonth,vYear) = getDateValues(bookingViewEditFecReco.text.toString())
+                datePicker.setDateMinMaxLimit(elementId,vDay,vMonth,vYear)
+            }
+        }
         datePicker.show(supportFragmentManager, "datePicker")
 
     }//showDatePickerDialog
@@ -233,26 +245,33 @@ class BookingActivity : AppCompatActivity() {
     //Fecha de recogida o entrega
     private fun onDateSelected(day: Int, month: Int, year: Int, elementoPicker: Int) {
 
-        if (elementoPicker == 1) {
-
-            //bookingViewEditFecReco.setText("$day/$month/$year")
-            bookingViewEditFecReco.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
-
-        }//if 1
-        else {
-
-            bookingViewEditFecReco.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
-
-        }//if not 1
+        when (elementoPicker) {
+            1 -> bookingViewEditFecReco.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
+            2 -> bookingViewEditFecEntrega.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
+        }
 
     }//onDateSelected
 
     //Mostrar horas seleccionadas
     private fun showTimePickerDialog(elementId: Int) {
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
-        timePicker.setLimita()
+
+        //timePicker.setLimita()
         timePicker.show(supportFragmentManager, "timePicker")
     }//showTimePickerDialog
+
+    private fun getDateValues(pDateString: String): Triple<Int, Int, Int> {
+        var value = pDateString
+        val lstValues: List<Int> = value.split("/").map { it -> it.trim().toInt() }
+        return Triple(lstValues[0],lstValues[1],lstValues[2])
+    }
+
+    fun fixDateTime() {
+        //Este metodo comprueba si la hora de entrega es inferior a la recogida, en tal caso, se
+        //comprobara la fehca, si las fecha son iguales, la fecha de entrega se aumentara en un dia.
+    }
+
+
 
     //Hora de recogida o entrega
     private fun onTimeSelected(time: String, elementoPicker: Int) {
