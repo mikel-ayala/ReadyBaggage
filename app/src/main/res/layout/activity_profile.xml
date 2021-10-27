@@ -145,7 +145,8 @@
                             android:ems="10"
                             android:hint="@string/nombre"
                             android:inputType="textPersonName"
-                            tools:ignore="TouchTargetSizeCheck" />
+                            tools:ignore="TouchTargetSizeCheck"
+                            android:padding="10dp"/>
 
                         <EditText
                             android:id="@+id/profileViewTextApellidos"
@@ -156,7 +157,8 @@
                             android:ems="10"
                             android:hint="@string/apellido"
                             android:inputType="textPersonName"
-                            tools:ignore="TouchTargetSizeCheck" />
+                            tools:ignore="TouchTargetSizeCheck"
+                            android:padding="10dp"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -175,7 +177,8 @@
                     android:ems="10"
                     android:hint="@string/telefono"
                     android:inputType="number"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:padding="10dp"/>
 
                 <TextView
                     android:id="@+id/profileViewTxtEmail"
@@ -192,7 +195,8 @@
                     android:ems="10"
                     android:hint="@string/email"
                     android:inputType="text"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:padding="10dp"/>
 
                 <TextView
                     android:id="@+id/profileViewTxtPassword"
@@ -210,7 +214,8 @@
                     android:ems="10"
                     android:hint="@string/pass"
                     android:inputType="textPassword"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:padding="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"

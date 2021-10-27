@@ -24,8 +24,5 @@ class TimePickerFragment(val listener:(String) -> Unit) : DialogFragment(), Time
         return picker
     }
 
-    fun setLimita() {
-        println("********TESTING PARAMETER BEFORE" )
-        timeasd = 9
-    }
+
 }
