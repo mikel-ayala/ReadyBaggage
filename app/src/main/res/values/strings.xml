@@ -76,10 +76,10 @@
 
     <!--Detalles reserva-->
     <string name="modReserva">Modificar reserva</string>
-    <string name="estado1">pendiente</string>
-    <string name="estado2">en almacén</string>
-    <string name="estado3">en entrega</string>
-    <string name="estado4">entregado</string>
+    <string name="estado0">Pendiente</string>
+    <string name="estado1">En almacén</string>
+    <string name="estado2">En entrega</string>
+    <string name="estado3">Entregado</string>
 
     <!--Activity de contacto-->
     <string name="nosotros">Hola, somos ReadyBaggage</string>

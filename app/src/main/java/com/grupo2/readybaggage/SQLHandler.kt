@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 
 private var tCliente: String = "create table cliente(idCliente INTEGER PRIMARY KEY AUTOINCREMENT, email text UNIQUE NOT NULL, pass text NOT NULL, nombre text NOT NULL, apellidos text, telefono text NOT NULL, f_registro text DEFAULT CURRENT_DATE, is_empleado INTEGER DEFAULT 0)"
 private var tProducto: String = "create table producto(idProducto real PRIMARY KEY AUTOINCREMENT, nombre text not null, desc text not null, precio real not null)"
-private var tReserva: String = "create table reserva(idReserva INTEGER PRIMARY KEY AUTOINCREMENT, idCliente INTEGER not null, idProducto INTEGER not null, cantidad INTEGER not null, f_solicitud text not null, origen text not null, destino text not null, fRecogida text not null, fEntrega text not null, hRecogida text not null, hEntrega text not null, metodoPago text not null, estado text not null default 'estado_1', is_nocturno INTEGER not null default 0, FOREIGN KEY(idCliente) REFERENCES cliente(idCliente))"
+private var tReserva: String = "create table reserva(idReserva INTEGER PRIMARY KEY AUTOINCREMENT, idCliente INTEGER not null, idProducto INTEGER not null, cantidad INTEGER not null, f_solicitud text not null, origen text not null, destino text not null, fRecogida text not null, fEntrega text not null, hRecogida text not null, hEntrega text not null, metodoPago text not null, estado text not null default 'estado0', FOREIGN KEY(idCliente) REFERENCES cliente(idCliente))"
 
 class SQLHandler(context: Context, name: String, factory: SQLiteDatabase.CursorFactory?, version: Int): SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase) {

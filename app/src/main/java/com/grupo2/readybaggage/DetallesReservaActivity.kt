@@ -26,6 +26,8 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_detallesreserva)
         createMapFragment()
 
+        var lastEstado: Int = 0
+
         if (!ControlCliente.isAdmin()) {
             //bookingViewTxtIva.isEnabled = false
             //bookingViewTxtIva.visibility = View.GONE
@@ -35,7 +37,7 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             dRvSpinnerEstado.setClickable(false);
         }
 
-        val reservaEstados = arrayOf(getString(R.string.actualizar),"En almacen","En entrega","Entregado")
+        val reservaEstados = arrayOf(getString(R.string.estado0),getString(R.string.estado1),getString(R.string.estado2),getString(R.string.estado3))
         val adaptador = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, reservaEstados)
         dRvSpinnerEstado.adapter = adaptador
 
@@ -57,19 +59,20 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         dRvEditHentrega.setText(reserva.h_entrega)
 
         for (i in reservaEstados.indices) {
-            var estadoFormated: String = reserva.estado.replace("estado_","")
+            var estadoFormated: String = reserva.estado.replace("estado","")
             var estadoFormatedToInt: Int = estadoFormated.toInt()
             if (i == estadoFormatedToInt) {
-                //dRvSpinnerEstado.setSelection(i)
-                //dRvSpinnerEstado.selectedItemPosition
+                lastEstado = i
                 dRvSpinnerEstado.setSelection(i)
                 break
             }
         }
 
         dRvBtnModificarReserva.setOnClickListener() {
-            if (!dRvSpinnerEstado.selectedItem.toString().equals(reserva.estado)) {
-                reserva.estado = dRvSpinnerEstado.selectedItem.toString()
+            var newEstado: Int = dRvSpinnerEstado.selectedItemPosition
+            if (newEstado != lastEstado) {
+                //lastEstado = dRvSpinnerEstado.selectedItemPosition
+                reserva.estado = "estado"+newEstado
                 if (ControlReserva.updateReserva(this,reserva)) {
                     Toast.makeText(this, "Reserva modificada correctamente", Toast.LENGTH_SHORT).show()
                     val reservasIntent = Intent(this, ReservasActivity::class.java)
@@ -78,7 +81,6 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
                 } else {
                     Toast.makeText(this, "Error al modificar la reserva", Toast.LENGTH_SHORT).show()
                 }
-
             }
         }
 

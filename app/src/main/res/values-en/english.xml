@@ -78,8 +78,8 @@
 
     <!--Activity de contacto-->
     <string name="nosotros">Hi, we\'re ReadyBaggage</string>
-    <string name="estado1">pending</string>
-    <string name="estado2">in warehouse</string>
-    <string name="estado3">on delivery</string>
-    <string name="estado4">delivered</string>
+    <string name="estado0">Pending</string>
+    <string name="estado1">In warehouse</string>
+    <string name="estado2">On delivery</string>
+    <string name="estado3">Delivered</string>
 </resources>

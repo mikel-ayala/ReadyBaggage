@@ -12,7 +12,6 @@ class TimePickerFragment(val listener:(String) -> Unit) : DialogFragment(), Time
     private var timeasd: Int = 5
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        //listener("$hourOfDay:$minute")
         listener(String.format("%02d", hourOfDay)+":"+String.format("%02d", minute))
     }
 

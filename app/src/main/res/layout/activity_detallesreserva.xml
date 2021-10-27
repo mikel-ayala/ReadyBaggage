@@ -85,7 +85,8 @@
                     android:hint="Nombre y apellidos"
                     android:focusable="false"
                     android:clickable="false"
-                    android:cursorVisible="false"/>
+                    android:cursorVisible="false"
+                    android:padding="10dp"/>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -111,7 +112,8 @@
                         android:hint="F. Recogida"
                         android:focusable="false"
                         android:clickable="false"
-                        android:cursorVisible="false"/>
+                        android:cursorVisible="false"
+                        android:padding="10dp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -138,7 +140,8 @@
                         android:hint="F. Entrega"
                         android:focusable="false"
                         android:clickable="false"
-                        android:cursorVisible="false"/>
+                        android:cursorVisible="false"
+                        android:padding="10dp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -165,7 +168,8 @@
                         android:hint="H. Recogida"
                         android:focusable="false"
                         android:clickable="false"
-                        android:cursorVisible="false"/>
+                        android:cursorVisible="false"
+                        android:padding="10dp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -192,7 +196,8 @@
                         android:hint="H. Entrega"
                         android:focusable="false"
                         android:clickable="false"
-                        android:cursorVisible="false"/>
+                        android:cursorVisible="false"
+                        android:padding="10dp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -215,7 +220,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="0.5"
                         android:layout_marginEnd="20dp"
-                        android:background="@drawable/roundededittext"/>
+                        android:background="@drawable/roundededittext"
+                        android:padding="10dp"/>
                 </LinearLayout>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"

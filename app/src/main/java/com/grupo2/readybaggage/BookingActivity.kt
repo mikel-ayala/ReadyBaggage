@@ -207,9 +207,7 @@ class BookingActivity : AppCompatActivity() {
     //Actualizar cantidad
     private fun actualizarResumen(qMaletas: Int) {
 
-//        bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
         bookingViewTxtTotalMaletas.text = getString(R.string.n_maletas) + qMaletas.toString()
-//        bookingViewTxtTotal.text = "Total: " + (qMaletas * precioProducto!!) + "€"
         var preciosiniva: Double = (qMaletas * precioProducto!!).toDouble()
         var precioiva: Double = ((preciosiniva * iva).toDouble() / 100)
         var preciototal: Double = preciosiniva+precioiva
@@ -253,33 +251,38 @@ class BookingActivity : AppCompatActivity() {
     //Mostrar horas seleccionadas
     private fun showTimePickerDialog(elementId: Int) {
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
-
-        //timePicker.setLimita()
         timePicker.show(supportFragmentManager, "timePicker")
     }//showTimePickerDialog
 
     private fun getDateValues(pDateString: String): Triple<Int, Int, Int> {
-        var value = pDateString
-        val lstValues: List<Int> = value.split("/").map { it -> it.trim().toInt() }
+        val lstValues: List<Int> = pDateString.split("/").map { it -> it.trim().toInt() }
         return Triple(lstValues[0],lstValues[1],lstValues[2])
     }
-
-    fun fixDateTime() {
-        //Este metodo comprueba si la hora de entrega es inferior a la recogida, en tal caso, se
-        //comprobara la fehca, si las fecha son iguales, la fecha de entrega se aumentara en un dia.
-    }
-
-
 
     //Hora de recogida o entrega
     private fun onTimeSelected(time: String, elementoPicker: Int) {
         if (elementoPicker == 1) {
             bookingViewEditHRecogida.setText("$time")
+            fixEntregaTime()
         }//if 1
         else {
             bookingViewEditHEntrega.setText("$time")
+            fixEntregaTime()
         }//if not 1
 
     }//onTimeSelected
+
+    fun fixEntregaTime() {
+        //Este metodo comprueba si la hora de entrega es inferior a la recogida, en tal caso, se
+        //comprobara la fehca, si las fecha son iguales, la fecha de entrega se aumentara en un dia.
+        bookingViewEditHEntrega.setError(null)
+        if (!bookingViewEditHEntrega.text.toString().isEmpty() && !bookingViewEditHRecogida.text.toString().isEmpty()) {
+            if (bookingViewEditFecReco.text.toString().equals(bookingViewEditFecEntrega.text.toString())) {
+                val lstHoraRecogida: List<Int> = bookingViewEditHRecogida.text.toString().split(":").map { it -> it.trim().toInt() }
+                val lstHoraEntrega: List<Int> = bookingViewEditHEntrega.text.toString().split(":").map { it -> it.trim().toInt() }
+            }
+        }
+
+    }
 
 }//BookingActivity

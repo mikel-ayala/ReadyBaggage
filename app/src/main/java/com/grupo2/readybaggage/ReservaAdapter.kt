@@ -24,14 +24,18 @@ ReservaAdapter (var mContext: Context, val reservasList: MutableList<Reserva>): 
 
     override fun getItemCount(): Int = reservasList.size
 
+
+    fun getStringIdentifier(context: Context, name: String?): Int {
+        return context.resources.getIdentifier(name, "string", context.packageName)
+    }
     inner class ReservaHolder(val view: View): RecyclerView.ViewHolder(view) {
         fun render(reserva: Reserva) {
 //            view.itemReservasId.text = reserva.idReserva
             view.itemReservasId.text = "ID: "+String.format("%06d", reserva.idReserva.toInt())
-            view.itemReservasNombre.text = "Nombre: "+reserva.nombreCliente + " " + reserva.apellidoCliente
-            view.itemReservasOrigen.text = "Origen: "+reserva.origen
-            view.itemReservasDestino.text = "Destino: "+reserva.destino
-            view.itemReservasEstado.text = reserva.estado
+            view.itemReservasNombre.text = view.context.getString(R.string.nombre) + ": "+reserva.nombreCliente + " " + reserva.apellidoCliente
+            view.itemReservasOrigen.text = view.context.getString(R.string.origen) + ": "+reserva.origen
+            view.itemReservasDestino.text = view.context.getString(R.string.destino) + ": "+reserva.destino
+            view.itemReservasEstado.text = view.context.getString(getStringIdentifier(view.context,reserva.estado))
             when (reserva.estado) {
                 "Pendiente" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_orange)
                 "En almacen" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_purple)

@@ -78,8 +78,8 @@
 
     <!--Activity de contacto-->
     <string name="nosotros">Kaixo, ReadyBaggage gara</string>
-    <string name="estado1">hartu gabe</string>
-    <string name="estado2">biltegian</string>
-    <string name="estado3">entregatzen</string>
-    <string name="estado4">entregatua</string>
+    <string name="estado0">Hartu gabe</string>
+    <string name="estado1">Biltegian</string>
+    <string name="estado2">Entregatzen</string>
+    <string name="estado3">Entregatua</string>
 </resources>
