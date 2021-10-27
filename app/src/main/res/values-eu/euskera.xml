@@ -71,5 +71,15 @@
     <string name="total">Totala: </string>
 
     <!--Activity detalles reserva-->
-    <string name="estadoR">Uneko egoera</string>
+    <string name="estadoReser">Uneko egoera</string>
+
+    <!--Detalles reserva-->
+    <string name="modReserva">Erreserba aldatu</string>
+
+    <!--Activity de contacto-->
+    <string name="nosotros">Kaixo, ReadyBaggage gara</string>
+    <string name="estado1">hartu gabe</string>
+    <string name="estado2">biltegian</string>
+    <string name="estado3">entregatzen</string>
+    <string name="estado4">entregatua</string>
 </resources>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".contactoActivity">
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/menu_superior"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content" />
+
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="532dp"
+        app:layout_constraintBottom_toTopOf="@+id/include4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include5"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/nosotros"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tellus blandit felis suscipit tempor. Donec sit amet sem quis sapien auctor convallis. Duis dignissim bibendum ante, ut gravida justo interdum eget. Nulla ornare arcu quis varius facilisis. Vivamus eu lectus lacinia justo maximus cursus id eget lacus. Morbi placerat tincidunt dapibus. "
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imageButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/facebook"
+                            app:tint="#3b5998"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/twitter"
+                            app:tint="#00acee"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/instagram"
+                            app:tint="#262626 "
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imageButton5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/linkedin"
+                            app:tint="#0e76a8"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/whatsapp"
+                            app:tint="#25d366"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+34 944 10 58 87" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="contacto@readybaggage.com" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/menu_inferior"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="651dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

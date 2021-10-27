@@ -71,5 +71,16 @@
     <string name="total">Total: </string>
 
     <!--Activity detalles reserva-->
-    <string name="estadoR">Estado actual</string>
+    <string name="estadoReser">Estado actual</string>
+
+
+    <!--Detalles reserva-->
+    <string name="modReserva">Modificar reserva</string>
+    <string name="estado1">pendiente</string>
+    <string name="estado2">en almacén</string>
+    <string name="estado3">en entrega</string>
+    <string name="estado4">entregado</string>
+
+    <!--Activity de contacto-->
+    <string name="nosotros">Hola, somos ReadyBaggage</string>
 </resources>
