@@ -22,9 +22,10 @@ class LoginActivity : AppCompatActivity() {
         //Login
         loginViewBtnLogin.setOnClickListener() {
             //Comprobar los datos
+
             if (validationLog(this)) {
 
-                if (ControlCliente.logCliente(this,logViewTextEmail.text.toString(), logViewTextPass.text.toString())) {
+                if (ControlCliente.logCliente(this,findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.logViewTextEmail).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.logViewTextPass).text.toString())) {
                     if (Preferences.setUserPreferences(this, "userdata","email",logViewTextEmail.text.toString()) && Preferences.setUserPreferences(this, "userdata","password",logViewTextPass.text.toString())) {
                         print("[DEBUG] User data guardada correctamente")
                     } else {

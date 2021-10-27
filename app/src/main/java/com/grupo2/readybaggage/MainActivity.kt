@@ -64,16 +64,31 @@ class MainActivity : AppCompatActivity() {
         //Ir al perfil
         iconoPerfil.setOnClickListener {
             if (ControlCliente.getClienteName() != null) {
+
                 startActivity<ProfileActivity>()
+
             }//logged
             else {
+
                 startActivity<LoginActivity>()
+
             }//not logged
+
         }//onClick
 
         //Ir a reservas
         iconoReservas.setOnClickListener{
-            startActivity<ReservasActivity>()
+            if (ControlCliente.getClienteName() != null) {
+
+                startActivity<ReservasActivity>()
+
+            }//logged
+            else {
+
+                startActivity<LoginActivity>()
+
+            }//not logged
+
         }//onClick
 
     }//onCreate

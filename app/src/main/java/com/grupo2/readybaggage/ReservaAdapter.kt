@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.item_reserva.view.*
 
-class ReservaAdapter (var mContext: Context, val reservasList: MutableList<Reserva>): RecyclerView.Adapter<ReservaAdapter.ReservaHolder>() {
+class
+ReservaAdapter (var mContext: Context, val reservasList: MutableList<Reserva>): RecyclerView.Adapter<ReservaAdapter.ReservaHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReservaHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return ReservaHolder(layoutInflater.inflate(R.layout.item_reserva, parent, false))
@@ -19,6 +20,7 @@ class ReservaAdapter (var mContext: Context, val reservasList: MutableList<Reser
     override fun onBindViewHolder(holder: ReservaHolder, position: Int) {
         holder.render(reservasList[position])
     }
+
 
     override fun getItemCount(): Int = reservasList.size
 

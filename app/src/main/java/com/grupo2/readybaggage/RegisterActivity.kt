@@ -23,7 +23,7 @@ class RegisterActivity : AppCompatActivity() {
 
                 if (!ControlCliente.existeCliente(this,regViewTxtEmail.text.toString())){
 
-                    if (ControlCliente.registrarCliente(this, findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtEmail).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtPass).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtNombre).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtApellidos).toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtTelefono).toString())) {
+                    if (ControlCliente.registrarCliente(this, findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtEmail).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtPass).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtNombre).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtApellidos).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtTelefono).text.toString())) {
 
                         startActivity<LoginActivity>()
                         Toast.makeText(this, "Registrado correctamente @"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
