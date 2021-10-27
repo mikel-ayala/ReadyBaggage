@@ -17,11 +17,6 @@ class ReservasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reservas)
 
-        iconoMain.setOnClickListener {
-            startActivity<MainActivity>()
-
-        }//onClick
-
         //Menu idiomas
         btIdiomas.setOnClickListener {
             Utils.showPopup(btIdiomas, this, this)
@@ -53,7 +48,6 @@ class ReservasActivity : AppCompatActivity() {
         }//onClick
 
         iconoMain.setOnClickListener {
-            println("*****************CLICKED ")
             startActivity<MainActivity>()
         }//onClick
 

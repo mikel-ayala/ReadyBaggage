@@ -14,7 +14,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.gson.Gson
 import com.grupo2.readybaggage.Utils.Companion.startActivity
-import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_detallesreserva.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
@@ -83,7 +82,7 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
-        iconoMain.setOnClickListener {
+        logo.setOnClickListener {
             startActivity<MainActivity>()
         }//onClick
 
@@ -91,7 +90,7 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             startActivity<ReservasActivity>()
         }//onClick
 
-        iconoMain.setOnClickListener {
+        logo.setOnClickListener {
             startActivity<MainActivity>()
         }//onClick
 

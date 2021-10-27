@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Salir de la app
-        iconoMain.setOnClickListener {
-            //guardarCliente(this, getCliente())
-            finishAffinity()
+        logo.setOnClickListener {
+            finish()
+
         }///onClick
 
         //Menu idiomas

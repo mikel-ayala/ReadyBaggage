@@ -3,14 +3,11 @@ package com.grupo2.readybaggage
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
-import androidx.core.view.isGone
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
-import java.lang.Math.floor
 import java.text.DecimalFormat
 import java.util.*
 
@@ -41,11 +38,6 @@ class BookingActivity : AppCompatActivity() {
             2 -> mostrarReserva(productoPrecio, productoNombre)
             3 -> mostrarReserva(productoPrecio, productoNombre)
         }
-
-        //Ir al main
-        iconoMain.setOnClickListener {
-            startActivity<MainActivity>()
-        }//onClick
 
         //Mostrar menu idiomas
         btIdiomas.setOnClickListener{
@@ -170,6 +162,12 @@ class BookingActivity : AppCompatActivity() {
         iconoPerfil.setOnClickListener {
             startActivity<ProfileActivity>()
 
+        }//onClick
+
+
+        //Ir al main
+        iconoMain.setOnClickListener {
+            startActivity<MainActivity>()
         }//onClick
 
         //Ir a reservas

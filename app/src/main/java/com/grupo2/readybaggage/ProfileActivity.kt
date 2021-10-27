@@ -12,7 +12,6 @@ import com.grupo2.readybaggage.Utils.Companion.validationPro
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
-import java.time.LocalDate
 import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
@@ -30,17 +29,9 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        iconoMain.setOnClickListener {
-            startActivity<MainActivity>()
-        }//onClick
-
         btIdiomas.setOnClickListener {
             showPopup(btIdiomas, this, this)
         }//onClick
-
-
-
-        iconoPerfil.setImageResource(R.drawable.ic_outline_person_outline_24_active)
 
         //Mostrar datos del usuario
         var cliente: Cliente? = ControlCliente.getClienteObject()
@@ -108,6 +99,9 @@ class ProfileActivity : AppCompatActivity() {
         }//onClick
 
 
+        iconoMain.setOnClickListener {
+            startActivity<MainActivity>()
+        }//onClick
 
         iconoReservas.setOnClickListener{
             startActivity<ReservasActivity>()
