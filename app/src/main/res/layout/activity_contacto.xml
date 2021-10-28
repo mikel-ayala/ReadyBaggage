@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".contactoActivity">
+    tools:context=".ContactoActivity">
 
     <include
         android:id="@+id/include5"
         layout="@layout/menu_superior"
         android:layout_width="411dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ScrollView
+        android:id="@+id/scrollView6"
         android:layout_width="409dp"
         android:layout_height="532dp"
         app:layout_constraintBottom_toTopOf="@+id/include4"
@@ -139,11 +143,25 @@
         </LinearLayout>
     </ScrollView>
 
+    <View
+        android:id="@+id/view6"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="35dp"
+        android:alpha="0.8"
+        android:background="@drawable/sombramenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:layout_constraintTop_toTopOf="@+id/include4" />
+
     <include
         android:id="@+id/include4"
         layout="@layout/menu_inferior"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="651dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

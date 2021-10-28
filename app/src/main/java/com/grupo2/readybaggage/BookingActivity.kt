@@ -46,6 +46,10 @@ class BookingActivity : AppCompatActivity() {
             3 -> mostrarReserva(productoPrecio, productoNombre)
         }
 
+        iconoContacto.setOnClickListener {
+            startActivity<ContactoActivity>()
+        }//onClick
+
         //Mostrar menu idiomas
         btIdiomas.setOnClickListener{
             Utils.showPopup(btIdiomas, this, this)

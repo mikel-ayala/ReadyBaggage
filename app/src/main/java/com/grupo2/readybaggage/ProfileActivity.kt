@@ -29,6 +29,10 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        iconoContacto.setOnClickListener {
+            startActivity<ContactoActivity>()
+        }//onClick
+
         btIdiomas.setOnClickListener {
             showPopup(btIdiomas, this, this)
         }//onClick

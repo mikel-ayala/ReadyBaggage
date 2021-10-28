@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/MainTheme">
         <activity
-            android:name=".contactoActivity"
-            android:exported="false" />
+            android:name=".ContactoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
