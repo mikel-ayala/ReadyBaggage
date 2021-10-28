@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         }///onClick
 
+        iconoContacto.setOnClickListener {
+            startActivity<ContactoActivity>()
+        }//onClick
+
         //Menu idiomas
         btIdiomas.setOnClickListener {
             showPopup(btIdiomas, this, this)
