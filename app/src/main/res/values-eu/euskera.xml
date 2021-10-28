@@ -75,11 +75,10 @@
 
     <!--Detalles reserva-->
     <string name="modReserva">Erreserba aldatu</string>
-
-    <!--Activity de contacto-->
     <string name="nosotros">Kaixo, ReadyBaggage gara</string>
     <string name="estado0">Hartu gabe</string>
     <string name="estado1">Biltegian</string>
     <string name="estado2">Entregatzen</string>
     <string name="estado3">Entregatua</string>
+    <string name="no_reservas">Ez dago erreserbarik erakusteko</string>
 </resources>

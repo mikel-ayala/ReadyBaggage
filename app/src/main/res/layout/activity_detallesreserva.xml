@@ -78,15 +78,17 @@
                     android:id="@+id/dRvEditNombre"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/roundededittext"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="20dp"
-                    android:hint="Nombre y apellidos"
-                    android:focusable="false"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/roundededittext"
                     android:clickable="false"
                     android:cursorVisible="false"
-                    android:padding="10dp"/>
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:hint="Nombre y apellidos"
+                    android:padding="10dp"
+                    tools:ignore="TouchTargetSizeCheck" />
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -102,18 +104,21 @@
                         android:gravity="center_vertical"
                         android:text="@string/fecha_rec"
                         android:textSize="18sp" />
+
                     <EditText
                         android:id="@+id/dRvEditFrecogida"
                         android:layout_width="0dp"
-                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
-                        android:background="@drawable/roundededittext"
                         android:layout_marginEnd="20dp"
-                        android:hint="F. Recogida"
-                        android:focusable="false"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/roundededittext"
                         android:clickable="false"
                         android:cursorVisible="false"
-                        android:padding="10dp"/>
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:hint="F. Recogida"
+                        android:padding="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -130,18 +135,21 @@
                         android:gravity="center_vertical"
                         android:text="@string/fecha_ent"
                         android:textSize="18sp" />
+
                     <EditText
                         android:id="@+id/dRvEditFentrega"
                         android:layout_width="0dp"
-                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
-                        android:background="@drawable/roundededittext"
                         android:layout_marginEnd="20dp"
-                        android:hint="F. Entrega"
-                        android:focusable="false"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/roundededittext"
                         android:clickable="false"
                         android:cursorVisible="false"
-                        android:padding="10dp"/>
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:hint="F. Entrega"
+                        android:padding="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -158,18 +166,21 @@
                         android:gravity="center_vertical"
                         android:text="@string/hora_rec"
                         android:textSize="18sp" />
+
                     <EditText
                         android:id="@+id/dRvEditHrecogida"
                         android:layout_width="0dp"
-                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
-                        android:background="@drawable/roundededittext"
                         android:layout_marginEnd="20dp"
-                        android:hint="H. Recogida"
-                        android:focusable="false"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/roundededittext"
                         android:clickable="false"
                         android:cursorVisible="false"
-                        android:padding="10dp"/>
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:hint="H. Recogida"
+                        android:padding="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -186,18 +197,21 @@
                         android:gravity="center_vertical"
                         android:text="@string/hora_ent"
                         android:textSize="18sp" />
+
                     <EditText
                         android:id="@+id/dRvEditHentrega"
                         android:layout_width="0dp"
-                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
-                        android:background="@drawable/roundededittext"
                         android:layout_marginEnd="20dp"
-                        android:hint="H. Entrega"
-                        android:focusable="false"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/roundededittext"
                         android:clickable="false"
                         android:cursorVisible="false"
-                        android:padding="10dp"/>
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:hint="H. Entrega"
+                        android:padding="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -214,14 +228,16 @@
                         android:gravity="center_vertical"
                         android:text="@string/estadoReser"
                         android:textSize="18sp" />
+
                     <Spinner
                         android:id="@+id/dRvSpinnerEstado"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.5"
                         android:layout_marginEnd="20dp"
+                        android:layout_weight="0.5"
                         android:background="@drawable/roundededittext"
-                        android:padding="10dp"/>
+                        android:padding="10dp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                 </LinearLayout>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -246,11 +262,11 @@
                     android:id="@+id/dRvBtnModificarReserva"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_blue"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Modificar Reserva"
-                    android:textColor="@color/white"/>
+                    android:background="@drawable/rounded_blue"
+                    android:text="@string/modReserva"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
 

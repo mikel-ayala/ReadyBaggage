@@ -70,11 +70,11 @@
     <string name="iva">IVA</string>
     <string name="total">Total: </string>
 
+    <!--Activity reservas-->
+    <string name="no_reservas">No hay reservas que mostrar</string>
+
     <!--Activity detalles reserva-->
     <string name="estadoReser">Estado actual</string>
-
-
-    <!--Detalles reserva-->
     <string name="modReserva">Modificar reserva</string>
     <string name="estado0">Pendiente</string>
     <string name="estado1">En almacén</string>

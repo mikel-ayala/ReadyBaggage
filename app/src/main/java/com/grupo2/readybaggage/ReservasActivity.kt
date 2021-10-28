@@ -2,6 +2,7 @@ package com.grupo2.readybaggage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_reservas.*
@@ -32,6 +33,8 @@ class ReservasActivity : AppCompatActivity() {
         if (reservasList != null) {
             reservasList!!.sortByDescending{it.idReserva}
             initRecycler(reservasList!!)
+        }else{
+            Toast.makeText(this, R.string.no_reservas, Toast.LENGTH_LONG).show()
         }
 
         //Ir al perfil
