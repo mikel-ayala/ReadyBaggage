@@ -18,6 +18,13 @@ class BookingActivity : AppCompatActivity() {
     private var metodoPago: String? = null
     private var precioProducto: Int? = 0
     private var iva: Int = 21
+    private var secondInMs = 1000
+    private var minuteInMs = 60*secondInMs
+    private var hourInMs = 60*minuteInMs
+
+    //private var minuteInSecons = 60
+    private var hourInMinute = 60
+    private var minHoursMargen = 120
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -128,12 +135,10 @@ class BookingActivity : AppCompatActivity() {
             if (metodoPago == null) {
                 bookingViewTxtPayment.text = "Seleccione un metodo de pago"
                 bookingViewTxtPayment.setTextColor(Color.parseColor("#FF0000"))
-                //Toast.makeText(this, "Error: Seleccione un Metodo de Pago", Toast.LENGTH_LONG).show()
                 errorAlReservar = true
             }
 
             if (!errorAlReservar) {
-                Toast.makeText(this, "EXITO: Reserva realizada correctamente", Toast.LENGTH_LONG).show()
                 startActivity<MainActivity>()
                 var clienteObject: Cliente? = ControlCliente.getClienteObject()
                 if (clienteObject != null) {
@@ -148,9 +153,9 @@ class BookingActivity : AppCompatActivity() {
 
                     if (ControlReserva.registrarReserva(this, idCliente,productoId!!,
                             vMaletasCantidad.toInt(),Utils.getCurrentDate(),vOrigen,vDestino,vFrecogida,vFentrega,vHrecogida,vHentrega,metodoPago!!)) {
-                        println("********EXITO")
+                        println("[DEBUG] Reservar realizada correctamente")
                     } else {
-                        println("********ERROR AL RESERVAR")
+                        println("[ERROR] Problemas al realizazr la reserva")
                     }
                 }
 
@@ -245,6 +250,7 @@ class BookingActivity : AppCompatActivity() {
             1 -> bookingViewEditFecReco.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
             2 -> bookingViewEditFecEntrega.setText(String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.format("%04d", year))
         }
+        fixEntregaTime()
 
     }//onDateSelected
 
@@ -272,6 +278,8 @@ class BookingActivity : AppCompatActivity() {
 
     }//onTimeSelected
 
+
+
     fun fixEntregaTime() {
         //Este metodo comprueba si la hora de entrega es inferior a la recogida, en tal caso, se
         //comprobara la fehca, si las fecha son iguales, la fecha de entrega se aumentara en un dia.
@@ -280,6 +288,13 @@ class BookingActivity : AppCompatActivity() {
             if (bookingViewEditFecReco.text.toString().equals(bookingViewEditFecEntrega.text.toString())) {
                 val lstHoraRecogida: List<Int> = bookingViewEditHRecogida.text.toString().split(":").map { it -> it.trim().toInt() }
                 val lstHoraEntrega: List<Int> = bookingViewEditHEntrega.text.toString().split(":").map { it -> it.trim().toInt() }
+                var timeRecogidaInMinutes: Int = (lstHoraRecogida[0]*hourInMinute) + (lstHoraRecogida[1])
+                var timeEntregaInMinutes: Int = (lstHoraEntrega[0]*hourInMinute) + (lstHoraEntrega[1])
+                if (timeEntregaInMinutes - timeRecogidaInMinutes < minHoursMargen) {
+                    println("******* Result Diff: " + (timeRecogidaInMinutes - timeEntregaInMinutes))
+                    println("******* Result MIN MARGEN: " + minHoursMargen)
+                    bookingViewEditHEntrega.setError("Debe haber al menos 2 horas de diferencia.")
+                }
             }
         }
 
