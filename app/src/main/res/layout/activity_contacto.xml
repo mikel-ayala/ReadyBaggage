@@ -20,6 +20,7 @@
         android:id="@+id/scrollView6"
         android:layout_width="409dp"
         android:layout_height="532dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toTopOf="@+id/include4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,33 +68,33 @@
                         android:orientation="horizontal">
 
                         <ImageButton
-                            android:id="@+id/imageButton2"
+                            android:id="@+id/iconoFB"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
                             app:srcCompat="@drawable/facebook"
                             app:tint="#3b5998"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <ImageButton
-                            android:id="@+id/imageButton3"
+                            android:id="@+id/iconoTwitter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
                             app:srcCompat="@drawable/twitter"
                             app:tint="#00acee"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <ImageButton
-                            android:id="@+id/imageButton4"
+                            android:id="@+id/iconoInsta"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
                             app:srcCompat="@drawable/instagram"
-                            app:tint="#262626 "
+                            app:tint="#30618A "
                             tools:ignore="SpeakableTextPresentCheck" />
                     </LinearLayout>
 
@@ -104,21 +105,21 @@
                         android:orientation="horizontal">
 
                         <ImageButton
-                            android:id="@+id/imageButton5"
+                            android:id="@+id/iconoLinkedIn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
                             app:srcCompat="@drawable/linkedin"
                             app:tint="#0e76a8"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <ImageButton
-                            android:id="@+id/imageButton6"
+                            android:id="@+id/iconoWhatsapp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
                             app:srcCompat="@drawable/whatsapp"
                             app:tint="#25d366"
                             tools:ignore="SpeakableTextPresentCheck" />
