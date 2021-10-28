@@ -9,7 +9,7 @@
     <include
         android:id="@+id/include5"
         layout="@layout/menu_superior"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +18,7 @@
 
     <ScrollView
         android:id="@+id/scrollView6"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="532dp"
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toTopOf="@+id/include4"
@@ -189,7 +189,7 @@
     <include
         android:id="@+id/include4"
         layout="@layout/menu_inferior"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
