@@ -26,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
                     if (ControlCliente.registrarCliente(this, findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtEmail).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtPass).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtNombre).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtApellidos).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtTelefono).text.toString())) {
 
                         startActivity<LoginActivity>()
-                        Toast.makeText(this, "Registrado correctamente @"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Registrado correctamente "+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
 
                     }//Si se registra
                     else {
