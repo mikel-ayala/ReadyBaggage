@@ -129,17 +129,47 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView4"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="+34 944 10 58 87" />
+                android:layout_height="27dp" />
 
-            <TextView
-                android:id="@+id/textView5"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="contacto@readybaggage.com" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewTlfn"
+                    android:layout_width="129dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telefono" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" +34 944 10 58 87" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="129dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="contacto@readybaggage.com" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
