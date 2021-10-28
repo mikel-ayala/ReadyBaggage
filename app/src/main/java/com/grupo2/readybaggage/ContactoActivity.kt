@@ -49,7 +49,7 @@ class ContactoActivity : AppCompatActivity() {
 
         //Icono Whatsapp
         iconoWhatsapp.setOnClickListener{
-
+            abrirweb("https://wa.me/521123456955")
         }
 
         //Ir al perfil
