@@ -84,15 +84,15 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
-        logo.setOnClickListener {
-            startActivity<MainActivity>()
-        }//onClick
+       iconoContacto.setOnClickListener {
+           startActivity<ContactoActivity>()
+       }//onClick
 
         iconoReservas.setOnClickListener{
             startActivity<ReservasActivity>()
         }//onClick
 
-        logo.setOnClickListener {
+        iconoMain.setOnClickListener {
             startActivity<MainActivity>()
         }//onClick
 

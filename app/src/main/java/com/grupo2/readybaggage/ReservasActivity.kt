@@ -51,6 +51,9 @@ class ReservasActivity : AppCompatActivity() {
             startActivity<MainActivity>()
         }//onClick
 
+        iconoContacto.setOnClickListener {
+            startActivity<ContactoActivity>()
+        }//onClick
 
     }//onCreate
 
