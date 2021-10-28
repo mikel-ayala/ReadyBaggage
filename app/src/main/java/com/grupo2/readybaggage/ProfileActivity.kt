@@ -46,6 +46,7 @@ class ProfileActivity : AppCompatActivity() {
         profileViewTextApellidos.setText(cliente?.apellidos)
         profileViewTextTelefono.setText(cliente?.telefono)
         profileViewTextEmail.setText(cliente?.email)
+        profileViewTextPass.setText(cliente?.password)
         var value = cliente?.f_registro ?: ""
         val lstValues: List<String> = value.split("-").map { it -> it.trim() }
         profileViewTxtMemberTime.setText(getString(R.string.antiguedad) + lstValues[2]+"/"+lstValues[1]+"/"+lstValues[0])
@@ -55,14 +56,14 @@ class ProfileActivity : AppCompatActivity() {
             if (validationPro(this)){
 
                 clienteUp = Cliente(cliente!!.idCliente,
-                    profileViewTxtEmail.text.toString(),
+                    profileViewTextEmail.text.toString(),
                     profileViewTextPass.text.toString(),
-                    profileViewTxtNombre.text.toString(),
-                    profileViewTxtApellidos.text.toString(),
-                    profileViewTxtTelefono.text.toString(),
+                    profileViewTextNombre.text.toString(),
+                    profileViewTextApellidos.text.toString(),
+                    profileViewTextTelefono.text.toString(),
                     cliente.f_registro, cliente.is_empleado)
 
-                if (clienteUp != cliente){
+                if (!cliente.equals(clienteUp)){
 
                     if (ControlCliente.updateCliente(this, clienteUp!!)) {
 

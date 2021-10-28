@@ -3,6 +3,7 @@ package com.grupo2.readybaggage
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_booking.*
@@ -17,14 +18,15 @@ class BookingActivity : AppCompatActivity() {
     private lateinit var currentLang: String
     private var metodoPago: String? = null
     private var precioProducto: Int? = 0
-    private var iva: Int = 21
-    private var secondInMs = 1000
-    private var minuteInMs = 60*secondInMs
-    private var hourInMs = 60*minuteInMs
+    private val iva: Int = 21
+    private var isNocturno: Boolean = false
+    private val horaNocturna: Int = 21
+    private val costeNocturno: Double = 4.0
+    private var cMaletas: Int = 1
+    val dec = DecimalFormat("#,###.00")
 
-    //private var minuteInSecons = 60
-    private var hourInMinute = 60
-    private var minHoursMargen = 120
+    private val hourInMinute = 60
+    private val minHoursMargen = 120
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -37,6 +39,8 @@ class BookingActivity : AppCompatActivity() {
         val productoId: Int? = extras?.getInt("productoId")
         val productoPrecio: Int? = extras?.getInt("productoPrecio")
         val productoNombre: String? = extras?.getString("productoNombre")
+
+        bookingViewTxtHnocturno.text = getString(R.string.hnocturno) + " >"+ String.format("%02d:00", horaNocturna) + ": " + dec.format(costeNocturno) + "€"
 
         bookingViewTxtIva.text = getString(R.string.iva) + " " + iva + "%: "
 
@@ -86,7 +90,7 @@ class BookingActivity : AppCompatActivity() {
 
         //Sumar cantidad de maletas
         bookingViewBtnPlus.setOnClickListener() {
-            var cMaletas: Int = bookingViewTxtMaletas.text.toString().toInt()
+            //cMaletas = bookingViewTxtMaletas.text.toString().toInt()
             cMaletas = cMaletas + 1
             bookingViewTxtMaletas.text = cMaletas.toString()
             actualizarResumen(cMaletas)
@@ -94,7 +98,7 @@ class BookingActivity : AppCompatActivity() {
 
         //Restar cantidad de maletas
         bookingViewBtnMinus.setOnClickListener() {
-            var cMaletas: Int = bookingViewTxtMaletas.text.toString().toInt()
+            //cMaletas = bookingViewTxtMaletas.text.toString().toInt()
             cMaletas = cMaletas - 1
             if (cMaletas <= 0) {
                 cMaletas = 1
@@ -220,10 +224,12 @@ class BookingActivity : AppCompatActivity() {
         var preciosiniva: Double = (qMaletas * precioProducto!!).toDouble()
         var precioiva: Double = ((preciosiniva * iva).toDouble() / 100)
         var preciototal: Double = preciosiniva+precioiva
-        val dec = DecimalFormat("#,###.00")
-        bookingViewTxtSubtotal.text = getString(R.string.subtotal) + preciosiniva.toInt() + "€"
-        bookingViewTxtIva.text = getString(R.string.iva) + " " + iva + "%: " + precioiva + "€"
-        bookingViewTxtTotal.text = getString(R.string.total) + dec.format(preciosiniva+precioiva) + "€"
+        if (isNocturno) preciototal = preciototal + costeNocturno
+
+        bookingViewTxtSubtotal.text = getString(R.string.subtotal) + " " + dec.format(preciosiniva) + "€"
+        bookingViewTxtIva.text = getString(R.string.iva) + " " + iva + "%: " + dec.format(precioiva) + "€"
+        bookingViewTxtTotal.text = getString(R.string.total) + dec.format(preciototal) + "€"
+
 
     }//actualizarResumen
 
@@ -285,8 +291,10 @@ class BookingActivity : AppCompatActivity() {
 
 
     fun fixEntregaTime() {
-        //Este metodo comprueba si la hora de entrega es inferior a la recogida, en tal caso, se
-        //comprobara la fehca, si las fecha son iguales, la fecha de entrega se aumentara en un dia.
+        /*
+            Este metodo comprueba si la hora de entrega es inferior a la recogida, en tal caso, se
+            comprobara la fehca, si las fecha son iguales, la fecha de entrega se aumentara en un dia.
+         */
         bookingViewEditHEntrega.setError(null)
         if (!bookingViewEditHEntrega.text.toString().isEmpty() && !bookingViewEditHRecogida.text.toString().isEmpty()) {
             if (bookingViewEditFecReco.text.toString().equals(bookingViewEditFecEntrega.text.toString())) {
@@ -295,13 +303,24 @@ class BookingActivity : AppCompatActivity() {
                 var timeRecogidaInMinutes: Int = (lstHoraRecogida[0]*hourInMinute) + (lstHoraRecogida[1])
                 var timeEntregaInMinutes: Int = (lstHoraEntrega[0]*hourInMinute) + (lstHoraEntrega[1])
                 if (timeEntregaInMinutes - timeRecogidaInMinutes < minHoursMargen) {
-                    println("******* Result Diff: " + (timeRecogidaInMinutes - timeEntregaInMinutes))
-                    println("******* Result MIN MARGEN: " + minHoursMargen)
                     bookingViewEditHEntrega.setError("Debe haber al menos 2 horas de diferencia.")
                 }
             }
         }
+        checkHorarioNocturno()
+    }
 
+    fun checkHorarioNocturno() {
+        bookingViewTxtHnocturno.visibility = View.GONE
+        isNocturno = false
+        if (!bookingViewEditHRecogida.text.toString().trim().isEmpty()) {
+            val lstHoraRecogida: List<Int> = bookingViewEditHRecogida.text.toString().split(":").map { it -> it.trim().toInt() }
+            if (lstHoraRecogida[0] >= horaNocturna) {
+                bookingViewTxtHnocturno.visibility = View.VISIBLE
+                isNocturno = true
+                actualizarResumen(cMaletas)
+            }
+        }
     }
 
 }//BookingActivity

@@ -83,4 +83,5 @@
 
     <!--Activity de contacto-->
     <string name="nosotros">Hola, somos ReadyBaggage</string>
+    <string name="hnocturno">Servicio Nocturno</string>
 </resources>

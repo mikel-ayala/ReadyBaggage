@@ -37,10 +37,10 @@ ReservaAdapter (var mContext: Context, val reservasList: MutableList<Reserva>): 
             view.itemReservasDestino.text = view.context.getString(R.string.destino) + ": "+reserva.destino
             view.itemReservasEstado.text = view.context.getString(getStringIdentifier(view.context,reserva.estado))
             when (reserva.estado) {
-                "Pendiente" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_orange)
-                "En almacen" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_purple)
-                "En entrega" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_blue)
-                "Entregado" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_green)
+                "estado0" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_orange)
+                "estado1" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_purple)
+                "estado2" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_blue)
+                "estado3" -> view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_green)
                 else -> {
                     view.itemReservasEstado.setBackgroundResource(R.drawable.rounded_orange)
                 }

@@ -17,6 +17,7 @@ import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_detallesreserva.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
+import kotlinx.coroutines.*
 
 class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -24,7 +25,15 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detallesreserva)
+
+        /*
+            No añadiremos la carga del mapa de google en otro hilo de ejecucion dado
+            que por su comportamiento, deducimos que ya hace uso de courutines.
+            Por otra parte, estamos overrideando metodos y al usar courutines es tedioso
+            lidiar con ciertos parametros que piden algunos de los metodos de dicha libreria
+         */
         createMapFragment()
+
 
         var lastEstado: Int = 0
 
@@ -114,12 +123,21 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
+        map.setOnCameraMoveStartedListener {
+            dRvScrollviewMain.requestDisallowInterceptTouchEvent(true)
+
+        }
+
+        map.setOnCameraIdleListener {
+            dRvScrollviewMain.requestDisallowInterceptTouchEvent(false)
+
+        }
         createMarker()
     }
 
     private fun createMarker() {
-        val favoritePlace = LatLng(43.25782365561766, -2.902841474811389)
+        val favoritePlace = LatLng(43.262825437771625, -2.9351437151831314)
         map.addMarker(MarkerOptions().position(favoritePlace).title("DESTINO"))
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(favoritePlace, 18f), 1000, null)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(favoritePlace, 14f), 1000, null)
     }
 }

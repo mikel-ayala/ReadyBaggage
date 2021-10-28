@@ -81,4 +81,5 @@
     <string name="estado2">Entregatzen</string>
     <string name="estado3">Entregatua</string>
     <string name="no_reservas">Ez dago erreserbarik erakusteko</string>
+    <string name="hnocturno">Gaua Zerbitzua</string>
 </resources>

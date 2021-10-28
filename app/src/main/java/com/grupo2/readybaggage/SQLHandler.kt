@@ -20,7 +20,7 @@ class SQLHandler(context: Context, name: String, factory: SQLiteDatabase.CursorF
         admin.put("pass", "Admin_1234")
         admin.put("nombre", "Administrador")
         admin.put("apellidos", "Oficial")
-        admin.put("telefono", "999999999")
+        admin.put("telefono", "699999999")
         admin.put("is_empleado", 1)
         db.insert("cliente", null, admin)
 

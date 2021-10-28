@@ -355,6 +355,17 @@
                     android:textStyle="italic" />
 
                 <TextView
+                    android:id="@+id/bookingViewTxtHnocturno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/hnocturno"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    android:visibility="gone"/>
+
+                <TextView
                     android:id="@+id/bookingViewTxtIva"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
