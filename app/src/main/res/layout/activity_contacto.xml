@@ -100,6 +100,16 @@
                         android:orientation="horizontal">
 
                         <ImageButton
+                            android:id="@+id/imageButton6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/whatsapp"
+                            app:tint="#25d366"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
                             android:id="@+id/imageButton5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -109,15 +119,6 @@
                             app:tint="#0e76a8"
                             tools:ignore="SpeakableTextPresentCheck" />
 
-                        <ImageButton
-                            android:id="@+id/imageButton6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/white"
-                            app:srcCompat="@drawable/whatsapp"
-                            app:tint="#25d366"
-                            tools:ignore="SpeakableTextPresentCheck" />
                     </LinearLayout>
 
                 </LinearLayout>
