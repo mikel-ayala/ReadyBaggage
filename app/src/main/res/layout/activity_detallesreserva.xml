@@ -248,13 +248,12 @@
                     android:layout_marginBottom="20dp"
                     app:cardElevation="10dp"
                     app:cardCornerRadius="20dp">
-                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:tools="http://schemas.android.com/tools"
+
+                    <fragment
                         android:id="@+id/fragmentMap"
                         android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
                         tools:context=".DetallesReservaActivity" />
                 </androidx.cardview.widget.CardView>
 

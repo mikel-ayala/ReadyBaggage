@@ -6,7 +6,7 @@
     <color name="secondary_a">#4B2D1A</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="menubg">#FFFFFF</color>
-    <color name="smoothGray">#ddd</color>
+    <color name="menubg">#424242</color>
+    <color name="smoothGray">#424242</color>
 
 </resources>

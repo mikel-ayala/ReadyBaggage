@@ -17,6 +17,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        
         //Registro
         regViewBtnReg.setOnClickListener() {
             if (validationReg(this)) {
