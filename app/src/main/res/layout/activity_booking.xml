@@ -148,9 +148,8 @@
                     android:ems="10"
                     android:hint="@string/origen"
                     android:inputType="text"
-                    android:text="Origentest1"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/bookingViewTxtDestino"
@@ -167,9 +166,8 @@
                     android:ems="10"
                     android:hint="@string/destino"
                     android:inputType="text"
-                    android:text="Destinotest1"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/bookingViewTxtFecReco"
@@ -257,9 +255,8 @@
                             android:focusable="false"
                             android:hint="@string/hora_rec"
                             android:inputType="time"
-                            android:text="16:00"
-                            tools:ignore="TouchTargetSizeCheck"
-                            android:padding="10dp"/>
+                            android:padding="10dp"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
                             android:id="@+id/bookingViewEditHEntrega"
@@ -273,9 +270,8 @@
                             android:focusable="false"
                             android:hint="@string/hora_ent"
                             android:inputType="time"
-                            android:text="21:00"
-                            tools:ignore="TouchTargetSizeCheck"
-                            android:padding="10dp"/>
+                            android:padding="10dp"
+                            tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
 
                 </LinearLayout>
