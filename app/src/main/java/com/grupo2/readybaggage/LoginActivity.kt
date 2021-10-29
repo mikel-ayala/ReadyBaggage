@@ -32,28 +32,21 @@ class LoginActivity : AppCompatActivity() {
             //Comprobar los datos
 
             if (validationLog(this)) {
-                /*
-                    Emplearemos la corruina sobre el siguiente Dispatcher ya predefinido y destinado
-                    a consultas a bases de datos y/o servidores.
-                    Dado que tenemos metodos en clases estaticas, en este caso omitiremos el result del hilo
-                 */
-                GlobalScope.launch(Dispatchers.IO) {
-                    if (ControlCliente.logCliente(contextActivity,findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.logViewTextEmail).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.logViewTextPass).text.toString())) {
-                        if (Preferences.setUserPreferences(vActivity, "userdata","email",logViewTextEmail.text.toString()) && Preferences.setUserPreferences(vActivity, "userdata","password",logViewTextPass.text.toString())) {
-                            print("[DEBUG] User data guardada correctamente")
-                        } else {
-                            print("[ERROR] Error al guardar el email del usuario")
-                        }
-                        startActivity<MainActivity>()
-                        Toast.makeText(contextActivity, "Cliente logeado Correctamente", Toast.LENGTH_LONG).show()
+                if (ControlCliente.logCliente(contextActivity,findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.logViewTextEmail).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.logViewTextPass).text.toString())) {
+                    if (Preferences.setUserPreferences(vActivity, "userdata","email",logViewTextEmail.text.toString()) && Preferences.setUserPreferences(vActivity, "userdata","password",logViewTextPass.text.toString())) {
+                        print("[DEBUG] User data guardada correctamente")
+                    } else {
+                        print("[ERROR] Error al guardar el email del usuario")
+                    }
+                    startActivity<MainActivity>()
+                    Toast.makeText(contextActivity, "Cliente logeado Correctamente", Toast.LENGTH_LONG).show()
 
-                    }//Si inicia sesion
-                    else {
+                }//Si inicia sesion
+                else {
 
-                    Toast.makeText(contextActivity, "El usuario y/o la contraseña son incorrectas", Toast.LENGTH_LONG).show()
+                Toast.makeText(contextActivity, "El usuario y/o la contraseña son incorrectas", Toast.LENGTH_LONG).show()
 
-                    }//Si no existe ese usuario
-                    }//Fin Hilo
+                }//Si no existe ese usuario
 
             }//Validacion de los datos
 
