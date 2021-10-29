@@ -9,7 +9,6 @@ import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_reservas.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
-import kotlinx.coroutines.*
 
 class ReservasActivity : AppCompatActivity() {
 
@@ -31,12 +30,18 @@ class ReservasActivity : AppCompatActivity() {
 
         var isAdmin: Boolean = ControlCliente.isAdmin()
         reservasList = ControlReserva.getAllReservas(contextActivity, !isAdmin)
+
         if (reservasList != null) {
+
             reservasList!!.sortByDescending{it.idReserva}
             initRecycler(reservasList!!)
-        }else{
+
+        }//not null
+        else{
+
             Toast.makeText(contextActivity, R.string.no_reservas, Toast.LENGTH_LONG).show()
-        }
+
+        }//null
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
@@ -67,6 +72,6 @@ class ReservasActivity : AppCompatActivity() {
         val adapter = ReservaAdapter(this,ReservaList)
         reservasViewRVMain.adapter = adapter
 
-    }
+    }//initRecycler
 
-}
+}//ReservasActivity

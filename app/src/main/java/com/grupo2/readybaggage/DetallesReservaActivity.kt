@@ -22,6 +22,7 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var map: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detallesreserva)
 
@@ -37,13 +38,13 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         var lastEstado: Int = 0
 
         if (!ControlCliente.isAdmin()) {
-            //bookingViewTxtIva.isEnabled = false
-            //bookingViewTxtIva.visibility = View.GONE
+
             dRvBtnModificarReserva.visibility = View.GONE
             dRvBtnModificarReserva.isEnabled = false
-            dRvSpinnerEstado.setEnabled(false);
-            dRvSpinnerEstado.setClickable(false);
-        }
+            dRvSpinnerEstado.setEnabled(false)
+            dRvSpinnerEstado.setClickable(false)
+
+        }//not admin
 
         val reservaEstados = arrayOf(getString(R.string.estado0),getString(R.string.estado1),getString(R.string.estado2),getString(R.string.estado3))
         val adaptador = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, reservaEstados)
@@ -56,7 +57,7 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
             "1" -> dRvImgProducto.setImageResource(R.drawable.maleta_pequenia)
             "2" -> dRvImgProducto.setImageResource(R.drawable.maleta_grande)
             "3" -> dRvImgProducto.setImageResource(R.drawable.maleta_extra)
-        }
+        }//when
 
         dRvTxtId.text = "ID: "+String.format("%06d", reserva.idReserva.toInt())
         dRvTxtFsolicitud.text = reserva.f_solicitud
@@ -67,30 +68,41 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         dRvEditHentrega.setText(reserva.h_entrega)
 
         for (i in reservaEstados.indices) {
+
             var estadoFormated: String = reserva.estado.replace("estado","")
             var estadoFormatedToInt: Int = estadoFormated.toInt()
+
             if (i == estadoFormatedToInt) {
+
                 lastEstado = i
                 dRvSpinnerEstado.setSelection(i)
                 break
+
             }
+
         }
 
         dRvBtnModificarReserva.setOnClickListener() {
             var newEstado: Int = dRvSpinnerEstado.selectedItemPosition
+
             if (newEstado != lastEstado) {
-                //lastEstado = dRvSpinnerEstado.selectedItemPosition
+
                 reserva.estado = "estado"+newEstado
+
                 if (ControlReserva.updateReserva(this,reserva)) {
+
                     Toast.makeText(this, "Reserva modificada correctamente", Toast.LENGTH_SHORT).show()
                     val reservasIntent = Intent(this, ReservasActivity::class.java)
                     reservasIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(reservasIntent)
-                } else {
+                }
+                else {
                     Toast.makeText(this, "Error al modificar la reserva", Toast.LENGTH_SHORT).show()
                 }
+
             }
-        }
+
+        }//onClick
 
        iconoContacto.setOnClickListener {
            startActivity<ContactoActivity>()
@@ -119,11 +131,15 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
         }//onClick
     }
 
+
     private fun createMapFragment() {
+
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentMap) as SupportMapFragment
         mapFragment.getMapAsync(this)
-    }
+
+    }//createMapFragment
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
@@ -137,11 +153,12 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
         createMarker()
-    }
+
+    }//onMapReady
 
     private fun createMarker() {
         val favoritePlace = LatLng(43.262825437771625, -2.9351437151831314)
         map.addMarker(MarkerOptions().position(favoritePlace).title("DESTINO"))
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(favoritePlace, 14f), 1000, null)
-    }
+    }//createMarker
 }
