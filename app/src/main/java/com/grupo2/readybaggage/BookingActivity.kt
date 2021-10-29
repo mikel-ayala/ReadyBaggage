@@ -130,67 +130,43 @@ class BookingActivity : AppCompatActivity() {
             var errorAlReservar: Boolean = false
 
             if (bookingViewEditOrigen.text.toString().trim().isEmpty()) {
-<<<<<<< HEAD
-                bookingViewEditOrigen.setError(R.string.errOrigen.toString())
-=======
 
                 bookingViewEditOrigen.setError("Escriba un lugar de Origen")
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 errorAlReservar = true
 
             }//empty
 
             if (bookingViewEditDestino.text.toString().trim().isEmpty()) {
-<<<<<<< HEAD
-                bookingViewEditDestino.setError(R.string.errDestino.toString())
-=======
 
                 bookingViewEditDestino.setError("Escriba un lugar de Destino")
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 errorAlReservar = true
 
             }//empty
 
             if (bookingViewEditFecReco.text.toString().trim().isEmpty()) {
-<<<<<<< HEAD
-                bookingViewEditFecReco.setError(R.string.errFechaRecogida.toString())
-=======
 
                 bookingViewEditFecReco.setError("Seleccione una fecha de Recogida")
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 errorAlReservar = true
 
             }//empty
 
             if (bookingViewEditFecEntrega.text.toString().trim().isEmpty()) {
-<<<<<<< HEAD
-                bookingViewEditFecEntrega.setError(R.string.errFechaEntrega.toString())
-=======
 
                 bookingViewEditFecEntrega.setError("Seleccione una fecha de Entrega")
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 errorAlReservar = true
 
             }//empty
 
             if (bookingViewEditHRecogida.text.toString().trim().isEmpty()) {
-<<<<<<< HEAD
-                bookingViewEditHRecogida.setError(R.string.errHoraRecogida.toString())
-=======
 
                 bookingViewEditHRecogida.setError("Seleccione una Hora de Recogida")
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 errorAlReservar = true
 
             }//empty
 
             if (bookingViewEditHEntrega.text.toString().trim().isEmpty()) {
-<<<<<<< HEAD
-                bookingViewEditHEntrega.setError(R.string.errHoraEntrega.toString())
-=======
 
                 bookingViewEditHEntrega.setError("Seleccione una Hora de Entrega")
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 errorAlReservar = true
 
             }//empty
@@ -391,12 +367,6 @@ class BookingActivity : AppCompatActivity() {
                 var timeEntregaInMinutes: Int = (lstHoraEntrega[0]*hourInMinute) + (lstHoraEntrega[1])
 
                 if (timeEntregaInMinutes - timeRecogidaInMinutes < minHoursMargen) {
-<<<<<<< HEAD
-                    bookingViewEditHEntrega.setError(R.string.errHoraDiferencia.toString())
-                }
-            }
-        }
-=======
 
                     bookingViewEditHEntrega.setError("Debe haber al menos 2 horas de diferencia.")
 
@@ -406,7 +376,6 @@ class BookingActivity : AppCompatActivity() {
 
         }//not empty
 
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
         checkHorarioNocturno()
 
     }//fixEntregaTime
