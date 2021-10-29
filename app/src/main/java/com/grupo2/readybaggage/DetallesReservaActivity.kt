@@ -17,7 +17,6 @@ import com.grupo2.readybaggage.Utils.Companion.startActivity
 import kotlinx.android.synthetic.main.activity_detallesreserva.*
 import kotlinx.android.synthetic.main.menu_inferior.*
 import kotlinx.android.synthetic.main.menu_superior.*
-import kotlinx.coroutines.*
 
 class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -96,6 +95,11 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
        iconoContacto.setOnClickListener {
            startActivity<ContactoActivity>()
        }//onClick
+
+        //Menu idiomas
+        btIdiomas.setOnClickListener {
+            Utils.showPopup(btIdiomas, this, this)
+        }//onClick
 
         iconoReservas.setOnClickListener{
             startActivity<ReservasActivity>()
