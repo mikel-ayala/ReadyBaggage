@@ -90,23 +90,14 @@ class DetallesReservaActivity : AppCompatActivity(), OnMapReadyCallback {
                 reserva.estado = "estado"+newEstado
 
                 if (ControlReserva.updateReserva(this,reserva)) {
-<<<<<<< HEAD
+
                     Toast.makeText(this, "${getResources().getString(R.string.modificar_reserva)}", Toast.LENGTH_SHORT).show()
                     val reservasIntent = Intent(this, ReservasActivity::class.java)
                     reservasIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(reservasIntent)
                 } else {
                     Toast.makeText(this, "${getResources().getString(R.string.errModificar_reserva)}", Toast.LENGTH_SHORT).show()
-=======
 
-                    Toast.makeText(this, "Reserva modificada correctamente", Toast.LENGTH_SHORT).show()
-                    val reservasIntent = Intent(this, ReservasActivity::class.java)
-                    reservasIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    startActivity(reservasIntent)
-                }
-                else {
-                    Toast.makeText(this, "Error al modificar la reserva", Toast.LENGTH_SHORT).show()
->>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
                 }
 
             }
