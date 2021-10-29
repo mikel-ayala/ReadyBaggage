@@ -35,6 +35,11 @@ class ReservasActivity : AppCompatActivity() {
 
             reservasList!!.sortByDescending{it.idReserva}
             initRecycler(reservasList!!)
+<<<<<<< HEAD
+        }else{
+            Toast.makeText(contextActivity, "${getResources().getString(R.string.no_reservas)}", Toast.LENGTH_LONG).show()
+        }
+=======
 
         }//not null
         else{
@@ -42,6 +47,7 @@ class ReservasActivity : AppCompatActivity() {
             Toast.makeText(contextActivity, R.string.no_reservas, Toast.LENGTH_LONG).show()
 
         }//null
+>>>>>>> 449a4eaf5de1795b405e1d1f1aa5ca25da555e6f
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
