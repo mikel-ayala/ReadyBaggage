@@ -19,38 +19,45 @@ class ContactoActivity : AppCompatActivity() {
         //Menu idiomas
         btIdiomas.setOnClickListener {
             Utils.showPopup(btIdiomas, this, this)
+
         }//onClick
 
         //Ir al main
         iconoMain.setOnClickListener {
             startActivity<MainActivity>()
+
         }//onClick
 
 
         //Icono Facebook
         iconoFB.setOnClickListener{
             abrirweb("https://www.facebook.com/")
-        }
+
+        }//onClick
 
         //Icono Twitter
         iconoTwitter.setOnClickListener{
             abrirweb("https://twitter.com")
-        }
+
+        }//onClick
 
         //Icono Instagram
         iconoInsta.setOnClickListener{
             abrirweb("https://www.instagram.com/")
-        }
+
+        }//onclick
 
         //Icono LinkedIn
         iconoLinkedIn.setOnClickListener{
             abrirweb("https://www.linkedin.com/")
-        }
+
+        }//onClick
 
         //Icono Whatsapp
         iconoWhatsapp.setOnClickListener{
             abrirweb("https://wa.me/521123456955")
-        }
+
+        }//onClick
 
         //Ir al perfil
         iconoPerfil.setOnClickListener {
@@ -61,11 +68,17 @@ class ContactoActivity : AppCompatActivity() {
         //Ir a las reservas
         iconoReservas.setOnClickListener{
             startActivity<ReservasActivity>()
-        }//onClick
-    }
 
+        }//onClick
+
+    }//onCreate
+
+    //Ir al navegador
     fun abrirweb(web:String){
+
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(web))
         startActivity(browserIntent)
-    }
-}
+
+    }//abrirweb
+
+}//ContactoActivity

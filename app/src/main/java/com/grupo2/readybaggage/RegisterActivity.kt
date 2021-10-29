@@ -27,19 +27,19 @@ class RegisterActivity : AppCompatActivity() {
                     if (ControlCliente.registrarCliente(this, findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtEmail).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtPass).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtNombre).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtApellidos).text.toString(), findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.regViewTxtTelefono).text.toString())) {
 
                         startActivity<LoginActivity>()
-                        Toast.makeText(this, "Bienvenido "+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "${getResources().getString(R.string.bienvenido)}"+regViewTxtNombre.text.toString(), Toast.LENGTH_LONG).show()
 
                     }//Si se registra
                     else {
 
-                        Toast.makeText(this, "ERROR: Algo ha ido mal durante el registro, intentelo nuevamente", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "${getResources().getString(R.string.errRegistro)}", Toast.LENGTH_LONG).show()
 
                     }//Si ocurre un error
 
                 }//Si no existe
                 else {
 
-                    Toast.makeText(this, "ERROR: Ya existe un cliente con ese email", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "${getResources().getString(R.string.existeUsuario)}", Toast.LENGTH_LONG).show()
 
                 }//Si ya existe
 

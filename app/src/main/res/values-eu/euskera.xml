@@ -75,11 +75,39 @@
 
     <!--Detalles reserva-->
     <string name="modReserva">Erreserba aldatu</string>
-    <string name="nosotros">Kaixo, ReadyBaggage gara</string>
     <string name="estado0">Hartu gabe</string>
     <string name="estado1">Biltegian</string>
     <string name="estado2">Entregatzen</string>
     <string name="estado3">Entregatua</string>
-    <string name="no_reservas">Ez dago erreserbarik erakusteko</string>
+
+    <!--Activity de contacto-->
+    <string name="nosotros">Kaixo, ReadyBaggage gara</string>
+
     <string name="hnocturno">Gaua Zerbitzua</string>
+
+
+    <!--Toasts de información-->
+    <string name="no_reservas">Ez dago erreserbarik erakusteko</string>
+    <string name="modificar_reserva">Erreserba behar bezala aldatu da</string>
+    <string name="errModificar_reserva">Errorea erreserba aldatzean</string>
+    <string name="log_cliente">Behar bezala logeatutako bezeroa</string>
+    <string name="errLogin">Erabiltzailea eta/edo pasahitza ez dira zuzenak</string>
+    <string name="reqLogin">Saioa hasi behar da erreserbatzeko</string>
+    <string name="actDatos">Behar bezala eguneratutako datuak</string>
+    <string name="errAct">ERROREA: ezin izan da eguneratu</string>
+    <string name="errNo_cambios">Ez da aldaketarik egon eguneratzeko</string>
+    <string name="cerrar_sesion">Saioa behar bezala itxi da</string>
+    <string name="errCerrar_sesion">ERROREA: ezin izan da saioa itxi</string>
+    <string name="bienvenido">"Ongi etorri "</string>
+    <string name="errRegistro">ERROREA: erregistratzean zerbait gaizki joan da, saiatu berriro</string>
+    <string name="existeUsuario">ERROREA: badago bezero bat mezu elektroniko horrekin</string>
+
+    <!--Textos de error-->
+    <string name="errOrigen">Idatzi jatorrizko leku bat</string>
+    <string name="errDestino">Idatzi helmugako leku bat</string>
+    <string name="errFechaRecogida">Aukeratu jasotze-data bat</string>
+    <string name="errFechaEntrega">Aukeratu entrega-data bat</string>
+    <string name="errHoraRecogida">Aukeratu biltzeko ordua</string>
+    <string name="errHoraEntrega">Aukeratu entregatzeko ordua</string>
+    <string name="errHoraDiferencia">Gutxienez 2 orduko aldea egon behar da</string>
 </resources>

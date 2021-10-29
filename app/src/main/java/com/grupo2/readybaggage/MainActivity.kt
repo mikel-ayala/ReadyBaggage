@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         }//logged
         else {
             startActivity<LoginActivity>()
-            Toast.makeText(this, "Se requiere iniciar sesion para reservar", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "${getResources().getString(R.string.reqLogin)}", Toast.LENGTH_LONG).show()
         }//not logged
     }//reservar
 

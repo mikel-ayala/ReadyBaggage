@@ -67,19 +67,19 @@ class ProfileActivity : AppCompatActivity() {
 
                     if (ControlCliente.updateCliente(this, clienteUp!!)) {
 
-                        Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "${getResources().getString(R.string.actDatos)}", Toast.LENGTH_LONG).show()
 
                     }//Se ha podido actualizar
                     else {
 
-                        Toast.makeText(this, "ERROR: No se ha podido actualizar", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "${getResources().getString(R.string.errAct)}", Toast.LENGTH_LONG).show()
 
                     }//No se ha podido actualizar
 
                 }//Si los datos se han cambiado
                 else {
 
-                    Toast.makeText(this, "No han habido cambios para actualizar", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "${getResources().getString(R.string.errNo_cambios)}", Toast.LENGTH_LONG).show()
 
                 }//Si los datos no se han cambiado
 
@@ -91,13 +91,13 @@ class ProfileActivity : AppCompatActivity() {
         profileViewBtnLogout.setOnClickListener() {
             if (ControlCliente.logout(this)) {
 
-                Toast.makeText(this, "Se ha cerrado correctamente la sesion", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "${getResources().getString(R.string.cerrar_sesion)}", Toast.LENGTH_LONG).show()
                 startActivity<MainActivity>()
 
             }//logged out
             else {
 
-                Toast.makeText(this, "ERROR: No se ha podido cerrar sesion", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "${getResources().getString(R.string.errCerrar_sesion)}", Toast.LENGTH_LONG).show()
 
             }//not logged out
 

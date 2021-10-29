@@ -8,9 +8,6 @@ import android.widget.Toast
 import com.grupo2.readybaggage.Utils.Companion.startActivity
 import com.grupo2.readybaggage.Utils.Companion.validationLog
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
@@ -22,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         //Cargar Data User
-        var userEmailData: String? = Preferences.getUserPreferences(this,"userdata","email")
+        val userEmailData: String? = Preferences.getUserPreferences(this,"userdata","email")
         if (userEmailData != null && userEmailData.trim() != "") {
             logViewTextEmail.setText(userEmailData)
         }
@@ -39,12 +36,12 @@ class LoginActivity : AppCompatActivity() {
                         print("[ERROR] Error al guardar el email del usuario")
                     }
                     startActivity<MainActivity>()
-                    Toast.makeText(contextActivity, "Cliente logeado Correctamente", Toast.LENGTH_LONG).show()
+                    Toast.makeText(contextActivity, "${getResources().getString(R.string.log_cliente)}", Toast.LENGTH_LONG).show()
 
                 }//Si inicia sesion
                 else {
 
-                Toast.makeText(contextActivity, "El usuario y/o la contraseña son incorrectas", Toast.LENGTH_LONG).show()
+                Toast.makeText(contextActivity, "${getResources().getString(R.string.errLogin)}", Toast.LENGTH_LONG).show()
 
                 }//Si no existe ese usuario
 

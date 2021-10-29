@@ -70,8 +70,22 @@
     <string name="iva">IVA</string>
     <string name="total">Total: </string>
 
-    <!--Activity reservas-->
+    <!--Toasts de información-->
     <string name="no_reservas">No hay reservas que mostrar</string>
+    <string name="modificar_reserva">Reserva modificada correctamente</string>
+    <string name="errModificar_reserva">Error al modificar la reserva</string>
+    <string name="log_cliente">Cliente logeado correctamente</string>
+    <string name="errLogin">El usuario y/o la contraseña son incorrectas</string>
+    <string name="reqLogin">Se requiere iniciar sesion para reservar</string>
+    <string name="actDatos">Datos actualizados correctamente</string>
+    <string name="errAct">ERROR: No se ha podido actualizar</string>
+    <string name="errNo_cambios">No han habido cambios para actualizar</string>
+    <string name="cerrar_sesion">Se ha cerrado correctamente la sesion</string>
+    <string name="errCerrar_sesion">ERROR: No se ha podido cerrar sesion</string>
+    <string name="bienvenido">Bienvenido </string>
+    <string name="errRegistro">ERROR: Algo ha ido mal durante el registro, intentelo nuevamente</string>
+    <string name="existeUsuario">ERROR: Ya existe un cliente con ese email</string>
+
 
     <!--Activity detalles reserva-->
     <string name="estadoReser">Estado actual</string>
@@ -84,4 +98,15 @@
     <!--Activity de contacto-->
     <string name="nosotros">Hola, somos ReadyBaggage</string>
     <string name="hnocturno">Servicio Nocturno</string>
+
+    <!--Textos de error-->
+    <string name="errOrigen">Escriba un lugar de origen</string>
+    <string name="errDestino">Escriba un lugar de destino</string>
+    <string name="errFechaRecogida">Seleccione una fecha de recogida</string>
+    <string name="errFechaEntrega">Seleccione una fecha de entrega</string>
+    <string name="errHoraRecogida">Seleccione una hora de recogida</string>
+    <string name="errHoraEntrega">Seleccione una hora de entrega</string>
+    <string name="errHoraDiferencia">Debe haber al menos 2 horas de diferencia</string>
+
+
 </resources>
